@@ -1,22 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout';
-import Home from './pages/Home';
+// App root — wraps the entire application with RouterProvider
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <MainLayout>
-              <Home />
-            </MainLayout>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
-  );
+export function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;

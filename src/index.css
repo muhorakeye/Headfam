@@ -1,19 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @theme {
-  --color-brand: #c8a96e;
-  --color-brand-hover: #b8924a;
-  --animate-fade-up: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-  --animate-fade-in: fade-in 1s ease both;
-  --animate-line-grow: line-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* Brand Colors */
+  --color-forest: #1a6b2f;
+  --color-forest-dark: #0f4520;
+  --color-forest-light: #e8f5ec;
+  --color-amber: #d4820a;
+  --color-amber-light: #fdf3e0;
+  --color-charcoal: #1a1a1a;
+  --color-stone: #f5f2ee;
+  --color-muted: #6b7280;
+
+  /* Font Families */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
@@ -22,31 +29,12 @@
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes line-grow {
-  from {
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  to {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-
-@layer utilities {
-  .hero-bg {
-    background-color: #050505;
-  }
-
-  .clip-diagonal {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  }
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-stone);
+  color: var(--color-charcoal);
 }
