@@ -96,6 +96,31 @@ specific pixel value is functionally required (e.g., `h-[72px]` for the navbar h
 
 ---
 
+## UI Consistency Rules
+
+After building each page, run a normalization check before moving
+to the next page. Check for:
+- Font sizes match the scale defined in index.css
+- Spacing between sections is consistent (use py-16 or py-24 for
+  sections, never arbitrary values)
+- Button styles match the Button component exactly, no one-off
+  styled buttons
+- Colors come from CSS custom properties only, never raw hex values
+  or Tailwind default colors like indigo, purple, blue, or gray
+  outside the defined palette
+- Card styles match the Card component exactly
+- Section labels use the SectionLabel component, not custom text
+
+After ALL pages are built, run a final normalization pass across
+the entire site with this prompt:
+"Normalize the entire site. All pages and sections were built at
+different times. Check for inconsistencies in font sizes, spacing,
+button styles, and color usage. Everything must match the design
+tokens in src/index.css exactly. Fix any drift without changing
+layout or content."
+
+---
+
 ## Component Rules
 
 - Named exports for all components. Never `export default` for components.
@@ -179,3 +204,7 @@ These apply to ALL user-facing text, comments, and documentation in this project
 - No AI-sounding filler phrases ("seamlessly", "leveraging", "robust", "delve into", etc.).
 - All user-facing copy should sound like a real Rwandan company wrote it, not a template.
 - Dates are absolute, never relative ("March 2026", not "last month").
+- Never use Tailwind default colors outside the defined palette
+  (no indigo, purple, blue, violet, or default gray shades).
+- All colors must come from the CSS custom properties defined
+  in src/index.css.
