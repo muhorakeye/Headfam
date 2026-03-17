@@ -1,4 +1,4 @@
-// Site-wide navigation — transparent over dark hero, solid white after 80px scroll
+// Site-wide navigation — always white, shadow appears after scrolling 80px
 import { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
@@ -17,23 +17,18 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
-  // "solid" = white background mode (scrolled past hero OR mobile menu is open)
-  const solid = scrollY > 80 || menuOpen;
-
   // Shared link classes — border-b-2 on all links keeps heights consistent
   const desktopLinkBase = 'font-body text-sm font-medium pb-px border-b-2 transition-colors duration-300 ease-in-out';
 
   const desktopLinkClass = (isActive: boolean) =>
     isActive
       ? `${desktopLinkBase} text-forest border-forest`
-      : `${desktopLinkBase} border-transparent ${
-          solid ? 'text-charcoal/80 hover:text-forest' : 'text-white/90 hover:text-white'
-        }`;
+      : `${desktopLinkBase} border-transparent text-charcoal/80 hover:text-forest`;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        solid ? 'bg-white shadow-sm' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300 ease-in-out ${
+        scrollY > 80 ? 'shadow-sm' : ''
       }`}
     >
       {/* Main bar */}
@@ -42,11 +37,13 @@ export function Navbar() {
         <Link
           to="/"
           onClick={() => setMenuOpen(false)}
-          className={`font-display font-bold text-xl transition-colors duration-300 ease-in-out ${
-            solid ? 'text-forest' : 'text-white'
-          }`}
+          aria-label={COMPANY.name}
         >
-          {COMPANY.name}
+          <img
+            src="/logo.png"
+            alt="HeadFam Africa"
+            className="h-14 md:h-16 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -129,11 +126,7 @@ export function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
-          <span
-            className={`text-2xl leading-none select-none transition-colors duration-300 ${
-              solid ? 'text-charcoal' : 'text-white'
-            }`}
-          >
+          <span className="text-2xl leading-none select-none text-charcoal">
             {menuOpen ? '✕' : '☰'}
           </span>
         </button>

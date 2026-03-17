@@ -35,7 +35,11 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
         {/* Column 1 — Brand */}
         <div>
-          <p className="font-display font-bold text-xl text-forest">{COMPANY.name}</p>
+          <img
+            src="/logo.png"
+            alt="HeadFam Africa"
+            className="h-12 w-auto brightness-0 invert"
+          />
           <p className="font-body text-sm text-gray-400 mt-2">{COMPANY.tagline}</p>
 
           {/* Social icon buttons */}
