@@ -15,10 +15,10 @@ No test framework is configured.
 
 ## Architecture
 
-Minimal React 19 + TypeScript + Vite + Tailwind CSS starter. The app currently has a single `App` component.
+React 19 + TypeScript + Vite + Tailwind CSS v4 app. Key runtime dependencies: `react-router-dom` v7 (routing) and `axios` (HTTP client). The app currently has a single `App` component — routing and data fetching infrastructure is ready but not yet wired up.
 
 - Entry: `index.html` → `src/main.tsx` → `src/App.tsx`
-- Styles: `src/index.css` imports Tailwind directives; `src/App.css` contains legacy template styles
+- Styles: `src/index.css` imports Tailwind directives; `src/App.css` contains legacy template styles (can be removed)
 - Build output: `dist/`
 
 ## Key Config Notes
