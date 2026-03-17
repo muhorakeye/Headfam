@@ -5,14 +5,15 @@
 @theme {
   --color-brand: #c8a96e;
   --color-brand-hover: #b8924a;
-  --animate-fade-up: fade-up 0.9s ease-out both;
-  --animate-fade-in: fade-in 0.8s ease-out both;
+  --animate-fade-up: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 1s ease both;
+  --animate-line-grow: line-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -29,12 +30,23 @@
   }
 }
 
+@keyframes line-grow {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
 @layer utilities {
-  .hero-grid-bg {
-    background-color: #080808;
-    background-image:
-      linear-gradient(rgba(200, 169, 110, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200, 169, 110, 0.04) 1px, transparent 1px);
-    background-size: 80px 80px;
+  .hero-bg {
+    background-color: #050505;
+  }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 }
