@@ -1,1 +1,1 @@
-// About page sections — to be built in next phase
+export { WhoWeAreSection } from './WhoWeAreSection';

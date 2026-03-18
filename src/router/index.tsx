@@ -14,6 +14,10 @@ import { DonatePage } from '../pages/DonatePage';
 import { BookingPage } from '../pages/BookingPage';
 import { ContactPage } from '../pages/ContactPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { WhoWeAre } from '../pages/about/WhoWeAre';
+import { OurProfile } from '../pages/about/OurProfile';
+import { OurTeam } from '../pages/about/OurTeam';
+import { OurPolicy } from '../pages/about/OurPolicy';
 import { useEffect } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 
@@ -42,6 +46,10 @@ export const router = createBrowserRouter([
     children: [
       { path: '/', element: <HomePage /> },
       { path: '/about', element: <AboutPage /> },
+      { path: '/about/who-we-are', element: <WhoWeAre /> },
+      { path: '/about/our-profile', element: <OurProfile /> },
+      { path: '/about/our-team', element: <OurTeam /> },
+      { path: '/about/our-policy', element: <OurPolicy /> },
       { path: '/community', element: <CommunityPage /> },
       { path: '/services', element: <ServicesPage /> },
       { path: '/services/:serviceId', element: <ServiceDetailPage /> },

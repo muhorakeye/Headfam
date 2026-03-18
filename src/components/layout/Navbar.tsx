@@ -11,11 +11,19 @@ const SERVICE_DROPDOWN = [
   { label: 'All Services', to: '/services' },
 ];
 
+const ABOUT_DROPDOWN = [
+  { label: 'Who We Are', to: '/about/who-we-are' },
+  { label: 'Our Profile', to: '/about/our-profile' },
+  { label: 'Our Team', to: '/about/our-team' },
+  { label: 'Our Policy', to: '/about/our-policy' },
+];
+
 export function Navbar() {
   const scrollY = useScrollPosition();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   // Shared link classes — border-b-2 on all links keeps heights consistent
   const desktopLinkBase = 'font-body text-sm font-medium pb-px border-b-2 transition-colors duration-300 ease-in-out';
@@ -49,6 +57,42 @@ export function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
           {NAV_LINKS.map((link) => {
+            // About gets a hover dropdown
+            if (link.label === 'About') {
+              return (
+                <div
+                  key={link.to}
+                  className="relative"
+                  onMouseEnter={() => setAboutOpen(true)}
+                  onMouseLeave={() => setAboutOpen(false)}
+                >
+                  <NavLink
+                    to={link.to}
+                    end={false}
+                    className={({ isActive }) => desktopLinkClass(isActive)}
+                  >
+                    {link.label}
+                  </NavLink>
+
+                  {aboutOpen && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white shadow-md rounded-md py-2 min-w-[200px]">
+                      <div className="absolute -top-3 left-0 right-0 h-3" />
+                      {ABOUT_DROPDOWN.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          onClick={() => setAboutOpen(false)}
+                          className="block px-4 py-2 font-body text-sm text-charcoal hover:bg-forest-light hover:text-forest transition-colors duration-200"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             // Services gets a hover dropdown
             if (link.label === 'Services') {
               return (
@@ -140,19 +184,32 @@ export function Navbar() {
         aria-label="Mobile navigation"
       >
         {NAV_LINKS.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            end={link.to === '/'}
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              `block py-4 px-6 font-body text-base font-medium border-b border-gray-100 transition-colors ${
-                isActive ? 'text-forest' : 'text-charcoal hover:text-forest'
-              }`
-            }
-          >
-            {link.label}
-          </NavLink>
+          <div key={link.to}>
+            <NavLink
+              to={link.to}
+              end={link.to === '/'}
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                `block py-4 px-6 font-body text-base font-medium border-b border-gray-100 transition-colors ${
+                  isActive ? 'text-forest' : 'text-charcoal hover:text-forest'
+                }`
+              }
+            >
+              {link.label}
+            </NavLink>
+
+            {/* About sub-links inline on mobile */}
+            {link.label === 'About' && ABOUT_DROPDOWN.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setMenuOpen(false)}
+                className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         ))}
 
         {/* Mobile Donate */}
