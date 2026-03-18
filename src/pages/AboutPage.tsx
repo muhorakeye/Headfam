@@ -1,7 +1,6 @@
 // AboutPage — company story, mission, team, values
 // Sections to be built in next phase
 import { PageHero } from '../components/layout';
-import { DonationCTA } from '../components/sections';
 
 export function AboutPage() {
   return (
@@ -17,7 +16,7 @@ export function AboutPage() {
           </h2>
         </div>
       </section>
-      <DonationCTA />
+
     </main>
   );
 }

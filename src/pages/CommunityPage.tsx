@@ -2,7 +2,6 @@
 // Sections to be built in next phase
 import { PageHero } from '../components/layout';
 import { ImpactStats } from '../components/sections';
-import { DonationCTA } from '../components/sections';
 
 export function CommunityPage() {
   return (
@@ -19,7 +18,7 @@ export function CommunityPage() {
           </h2>
         </div>
       </section>
-      <DonationCTA />
+
     </main>
   );
 }
