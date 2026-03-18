@@ -2,40 +2,13 @@
 // Sections to be built in next phase
 import { ImpactStats } from '../components/sections';
 import { DonationCTA } from '../components/sections';
+// @ts-ignore — plain JSX component, no type declarations
+import HeroCarousel from '../components/sections/HeroCarousel';
 
 export function HomePage() {
   return (
     <main>
-      {/* Hero section placeholder — full-screen with forest background */}
-      <section className="min-h-screen bg-forest-dark flex items-center justify-center">
-        <div className="text-center px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/50 mb-4">
-            Eco-Construction Rwanda
-          </p>
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6">
-            Building Rwanda's<br />Sustainable Future
-          </h1>
-          <p className="font-body text-lg text-white/70 max-w-xl mx-auto mb-8">
-            HeadFam Africa builds eco-structures using local materials,
-            employs workers from low-income families, and donates 30% of
-            revenue to community programs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/projects"
-              className="font-body font-semibold bg-white text-forest px-8 py-4 rounded-sm hover:bg-stone transition-colors"
-            >
-              View Our Projects
-            </a>
-            <a
-              href="/donate"
-              className="font-body font-semibold border border-white text-white px-8 py-4 rounded-sm hover:bg-white hover:text-forest transition-colors"
-            >
-              Support Our Work
-            </a>
-          </div>
-        </div>
-      </section>
+      <HeroCarousel />
 
       <ImpactStats />
 

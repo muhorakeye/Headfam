@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 BEFORE STARTING ANY TASK: Read this entire file.
 Check PROGRESS.md to understand what is done and what is next.
 Never build a feature that is already marked complete in PROGRESS.md.
@@ -21,11 +23,14 @@ This is a frontend-only rebuild of headfamafrica.com. All data is currently hard
 - React 19.2.4
 - TypeScript 5.9.3 (strict mode)
 - Vite 8.0.0 with @vitejs/plugin-react
-- Tailwind CSS 4.2.1 via PostCSS (@tailwindcss/postcss in postcss.config.js)
+- Tailwind CSS 4.2.1 via PostCSS (`@tailwindcss/postcss` in postcss.config.js)
 - react-router-dom 7.13.1 (createBrowserRouter)
 - axios 1.13.6 (installed, not yet used — ready for Phase 2)
 
 No test framework is configured.
+
+**Tailwind v4 gotcha:** The Vite plugin (`@tailwindcss/vite`) does not support Vite 8.
+Always use the PostCSS path. Do not add `@tailwindcss/vite` to vite.config.ts.
 
 ---
 
@@ -89,6 +94,14 @@ Use Tailwind utilities: `bg-forest`, `text-amber`, `border-charcoal`, etc.
 
 Use Tailwind utilities: `font-display`, `font-body`, `font-mono`.
 
+### Animations
+
+Two keyframes are defined in `src/index.css` and available as Tailwind utilities:
+- `animate-[fade-up_...]` — fades in while translating up from 32px
+- `animate-[fade-in_...]` — opacity fade only
+
+Use these for section entrances. Do not define new keyframes in component files.
+
 ### Spacing
 
 8px base grid. Use the Tailwind scale only. No arbitrary values like `p-[13px]` unless a
@@ -147,8 +160,10 @@ layout or content."
 - Router: createBrowserRouter with all 11 routes and ScrollToTop in a Layout wrapper
 
 ### Components
-- Navbar: transparent over dark hero, solid white after 80px scroll, Services dropdown
-  on hover, mobile max-height animated menu, active link underline, aria attributes
+- Navbar: always white (not transparent), shadow appears after 80px scroll, Services
+  dropdown on hover, mobile max-height animated menu, active link underline, aria attributes.
+  "Book a Consultation" and "Donate" are hardcoded CTAs in Navbar.tsx — they are NOT in
+  `NAV_LINKS`. Add standard nav links to `constants.ts`; touch Navbar.tsx only for CTA changes.
 - Footer: 4-column responsive (1 col mobile, 2 col tablet, 4 col desktop), square social
   icon buttons, all internal links use react-router-dom Link
 
