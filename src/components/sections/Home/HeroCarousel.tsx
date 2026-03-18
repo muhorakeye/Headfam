@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
-import img0 from "../../assets/Hero/headfam.jpeg";
-import img1 from "../../assets/Hero/headfam1.jpeg";
-import img2 from "../../assets/Hero/headfam2.jpeg";
-import img3 from "../../assets/Hero/headfam3.jpeg";
-import img4 from "../../assets/Hero/Headfam4.jpeg";
-import img5 from "../../assets/Hero/headfam5.jpeg";
+import img0 from "../../../assets/Hero/headfam.jpeg";
+import img1 from "../../../assets/Hero/headfam1.jpeg";
+import img2 from "../../../assets/Hero/headfam2.jpeg";
+import img3 from "../../../assets/Hero/headfam3.jpeg";
+import img4 from "../../../assets/Hero/Headfam4.jpeg";
+import img5 from "../../../assets/Hero/headfam5.jpeg";
 
 const slides = [img0, img1, img2, img3, img4, img5];
 
@@ -44,11 +44,26 @@ export default function HeroCarousel() {
             width="1920"
             height="1080"
             loading={index === 0 ? "eager" : "lazy"}
-            style={{ imageRendering: "high-quality" }}
             className="w-full h-full object-cover object-center"
           />
         </div>
       ))}
+
+      {/* Partial gradient scrim — left side only, behind text */}
+      <div
+        className="absolute inset-y-0 left-0 w-2/3 z-10 pointer-events-none"
+        style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, transparent 100%)" }}
+      />
+
+      {/* Static text overlay — does not move during slide transitions */}
+      <div className="absolute bottom-24 left-10 z-20">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-4">
+          Eco-Construction.
+        </h1>
+        <p className="text-base md:text-lg font-semibold text-green-400 max-w-lg leading-relaxed">
+          Green builder, Protecting Health
+        </p>
+      </div>
 
       {/* Prev button */}
       <button

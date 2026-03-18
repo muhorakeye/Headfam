@@ -1,3 +1,4 @@
-// Re-exports all section components
-export { ImpactStats } from './ImpactStats';
-export { DonationCTA } from './DonationCTA';
+// Re-exports all section components by page
+export { ImpactStats } from './Impact';
+export { DonationCTA } from './Donate';
+export { HeroCarousel } from './Home';

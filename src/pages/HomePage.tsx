@@ -1,9 +1,8 @@
 // HomePage — hero, impact stats, services overview, featured projects, community, donate CTA
 // Sections to be built in next phase
-import { ImpactStats } from '../components/sections';
-import { DonationCTA } from '../components/sections';
+import { ImpactStats, DonationCTA } from '../components/sections';
 // @ts-ignore — plain JSX component, no type declarations
-import HeroCarousel from '../components/sections/HeroCarousel';
+import HeroCarousel from '../components/sections/Home/HeroCarousel';
 
 export function HomePage() {
   return (
