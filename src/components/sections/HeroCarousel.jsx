@@ -6,7 +6,6 @@ import img3 from "../../assets/Hero/headfam3.jpeg";
 import img4 from "../../assets/Hero/Headfam4.jpeg";
 import img5 from "../../assets/Hero/headfam5.jpeg";
 
-
 const slides = [img0, img1, img2, img3, img4, img5];
 
 export default function HeroCarousel() {
@@ -33,16 +32,22 @@ export default function HeroCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {slides.map((src, i) => (
-        <img
-          key={i}
-          src={src}
-          alt=""
-          className={[
-            "absolute inset-0 w-full h-full object-cover transition-opacity duration-700",
-            i === current ? "opacity-100" : "opacity-0",
-          ].join(" ")}
-        />
+      {slides.map((src, index) => (
+        <div
+          key={index}
+          className="absolute inset-0 w-full h-full transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(${(index - current) * 100}%)` }}
+        >
+          <img
+            src={src}
+            alt=""
+            width="1920"
+            height="1080"
+            loading={index === 0 ? "eager" : "lazy"}
+            style={{ imageRendering: "high-quality" }}
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
       ))}
 
       {/* Prev button */}
