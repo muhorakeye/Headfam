@@ -53,7 +53,9 @@ src/
   components/
     ui/                # Atomic components: Button, Badge, Card, SectionLabel
     layout/            # Page-level components: Navbar, Footer, PageHero
-    sections/          # Reusable multi-component blocks: ImpactStats, DonationCTA
+    sections/          # Section components organized by page (Home/, Donate/, etc.)
+                       # Each subfolder has an index.ts barrel. Top-level index.ts
+                       # re-exports everything: import { ImpactStats } from '../components/sections'
   data/                # All dummy data. Single place to swap for API calls in Phase 2.
   hooks/               # useScrollPosition, useIntersectionObserver
   pages/               # One file per route. Orchestrates layout and sections.
@@ -167,20 +169,28 @@ layout or content."
 - Footer: 4-column responsive (1 col mobile, 2 col tablet, 4 col desktop), square social
   icon buttons, all internal links use react-router-dom Link
 
+### Homepage Sections
+- HeroCarousel: full-viewport image slider, 6 real photos from `src/assets/Hero/`, auto-advances
+  every 5s (pauses on hover), prev/next buttons, dot indicators, static text overlay, left
+  gradient scrim. Exception: uses `export default` (not a named export) because the
+  `@ts-ignore` import in HomePage.tsx predated the type setup.
+- ImpactStats: scroll-triggered count-up animation with cubic ease-out, cards stagger by 120ms
+- WhatWeBuild: 8-service grid with inline SVG icons, scroll-triggered stagger animation,
+  green-to-gold CTA button linking to `/contact`
+- DonationCTA: reusable CTA block, lives in `sections/Donate/`
+
 ### Pages (all placeholder, content pending)
-HomePage, AboutPage, CommunityPage, ServicesPage, ServiceDetailPage, ProjectsPage,
+AboutPage, CommunityPage, ServicesPage, ServiceDetailPage, ProjectsPage,
 ProjectDetailPage, DonatePage, BookingPage, ContactPage, NotFoundPage
 
 ---
 
 ## What Is Pending
 
-### Homepage Sections (build these next)
-- Hero section with background image
+### Homepage Sections (remaining)
 - Mission/intro section
-- Services preview section (cards for the 11 services)
 - Projects preview section (cards for the 3 projects)
-- Community/impact section
+- Community section
 
 ### All Inner Pages
 About, Community, Services, ServiceDetail, Projects, ProjectDetail,

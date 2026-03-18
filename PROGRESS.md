@@ -18,11 +18,16 @@
 
 ---
 
+## Completed (continued)
+
+- [x] Homepage: HeroCarousel (6 real photos, auto-advance, prev/next, dots, text overlay)
+- [x] Homepage: ImpactStats (scroll-triggered count-up, stagger animation)
+- [x] Homepage: WhatWeBuild (8-service grid, SVG icons, stagger animation, CTA button)
+- [x] Homepage: DonationCTA section
+
 ## In Progress
 
-- [ ] Homepage: hero section with real background image
-- [ ] Homepage: mission section
-- [ ] Homepage: services preview section
+- [ ] Homepage: mission/intro section
 - [ ] Homepage: projects preview section
 - [ ] Homepage: community section
 
@@ -67,4 +72,4 @@
 
 ## Next Feature to Build
 
-Homepage sections, starting with the hero section.
+Remaining homepage sections: mission/intro, projects preview, community.
