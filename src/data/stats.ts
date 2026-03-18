@@ -11,7 +11,7 @@ export const stats: Stat[] = [
   {
     value: '30%',
     label: 'Revenue Donated',
-    description: 'Of every project goes directly to low-income communities near each build site',
+    description: '30%Of every project goes directly to low-income communities near each build site',
   },
   {
     value: '500+',
@@ -19,12 +19,12 @@ export const stats: Stat[] = [
     description: 'Skilled workers hired from surrounding communities across Rwanda',
   },
   {
-    value: '12+',
+    value: '10+',
     label: 'Years of Experience',
     description: 'Pioneering eco-construction techniques across East Africa',
   },
   {
-    value: '3',
+    value: '20+',
     label: 'Landmark Projects',
     description: 'Iconic structures that define sustainable development in Rwanda',
   },
