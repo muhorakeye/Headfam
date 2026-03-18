@@ -1,5 +1,7 @@
 // "What We Build" services grid — Home page, below ImpactStats
 // Scroll-triggered stagger animation, inline SVG icons, no external libraries
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 
 interface Service {
@@ -114,6 +116,7 @@ const services: Service[] = [
 
 export function WhatWeBuild() {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.08 });
+  const [hovered, setHovered] = useState(false);
 
   return (
     <section id="what-we-build" className="bg-white py-16 px-6 md:px-16">
@@ -152,6 +155,19 @@ export function WhatWeBuild() {
             <p className="text-sm text-gray-500 leading-relaxed">{service.description}</p>
           </div>
         ))}
+      </div>
+
+      {/* CTA button — links to Contact page */}
+      <div className="flex justify-center mt-12">
+        <Link
+          to="/contact"
+          className="px-10 py-4 text-base font-semibold rounded-full text-white transition-colors duration-300"
+          style={{ backgroundColor: hovered ? '#C9A84C' : '#2E7D32' }}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          Start Your Project With Us
+        </Link>
       </div>
     </section>
   );
