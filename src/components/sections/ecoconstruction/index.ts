@@ -1,0 +1,6 @@
+export { default as EcoHero }     from './EcoHero'
+export { default as EcoServices } from './EcoServices'
+export { default as EcoProcess }  from './EcoProcess'
+export { default as EcoWhyUs }    from './EcoWhyUs'
+export { default as EcoProjects } from './EcoProjects'
+export { default as EcoCTA }      from './EcoCTA'
