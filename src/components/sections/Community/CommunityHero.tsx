@@ -4,7 +4,7 @@ export default function CommunityHero() {
   return (
     <motion.section
       id="community-hero"
-      className="py-20 px-6 text-center w-full"
+      className="pt-32 pb-20 px-6 text-center w-full"
       style={{ backgroundColor: '#2E7D32' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

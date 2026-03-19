@@ -4,11 +4,16 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 import { NAV_LINKS, COMPANY } from '../../utils/constants';
 
-const SERVICE_DROPDOWN = [
-  { label: 'Eco-Construction', to: '/services/eco-construction' },
-  { label: 'Architecture Design', to: '/services/architecture-design' },
-  { label: 'Consultancy', to: '/services/consultancy' },
-  { label: 'All Services', to: '/services' },
+interface ServiceDropdownItem {
+  label: string;
+  to?: string;
+  comingSoon?: true;
+}
+
+const SERVICE_DROPDOWN: ServiceDropdownItem[] = [
+  { label: 'Eco-Construction Consultancy', to: '/services/consultancy' },
+  { label: 'Eco-Construction', comingSoon: true },
+  { label: 'Architecture Design', comingSoon: true },
 ];
 
 const ABOUT_DROPDOWN = [
@@ -114,16 +119,26 @@ export function Navbar() {
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white shadow-md rounded-md py-2 min-w-[200px]">
                       {/* Invisible bridge so hover doesn't break when moving to dropdown */}
                       <div className="absolute -top-3 left-0 right-0 h-3" />
-                      {SERVICE_DROPDOWN.map((item) => (
-                        <Link
-                          key={item.to}
-                          to={item.to}
-                          onClick={() => setServicesOpen(false)}
-                          className="block px-4 py-2 font-body text-sm text-charcoal hover:bg-forest-light hover:text-forest transition-colors duration-200"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                      {SERVICE_DROPDOWN.map((item) =>
+                        item.comingSoon ? (
+                          <span
+                            key={item.label}
+                            className="block px-4 py-2 font-body text-sm cursor-not-allowed"
+                            style={{ color: '#9ca3af' }}
+                          >
+                            {item.label} (coming soon)
+                          </span>
+                        ) : (
+                          <Link
+                            key={item.to}
+                            to={item.to!}
+                            onClick={() => setServicesOpen(false)}
+                            className="block px-4 py-2 font-body text-sm text-charcoal hover:bg-forest-light hover:text-forest transition-colors duration-200"
+                          >
+                            {item.label}
+                          </Link>
+                        )
+                      )}
                     </div>
                   )}
                 </div>

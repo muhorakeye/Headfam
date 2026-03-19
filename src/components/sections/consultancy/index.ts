@@ -1,0 +1,6 @@
+export { default as ConsultancyHero }     from './ConsultancyHero'
+export { default as ConsultancyServices } from './ConsultancyServices'
+export { default as ConsultancyProcess }  from './ConsultancyProcess'
+export { default as ConsultancyWhyUs }    from './ConsultancyWhyUs'
+export { default as ConsultancyProjects } from './ConsultancyProjects'
+export { default as ConsultancyCTA }      from './ConsultancyCTA'
