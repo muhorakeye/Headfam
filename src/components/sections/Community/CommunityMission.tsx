@@ -1,7 +1,7 @@
 import hero2 from '../../../assets/Hero/headfam2.jpeg'
 import hero3 from '../../../assets/Hero/headfam3.jpeg'
 
-const onImgError = (e) => {
+const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
   e.currentTarget.src = ''
 }

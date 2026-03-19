@@ -5,7 +5,7 @@ import hero1 from '../../../assets/Hero/headfam1.jpeg'
 import hero2 from '../../../assets/Hero/headfam2.jpeg'
 import hero3 from '../../../assets/Hero/headfam3.jpeg'
 
-const onImgError = (e) => {
+const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
   e.currentTarget.src = ''
 }
@@ -84,7 +84,7 @@ function LearnMoreBtn() {
 export default function CommunityPrograms() {
   const [cardHovered, setCardHovered] = useState([false, false, false])
 
-  const setHover = (i, val) =>
+  const setHover = (i: number, val: boolean) =>
     setCardHovered((prev) => prev.map((v, idx) => (idx === i ? val : v)))
 
   return (
