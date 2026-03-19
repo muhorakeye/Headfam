@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import {
   EcoHero,
   EcoServices,
@@ -9,13 +10,17 @@ import {
 
 export default function EcoConstruction() {
   return (
-    <main>
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
       <EcoHero />
       <EcoServices />
       <EcoProcess />
       <EcoWhyUs />
       <EcoProjects />
       {/*<EcoCTA />*/}
-    </main>
+    </motion.main>
   )
 }

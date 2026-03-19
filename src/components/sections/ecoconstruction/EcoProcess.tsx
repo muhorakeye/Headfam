@@ -226,8 +226,8 @@ export default function EcoProcess() {
         {SUMMARY.map((item) => (
           <div
             key={item.number}
-            className="flex items-center gap-4"
-            style={item.border ? { borderRight: '1px solid rgba(255,255,255,0.1)', paddingRight: '1.5rem' } : {}}
+            className={`flex items-center gap-4${item.border ? ' md:border-r md:pr-6' : ''}`}
+            style={item.border ? { borderColor: 'rgba(255,255,255,0.1)' } : {}}
           >
             <div
               className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"

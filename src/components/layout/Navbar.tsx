@@ -13,7 +13,7 @@ interface ServiceDropdownItem {
 const SERVICE_DROPDOWN: ServiceDropdownItem[] = [
   { label: 'Eco-Construction Consultancy', to: '/services/consultancy' },
   { label: 'Eco-Construction', to: '/services/eco-construction' },
-  { label: 'Architecture Design', comingSoon: true },
+  { label: 'Architecture Design', to: '/services/architecture-design' },
 ];
 
 const ABOUT_DROPDOWN = [

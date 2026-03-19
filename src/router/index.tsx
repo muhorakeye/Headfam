@@ -20,6 +20,7 @@ import { OurTeam } from '../pages/about/OurTeam';
 import { OurPolicy } from '../pages/about/OurPolicy';
 import Consultancy from '../pages/services/Consultancy';
 import EcoConstruction from '../pages/services/EcoConstruction';
+import ArchitectureDesign from '../pages/services/ArchitectureDesign';
 import { useEffect } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 
@@ -56,6 +57,7 @@ export const router = createBrowserRouter([
       { path: '/services', element: <ServicesPage /> },
       { path: '/services/consultancy', element: <Consultancy /> },
       { path: '/services/eco-construction', element: <EcoConstruction /> },
+      { path: '/services/architecture-design', element: <ArchitectureDesign /> },
       { path: '/services/:serviceId', element: <ServiceDetailPage /> },
       { path: '/projects', element: <ProjectsPage /> },
       { path: '/projects/:projectId', element: <ProjectDetailPage /> },
