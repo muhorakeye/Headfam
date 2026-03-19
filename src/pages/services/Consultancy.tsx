@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import {
   ConsultancyHero,
   ConsultancyServices,
@@ -9,13 +10,17 @@ import {
 
 export default function Consultancy() {
   return (
-    <main>
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
       <ConsultancyHero />
       <ConsultancyServices />
       <ConsultancyWhyUs />
       <ConsultancyProcess />
       {/*<ConsultancyProjects />*/}
       <ConsultancyCTA />
-    </main>
+    </motion.main>
   )
 }

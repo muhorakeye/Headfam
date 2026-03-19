@@ -125,7 +125,7 @@ export default function ConsultancyWhyUs() {
 
         {/* Right — stacked images */}
         <motion.div
-          className="flex-1 relative"
+          className="flex-1 relative pb-8 md:pb-0"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={VP}
@@ -138,18 +138,18 @@ export default function ConsultancyWhyUs() {
             className="w-full h-80 object-cover rounded-2xl shadow-xl"
           />
 
-          {/* Floating second image */}
+          {/* Floating second image — hidden on mobile to prevent clipping */}
           <img
             src={hero1}
             alt="HeadFam Africa project"
             onError={onImgError}
-            className="absolute z-10 w-40 h-28 object-cover rounded-xl shadow-lg"
+            className="absolute z-10 w-40 h-28 object-cover rounded-xl shadow-lg hidden md:block"
             style={{ bottom: '-1.5rem', left: '-1.5rem', border: '4px solid #ffffff' }}
           />
 
-          {/* Floating stat card */}
+          {/* Floating stat card — hidden on mobile to prevent clipping */}
           <div
-            className="absolute z-10 bg-white rounded-xl shadow-lg px-5 py-4"
+            className="absolute z-10 bg-white rounded-xl shadow-lg px-5 py-4 hidden md:block"
             style={{ top: '1.5rem', right: '-1.5rem', borderLeft: '4px solid #2E7D32' }}
           >
             <p

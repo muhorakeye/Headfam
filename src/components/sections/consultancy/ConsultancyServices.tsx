@@ -172,7 +172,7 @@ export default function ConsultancyServices() {
               <div key={service.id}>
                 <button
                   onClick={() => setActiveId(service.id)}
-                  className="w-full text-left px-8 py-6 transition-colors duration-200"
+                  className="w-full text-left px-5 md:px-8 py-5 md:py-6 transition-colors duration-200"
                   style={{
                     backgroundColor: isActive ? '#ffffff' : 'transparent',
                     borderLeft: isActive ? '4px solid #2E7D32' : '4px solid transparent',
@@ -223,7 +223,7 @@ export default function ConsultancyServices() {
         </div>
 
         {/* Right — active service detail */}
-        <div className="flex-1 bg-white px-10 py-12 flex flex-col justify-center">
+        <div className="flex-1 bg-white px-6 md:px-10 py-8 md:py-12 flex flex-col justify-center">
           <motion.div
             key={activeId}
             initial={{ opacity: 0, x: 16 }}
