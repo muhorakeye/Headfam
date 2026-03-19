@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const STORIES = [
   {
@@ -27,8 +28,10 @@ const STORIES = [
   },
 ]
 
+const VP = { once: true, amount: 0.2 as const }
+
 function ShareBtn() {
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState<boolean>(false)
   return (
     <a
       href="/contact"
@@ -42,14 +45,14 @@ function ShareBtn() {
       }}
       className="px-8 py-3 rounded-full text-sm font-semibold inline-block"
     >
-      Share Your Story
+      Donate Now
     </a>
   )
 }
 
 export default function CommunityStories() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const [isPaused, setIsPaused] = useState<boolean>(false)
 
   useEffect(() => {
     if (isPaused) return
@@ -66,7 +69,13 @@ export default function CommunityStories() {
     <section id="community-stories" className="py-10 px-6 md:px-16 bg-white">
 
       {/* ── Header ── */}
-      <div className="max-w-3xl mx-auto text-center mb-16">
+      <motion.div
+        className="max-w-3xl mx-auto text-center mb-16"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={VP}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
         <div className="flex justify-center items-center gap-3 mb-4">
           <span className="inline-block w-10 h-0.5" style={{ backgroundColor: '#C9A84C' }} />
           <span
@@ -88,13 +97,17 @@ export default function CommunityStories() {
         <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: '"DM Sans", sans-serif' }}>
           Behind every project is a community. Behind every community are people with stories worth telling.
         </p>
-      </div>
+      </motion.div>
 
       {/* ── Carousel ── */}
-      <div
+      <motion.div
         className="max-w-3xl mx-auto relative mb-12"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
+        initial={{ opacity: 0, scale: 0.98 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={VP}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       >
         {/* Slide stack */}
         <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 320 }}>
@@ -111,7 +124,6 @@ export default function CommunityStories() {
                 minHeight: 320,
               }}
             >
-              {/* Quote mark */}
               <div
                 className="text-6xl font-black leading-none mb-6"
                 style={{ color: 'rgba(255,255,255,0.25)', fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -119,7 +131,6 @@ export default function CommunityStories() {
                 &#x201C;
               </div>
 
-              {/* Quote text */}
               <p
                 className="text-xl md:text-2xl font-black text-white leading-snug mb-8"
                 style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -127,10 +138,8 @@ export default function CommunityStories() {
                 {story.quote}
               </p>
 
-              {/* Divider */}
               <div className="h-px mb-6" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }} />
 
-              {/* Attribution row */}
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center gap-4">
                   <div
@@ -152,8 +161,8 @@ export default function CommunityStories() {
                 <div className="flex items-center gap-2">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                     stroke="rgba(255,255,255,0.5)" strokeWidth="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
                   </svg>
                   <span className="text-xs" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"DM Sans", sans-serif' }}>
                     {story.location}
@@ -175,7 +184,7 @@ export default function CommunityStories() {
             onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent' }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="15 18 9 12 15 6"/>
+              <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
 
@@ -204,37 +213,43 @@ export default function CommunityStories() {
             onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent' }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="9 18 15 12 9 6"/>
+              <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* ── Bottom strip ── */}
-      <div
+      <motion.div
         className="max-w-6xl mx-auto rounded-2xl px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
         style={{ backgroundColor: '#f9f6f0' }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={VP}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <div>
           <p
             className="text-xs font-bold tracking-widest mb-2"
             style={{ color: '#C9A84C', fontFamily: '"DM Sans", sans-serif' }}
           >
-            YOUR STORY MATTERS
+            Support Community
           </p>
           <h4
             className="text-xl font-black"
             style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", Georgia, serif' }}
           >
-            Are You Part of a HeadFam Community?
+            Make Donation
           </h4>
           <p className="text-sm text-gray-500 mt-1" style={{ fontFamily: '"DM Sans", sans-serif' }}>
-            We'd love to hear how our projects have impacted your life.
+            Every donation directly funds skills training, school construction,
+            <br /> and income programs for families near our build sites.
+            No amount is too small to matter.
           </p>
         </div>
 
         <ShareBtn />
-      </div>
+      </motion.div>
 
     </section>
   )

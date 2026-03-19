@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import hero2 from '../../../assets/Hero/headfam2.jpeg'
 import hero3 from '../../../assets/Hero/headfam3.jpeg'
 
@@ -5,6 +6,9 @@ const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
   e.currentTarget.src = ''
 }
+
+const VP = { once: true, amount: 0.2 as const }
+const T  = { duration: 0.6, ease: 'easeOut' as const }
 
 const PILLARS = [
   {
@@ -49,8 +53,13 @@ export default function CommunityMission() {
     <section id="community-mission" className="py-20 px-6 md:px-16 bg-white">
 
       {/* ── Part 1: Intro ── */}
-      <div className="max-w-3xl mx-auto text-center mb-16">
-
+      <motion.div
+        className="max-w-3xl mx-auto text-center mb-16"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={VP}
+        transition={T}
+      >
         <div className="flex justify-center items-center gap-3 mb-4">
           <span className="inline-block w-10 h-0.5" style={{ backgroundColor: '#C9A84C' }} />
           <span
@@ -75,15 +84,19 @@ export default function CommunityMission() {
         >
           HeadFam Africa believes that sustainable construction only means something when it lifts the people around it. Every nail, every beam, every foundation we lay is a commitment to the communities that surround our build sites.
         </p>
-      </div>
+      </motion.div>
 
       {/* ── Part 2: Three pillars ── */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-        {PILLARS.map((pillar) => (
-          <div
+        {PILLARS.map((pillar, i) => (
+          <motion.div
             key={pillar.title}
             className="rounded-2xl p-8"
             style={{ backgroundColor: '#f9f6f0' }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={VP}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.15 }}
           >
             <div className="mb-5">{pillar.svg}</div>
             <div
@@ -102,24 +115,27 @@ export default function CommunityMission() {
             >
               {pillar.body}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* ── Part 3: Split image + quote ── */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
 
-        {/* Left: images */}
-        <div className="flex-1 relative">
+        <motion.div
+          className="flex-1 relative"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={VP}
+          transition={T}
+        >
           <img
             src={hero2}
             alt="HeadFam Africa community build"
             onError={onImgError}
             className="w-full h-80 object-cover rounded-2xl shadow-xl"
           />
-          <div
-            className="absolute -bottom-5 -right-5 bg-white rounded-xl shadow-lg p-4 z-10 max-w-xs"
-          >
+          <div className="absolute -bottom-5 -right-5 bg-white rounded-xl shadow-lg p-4 z-10 max-w-xs">
             <p
               className="text-xs font-bold tracking-widest mb-1"
               style={{ color: '#C9A84C', fontFamily: '"DM Sans", sans-serif' }}
@@ -134,10 +150,15 @@ export default function CommunityMission() {
             </p>
             <div className="h-0.5 w-8 mt-3 rounded-full" style={{ backgroundColor: '#2E7D32' }} />
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right: quote + second image */}
-        <div className="flex-1">
+        <motion.div
+          className="flex-1"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={VP}
+          transition={T}
+        >
           <div
             className="text-8xl font-black leading-none mb-2"
             style={{ color: '#C9A84C', fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -156,14 +177,13 @@ export default function CommunityMission() {
           >
             — HeadFam Africa
           </p>
-
           <img
             src={hero3}
             alt="HeadFam Africa project"
             onError={onImgError}
             className="w-full h-48 object-cover rounded-xl shadow-md mt-8"
           />
-        </div>
+        </motion.div>
 
       </div>
     </section>

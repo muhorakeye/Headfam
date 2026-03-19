@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import hero0 from '../../../assets/Hero/headfam.jpeg'
 import hero1 from '../../../assets/Hero/headfam1.jpeg'
@@ -9,6 +10,9 @@ const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
   e.currentTarget.src = ''
 }
+
+const VP = { once: true, amount: 0.2 as const }
+const T  = { duration: 0.6, ease: 'easeOut' as const }
 
 const PROGRAMS = [
   {
@@ -82,7 +86,7 @@ function LearnMoreBtn() {
 }
 
 export default function CommunityPrograms() {
-  const [cardHovered, setCardHovered] = useState([false, false, false])
+  const [cardHovered, setCardHovered] = useState<boolean[]>([false, false, false])
 
   const setHover = (i: number, val: boolean) =>
     setCardHovered((prev) => prev.map((v, idx) => (idx === i ? val : v)))
@@ -91,7 +95,13 @@ export default function CommunityPrograms() {
     <section id="community-programs" className="py-20 px-6 md:px-16" style={{ backgroundColor: '#f9f6f0' }}>
 
       {/* ── Part 1: Header ── */}
-      <div className="max-w-3xl mx-auto text-center mb-16">
+      <motion.div
+        className="max-w-3xl mx-auto text-center mb-16"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={VP}
+        transition={T}
+      >
         <div className="flex justify-center items-center gap-3 mb-4">
           <span className="inline-block w-10 h-0.5" style={{ backgroundColor: '#C9A84C' }} />
           <span className="text-xs font-bold tracking-widest" style={{ color: '#C9A84C', fontFamily: '"DM Sans", sans-serif' }}>
@@ -110,10 +120,16 @@ export default function CommunityPrograms() {
         <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: '"DM Sans", sans-serif' }}>
           From skills training to school building — every program HeadFam Africa runs is designed to leave a lasting positive footprint on the communities we serve.
         </p>
-      </div>
+      </motion.div>
 
       {/* ── Part 2: Featured program ── */}
-      <div className="max-w-6xl mx-auto mb-12">
+      <motion.div
+        className="max-w-6xl mx-auto mb-12"
+        initial={{ opacity: 0, scale: 0.97 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={VP}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
         <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-lg">
 
           <img
@@ -165,20 +181,24 @@ export default function CommunityPrograms() {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* ── Part 3: Programs grid ── */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {PROGRAMS.map((program, i) => (
-          <div
+          <motion.div
             key={program.title}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={VP}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.15 }}
+            whileHover={{ y: -2 }}
             onMouseEnter={() => setHover(i, true)}
             onMouseLeave={() => setHover(i, false)}
             className="bg-white rounded-2xl overflow-hidden"
             style={{
               boxShadow: cardHovered[i] ? '0 10px 30px rgba(0,0,0,0.12)' : '0 1px 4px rgba(0,0,0,0.06)',
-              transform: cardHovered[i] ? 'translateY(-2px)' : 'translateY(0)',
-              transition: 'all 0.3s ease',
+              transition: 'box-shadow 0.3s ease',
             }}
           >
             <img
@@ -231,12 +251,18 @@ export default function CommunityPrograms() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* ── Part 4: Bottom CTA ── */}
-      <div className="max-w-6xl mx-auto mt-12 flex flex-col md:flex-row items-center justify-between gap-6 bg-white rounded-2xl px-10 py-8 shadow-sm">
+      <motion.div
+        className="max-w-6xl mx-auto mt-12 flex flex-col md:flex-row items-center justify-between gap-6 bg-white rounded-2xl px-10 py-8 shadow-sm"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={VP}
+        transition={T}
+      >
         <div>
           <h4
             className="text-xl font-black"
@@ -256,7 +282,7 @@ export default function CommunityPrograms() {
           <PartnerBtn />
           <LearnMoreBtn />
         </div>
-      </div>
+      </motion.div>
 
     </section>
   )
