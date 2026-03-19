@@ -1,24 +1,25 @@
-// CommunityPage — community impact, jobs created, donation programs, testimonials
-// Sections to be built in next phase
-import { PageHero } from '../components/layout';
-import { ImpactStats } from '../components/sections';
+// @ts-ignore
+import CommunityHero     from '../components/sections/Community/CommunityHero';
+// @ts-ignore
+import CommunityMission  from '../components/sections/Community/CommunityMission';
+// @ts-ignore
+import CommunityImpact   from '../components/sections/Community/CommunityImpact';
+// @ts-ignore
+import CommunityPrograms from '../components/sections/Community/CommunityPrograms';
+// @ts-ignore
+import CommunityStories  from '../components/sections/Community/CommunityStories';
+// @ts-ignore
+import CommunityJoin     from '../components/sections/Community/CommunityJoin';
 
 export function CommunityPage() {
   return (
     <main>
-      <PageHero
-        title="Community Impact"
-        subtitle="30% of every project goes back to the communities who build with us."
-      />
-      <ImpactStats />
-      <section className="py-20 bg-stone">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="font-display text-3xl font-bold text-charcoal">
-            Community programs — content coming next phase
-          </h2>
-        </div>
-      </section>
-
+      <CommunityHero />
+      <CommunityMission />
+      <CommunityImpact />
+      <CommunityPrograms />
+      <CommunityStories />
+      <CommunityJoin />
     </main>
   );
 }
