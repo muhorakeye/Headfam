@@ -4,7 +4,7 @@ export default function EcoHero() {
   return (
     <section
       id="eco-hero"
-      className="py-20 px-6 text-center w-full"
+      className="py-20 px-6 text-center w-full flex flex-col items-center justify-center"
       style={{ backgroundColor: '#2E7D32' }}
     >
       <motion.h1
