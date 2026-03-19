@@ -3,7 +3,7 @@ import {
   ConsultancyServices,
   ConsultancyProcess,
   ConsultancyWhyUs,
-  ConsultancyProjects,
+  //ConsultancyProjects,
   ConsultancyCTA,
 } from '../../components/sections/consultancy'
 
@@ -12,9 +12,9 @@ export default function Consultancy() {
     <main>
       <ConsultancyHero />
       <ConsultancyServices />
-      <ConsultancyProcess />
       <ConsultancyWhyUs />
-      <ConsultancyProjects />
+      <ConsultancyProcess />
+      {/*<ConsultancyProjects />*/}
       <ConsultancyCTA />
     </main>
   )
