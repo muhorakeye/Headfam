@@ -4,7 +4,7 @@ import {
   EcoProcess,
   EcoWhyUs,
   EcoProjects,
-  EcoCTA,
+  //EcoCTA,
 } from '../../components/sections/ecoconstruction'
 
 export default function EcoConstruction() {
@@ -15,7 +15,7 @@ export default function EcoConstruction() {
       <EcoProcess />
       <EcoWhyUs />
       <EcoProjects />
-      <EcoCTA />
+      {/*<EcoCTA />*/}
     </main>
   )
 }
