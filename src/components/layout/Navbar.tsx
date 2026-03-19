@@ -13,7 +13,6 @@ const SERVICE_DROPDOWN = [
 
 const ABOUT_DROPDOWN = [
   { label: 'Who We Are', to: '/about/who-we-are' },
-  { label: 'Our Profile', to: '/about/our-profile' },
   { label: 'Our Team', to: '/about/our-team' },
   { label: 'Our Policy', to: '/about/our-policy' },
 ];

@@ -59,7 +59,8 @@ src/
   data/                # All dummy data. Single place to swap for API calls in Phase 2.
   hooks/               # useScrollPosition, useIntersectionObserver
   pages/               # One file per route. Orchestrates layout and sections.
-  router/              # createBrowserRouter config with all 11 routes and ScrollToTop
+    about/             # Sub-pages for the About section (WhoWeAre, OurProfile, OurTeam, OurPolicy)
+  router/              # createBrowserRouter config with 15 routes and ScrollToTop
   types/               # TypeScript interfaces that must stay in sync with FastAPI schemas
   utils/               # constants.ts (company info, nav links), formatters.ts, api.ts
   App.tsx              # RouterProvider wrapper
@@ -142,6 +143,9 @@ layout or content."
 - Props typed with an interface named `[ComponentName]Props`.
 - No `any` types, ever.
 - No inline styles. Tailwind classes only (with the arbitrary value exception above).
+  Exception: some sections/Home/ components are `.jsx` files (not `.tsx`) and have companion
+  `.d.ts` type declaration files (e.g., `OurWork.d.ts`). Do not convert these to `.tsx` —
+  the `.d.ts` pattern exists because `@ts-ignore` imports predated the type setup.
 - Components stay under 150 lines. Split into sub-components if larger.
 - Every component that renders data must handle loading, error, and empty states
   (relevant now for when Phase 2 API calls replace the dummy data arrays).
@@ -159,17 +163,18 @@ layout or content."
 - Dummy data: 11 services, 3 projects, 4 team members, 4 impact stats
 - Hooks: useScrollPosition, useIntersectionObserver
 - Utils: constants.ts, formatters.ts, api.ts (axios instance ready for Phase 2)
-- Router: createBrowserRouter with all 11 routes and ScrollToTop in a Layout wrapper
+- Router: 15 routes total (11 main + 4 About sub-routes) with ScrollToTop in a Layout wrapper
+- Favicon: changed to logo.png
 
 ### Components
-- Navbar: always white (not transparent), shadow appears after 80px scroll, Services
-  dropdown on hover, mobile max-height animated menu, active link underline, aria attributes.
+- Navbar: always white (not transparent), shadow appears after 80px scroll, Services AND About
+  dropdowns on hover, mobile animated menu, active link underline, aria attributes.
   "Book a Consultation" and "Donate" are hardcoded CTAs in Navbar.tsx — they are NOT in
   `NAV_LINKS`. Add standard nav links to `constants.ts`; touch Navbar.tsx only for CTA changes.
 - Footer: 4-column responsive (1 col mobile, 2 col tablet, 4 col desktop), square social
   icon buttons, all internal links use react-router-dom Link
 
-### Homepage Sections
+### Homepage Sections (all complete)
 - HeroCarousel: full-viewport image slider, 6 real photos from `src/assets/Hero/`, auto-advances
   every 5s (pauses on hover), prev/next buttons, dot indicators, static text overlay, left
   gradient scrim. Exception: uses `export default` (not a named export) because the
@@ -177,30 +182,35 @@ layout or content."
 - ImpactStats: scroll-triggered count-up animation with cubic ease-out, cards stagger by 120ms
 - WhatWeBuild: 8-service grid with inline SVG icons, scroll-triggered stagger animation,
   green-to-gold CTA button linking to `/contact`
-- DonationCTA: reusable CTA block, lives in `sections/Donate/`
+- OurWork: 3-column mosaic bento grid using headfam6/7/8.jpeg, full-bleed image cards,
+  hover zoom effect, gold VIEW PROJECT button
+- SupportOurWork: two-column layout, left CTA with two pill buttons, right 2x2 stat grid
+- DonateBanner: reusable donate CTA banner (`.jsx` with `.d.ts` companion file)
 
-### Pages (all placeholder, content pending)
-AboutPage, CommunityPage, ServicesPage, ServiceDetailPage, ProjectsPage,
+### About Sub-pages (all complete, under src/pages/about/)
+- WhoWeAre: hero, Work Performance section, tabbed History/Mission/Vision, timeline, CTA strip
+- OurProfile: hero, mission/vision text, 3 key stats
+- OurTeam: hero, placeholder cards grid
+- OurPolicy: hero, 3 policy cards with left green border
+
+### Pages (placeholder shells exist for all remaining routes)
+CommunityPage, ServicesPage, ServiceDetailPage, ProjectsPage,
 ProjectDetailPage, DonatePage, BookingPage, ContactPage, NotFoundPage
 
 ---
 
 ## What Is Pending
 
-### Homepage Sections (remaining)
-- Mission/intro section
-- Projects preview section (cards for the 3 projects)
-- Community section
-
-### All Inner Pages
-About, Community, Services, ServiceDetail, Projects, ProjectDetail,
+### Inner Pages (placeholder shells exist but need full content)
+Community, Services, ServiceDetail, Projects, ProjectDetail,
 Donate, Booking, Contact, 404
 
 ### Other
-- Real photography (replace picsum.photos placeholders)
+- Real photography (replace placeholder images)
 - Contact form (frontend only, no submission in Phase 1)
 - Donation tiers UI (frontend only, no payment processing in Phase 1)
 - Booking inquiry form (frontend only)
+- Final normalization pass across all pages
 
 ---
 

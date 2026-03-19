@@ -3,6 +3,7 @@
 // Both are defined as design tokens in src/index.css and match the rest of the site
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 import hero0 from '../../../assets/Hero/headfam.jpeg';
 import hero2 from '../../../assets/Hero/headfam2.jpeg';
 import hero3 from '../../../assets/Hero/headfam3.jpeg';
@@ -15,6 +16,16 @@ const CREAM = '#f9f6f0';
 function onImgError(e: React.SyntheticEvent<HTMLImageElement>) {
   e.currentTarget.src = '';
   e.currentTarget.style.backgroundColor = '#e8f5e9';
+}
+
+// Shared fade-up style — driven by intersection observer
+function fadeUp(visible: boolean, delay = 0): React.CSSProperties {
+  return {
+    opacity: visible ? 1 : 0,
+    transform: visible ? 'translateY(0)' : 'translateY(28px)',
+    transition: 'opacity 0.65s ease, transform 0.65s ease',
+    transitionDelay: `${delay}ms`,
+  };
 }
 
 // ─── Shared primitives ────────────────────────────────────────────────────────
@@ -38,21 +49,6 @@ function GetStartedBtn() {
       onMouseLeave={() => setHovered(false)}
     >
       Get Started <ArrowRight />
-    </Link>
-  );
-}
-
-function CtaBtn() {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <Link
-      to="/contact"
-      className="font-body inline-flex items-center gap-2 px-10 py-4 font-semibold text-sm text-white transition-colors duration-300 rounded-full"
-      style={{ backgroundColor: hovered ? GREEN : GOLD }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      Start a Conversation
     </Link>
   );
 }
@@ -90,19 +86,18 @@ const TAB_CONTENT: Record<Tab, TabData> = {
     showCta: false,
   },
   'Our Mission': {
-    heading: 'Turning Vision Into Reality',
+    heading: 'Mission Statement',
     body: [
-      'Our mission is to turn your vision into a breathtaking reality. To provide excellent services which promote global eco-constructions.',
-      'We prioritize professional, sustainable, affordable, and innovative eco-friendly buildings which promote tourism and community engagement across Rwanda and beyond.',
+      'Our mission is to turn your vision into a breathtaking reality.',
+      'To provide excellent services which promote global eco-constructions.',
     ],
     image: hero2,
     showCta: true,
   },
   'Our Vision': {
-    heading: 'First Resort for Global Investments',
+    heading: 'Vision Statement',
     body: [
-      'To be the first resort for global investments, building a legacy of sustainable, community-centered construction that spans East Africa and beyond.',
-      'We envision a future where every structure we raise becomes a landmark of responsible development, where construction rooted in tradition creates the wonders of nature for today and tomorrow.',
+      'To be the first resort for global investments.',
     ],
     image: hero3,
     showCta: true,
@@ -124,23 +119,33 @@ export function WhoWeAreSection() {
   const [activeTab, setActiveTab] = useState<Tab>('Our History');
   const content = TAB_CONTENT[activeTab];
 
+  const [sec1Ref, sec1Visible] = useIntersectionObserver();
+  const [sec2Ref, sec2Visible] = useIntersectionObserver();
+  const [timelineRef, timelineVisible] = useIntersectionObserver();
+
   return (
     <>
       {/* ── Hero ── */}
       <div className="pt-28 pb-14 px-6 text-center" style={{ backgroundColor: GREEN }}>
-        <h1 className="font-display text-4xl md:text-5xl font-black text-white mb-3">
+        <h1
+          className="font-display text-4xl md:text-5xl font-black text-white mb-3"
+          style={{ animation: 'fade-up 0.6s ease both' }}
+        >
           Who We Are
         </h1>
-        <p className="font-body text-sm tracking-widest" style={{ color: '#86efac' }}>
+        <p
+          className="font-body text-sm tracking-widest"
+          style={{ color: '#86efac', animation: 'fade-up 0.6s ease 0.15s both' }}
+        >
           Home &rsaquo; About &rsaquo; Who We Are
         </p>
       </div>
 
       {/* ── Section 1: Work Performance ── */}
       <section className="py-20 px-6 md:px-16 bg-white">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-14 items-center">
+        <div ref={sec1Ref} className="max-w-6xl mx-auto flex flex-col md:flex-row gap-14 items-center">
 
-          <div className="flex-1">
+          <div className="flex-1" style={fadeUp(sec1Visible, 0)}>
             <div className="flex items-center gap-3 mb-5">
               <span className="font-body text-xs font-bold tracking-widest" style={{ color: GOLD }}>
                 WHO WE ARE
@@ -158,7 +163,7 @@ export function WhoWeAreSection() {
             <ReachOutBtn />
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1" style={fadeUp(sec1Visible, 150)}>
             <img src={hero0} alt="HeadFam Africa construction" onError={onImgError}
               className="w-full object-cover shadow-xl"
               style={{ height: 420, borderRadius: 16 }} />
@@ -168,9 +173,9 @@ export function WhoWeAreSection() {
 
       {/* ── Section 2: More About Us + Tabs ── */}
       <section className="py-20 px-6 md:px-16" style={{ backgroundColor: CREAM }}>
-        <div className="max-w-6xl mx-auto">
+        <div ref={sec2Ref} className="max-w-6xl mx-auto">
 
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" style={fadeUp(sec2Visible, 0)}>
             <span className="font-body text-xs font-bold tracking-widest" style={{ color: GOLD }}>
               MORE ABOUT US
             </span>
@@ -183,7 +188,7 @@ export function WhoWeAreSection() {
           </div>
 
           {/* Tab bar */}
-          <div className="flex gap-0 border-b-2 border-gray-200 mb-10 overflow-x-auto">
+          <div className="flex gap-0 border-b-2 border-gray-200 mb-10 overflow-x-auto" style={fadeUp(sec2Visible, 120)}>
             {TABS.map((tab) => {
               const active = tab === activeTab;
               return (
@@ -204,7 +209,7 @@ export function WhoWeAreSection() {
           </div>
 
           {/* Tab panel */}
-          <div className="flex flex-col md:flex-row gap-12 items-start">
+          <div className="flex flex-col md:flex-row gap-12 items-start" style={fadeUp(sec2Visible, 220)}>
             <div className="flex-1">
               <h3 className="font-display text-2xl font-black mb-5" style={{ color: GREEN }}>
                 {content.heading}
@@ -229,7 +234,7 @@ export function WhoWeAreSection() {
       <section className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-4xl mx-auto">
 
-          <div className="text-center mb-14">
+          <div className="text-center mb-14" style={fadeUp(timelineVisible, 0)}>
             <span className="font-body text-xs font-bold tracking-widest" style={{ color: GOLD }}>
               OUR JOURNEY
             </span>
@@ -238,15 +243,22 @@ export function WhoWeAreSection() {
             </h2>
           </div>
 
-          <div className="relative">
+          <div ref={timelineRef} className="relative">
             <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2"
               style={{ backgroundColor: '#e5e7eb' }} />
 
             {TIMELINE.map((item, i) => {
               const isLeft = i % 2 === 0;
               return (
-                <div key={item.year} className="relative flex items-start mb-12 last:mb-0">
-
+                <div
+                  key={item.year}
+                  className="relative flex items-start mb-12 last:mb-0 transition-all duration-700"
+                  style={{
+                    opacity: timelineVisible ? 1 : 0,
+                    transform: timelineVisible ? 'translateY(0)' : 'translateY(24px)',
+                    transitionDelay: `${i * 100}ms`,
+                  }}
+                >
                   <div className="flex-1 pr-10" style={{ textAlign: 'right' }}>
                     {isLeft && (
                       <>
@@ -274,20 +286,6 @@ export function WhoWeAreSection() {
             })}
           </div>
         </div>
-      </section>
-
-      {/* ── Section 4: CTA strip ── */}
-      <section className="py-20 px-6 text-center" style={{ backgroundColor: DARK }}>
-        <p className="font-body text-xs font-bold tracking-widest mb-4" style={{ color: GOLD }}>
-          WORK WITH US
-        </p>
-        <h2 className="font-display text-3xl md:text-4xl font-black text-white mb-4">
-          Ready to Build Something That Lasts?
-        </h2>
-        <p className="font-body text-base mb-8" style={{ color: 'rgba(255,255,255,0.6)' }}>
-          Let's turn your vision into a breathtaking, sustainable reality.
-        </p>
-        <CtaBtn />
       </section>
     </>
   );
