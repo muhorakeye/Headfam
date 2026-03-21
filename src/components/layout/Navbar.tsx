@@ -157,14 +157,15 @@ export function Navbar() {
             );
           })}
 
-          {/* Donate — amber CTA, not a standard nav link */}
+          {/* Donate — gold standalone link */}
           <Link
             to="/donate"
-            className={`font-body text-sm font-semibold text-amber border-b border-transparent hover:border-amber/60 transition-colors duration-300 ${
-              location.pathname === '/donate' ? 'border-amber/60' : ''
-            }`}
+            className="font-body text-sm font-bold transition-colors duration-300"
+            style={{ color: location.pathname === '/donate' ? '#2E7D32' : '#C9A84C' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#2E7D32')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = location.pathname === '/donate' ? '#2E7D32' : '#C9A84C')}
           >
-            Donate
+            DONATE
           </Link>
         </nav>
 
@@ -263,9 +264,10 @@ export function Navbar() {
         <Link
           to="/donate"
           onClick={() => setMenuOpen(false)}
-          className="block py-4 px-6 font-body text-base font-semibold text-amber border-b border-gray-100"
+          className="block py-4 px-6 font-body text-base font-bold border-b border-gray-100"
+          style={{ color: '#C9A84C' }}
         >
-          Donate
+          DONATE
         </Link>
 
         {/* Mobile Book CTA */}

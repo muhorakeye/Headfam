@@ -10,7 +10,7 @@ import { ServicesPage } from '../pages/ServicesPage';
 import { ServiceDetailPage } from '../pages/ServiceDetailPage';
 import { ProjectsPage } from '../pages/ProjectsPage';
 import { ProjectDetailPage } from '../pages/ProjectDetailPage';
-import { DonatePage } from '../pages/DonatePage';
+import Donate from '../pages/Donate';
 import { BookingPage } from '../pages/BookingPage';
 import { ContactPage } from '../pages/ContactPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       { path: '/services/:serviceId', element: <ServiceDetailPage /> },
       { path: '/projects', element: <ProjectsPage /> },
       { path: '/projects/:projectId', element: <ProjectDetailPage /> },
-      { path: '/donate', element: <DonatePage /> },
+      { path: '/donate', element: <Donate /> },
       { path: '/booking', element: <BookingPage /> },
       { path: '/book-consultation', element: <BookConsultation /> },
       { path: '/contact', element: <ContactPage /> },
