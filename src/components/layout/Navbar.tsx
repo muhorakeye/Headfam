@@ -70,13 +70,12 @@ export function Navbar() {
                   onMouseEnter={() => setAboutOpen(true)}
                   onMouseLeave={() => setAboutOpen(false)}
                 >
-                  <NavLink
-                    to={link.to}
-                    end={false}
-                    className={({ isActive }) => desktopLinkClass(isActive)}
+                  <span
+                    className={`${desktopLinkBase} border-transparent text-charcoal/80 hover:text-forest cursor-pointer select-none`}
+                    onClick={() => setAboutOpen((o) => !o)}
                   >
                     {link.label}
-                  </NavLink>
+                  </span>
 
                   {aboutOpen && (
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white shadow-md rounded-md py-2 min-w-[200px]">
@@ -106,13 +105,12 @@ export function Navbar() {
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
                 >
-                  <NavLink
-                    to={link.to}
-                    end={false}
-                    className={({ isActive }) => desktopLinkClass(isActive)}
+                  <span
+                    className={`${desktopLinkBase} border-transparent text-charcoal/80 hover:text-forest cursor-pointer select-none`}
+                    onClick={() => setServicesOpen((o) => !o)}
                   >
                     {link.label}
-                  </NavLink>
+                  </span>
 
                   {/* Dropdown */}
                   {servicesOpen && (
@@ -197,34 +195,66 @@ export function Navbar() {
         }`}
         aria-label="Mobile navigation"
       >
-        {NAV_LINKS.map((link) => (
-          <div key={link.to}>
-            <NavLink
-              to={link.to}
-              end={link.to === '/'}
-              onClick={() => setMenuOpen(false)}
-              className={({ isActive }) =>
-                `block py-4 px-6 font-body text-base font-medium border-b border-gray-100 transition-colors ${
-                  isActive ? 'text-forest' : 'text-charcoal hover:text-forest'
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
+        {NAV_LINKS.map((link) => {
+          if (link.label === 'About') {
+            return (
+              <div key={link.to}>
+                <span className="block py-4 px-6 font-body text-base font-medium border-b border-gray-100 text-charcoal select-none">
+                  {link.label}
+                </span>
+                {ABOUT_DROPDOWN.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setMenuOpen(false)}
+                    className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            );
+          }
 
-            {/* About sub-links inline on mobile */}
-            {link.label === 'About' && ABOUT_DROPDOWN.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
+          if (link.label === 'Services') {
+            return (
+              <div key={link.to}>
+                <span className="block py-4 px-6 font-body text-base font-medium border-b border-gray-100 text-charcoal select-none">
+                  {link.label}
+                </span>
+                {SERVICE_DROPDOWN.map((item) =>
+                  item.comingSoon ? null : (
+                    <Link
+                      key={item.to}
+                      to={item.to!}
+                      onClick={() => setMenuOpen(false)}
+                      className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
+              </div>
+            );
+          }
+
+          return (
+            <div key={link.to}>
+              <NavLink
+                to={link.to}
+                end={link.to === '/'}
                 onClick={() => setMenuOpen(false)}
-                className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors"
+                className={({ isActive }) =>
+                  `block py-4 px-6 font-body text-base font-medium border-b border-gray-100 transition-colors ${
+                    isActive ? 'text-forest' : 'text-charcoal hover:text-forest'
+                  }`
+                }
               >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        ))}
+                {link.label}
+              </NavLink>
+            </div>
+          );
+        })}
 
         {/* Mobile Donate */}
         <Link
