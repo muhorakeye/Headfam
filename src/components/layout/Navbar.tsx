@@ -22,12 +22,19 @@ const ABOUT_DROPDOWN = [
   { label: 'Our Policy', to: '/about/our-policy' },
 ];
 
+const PROJECTS_DROPDOWN = [
+  { label: "Kinigi Women's Village", to: '/projects/kinigi-womens-village' },
+  { label: 'Masaka Sweet Apartment', to: '/projects/masaka-sweet-apartment' },
+  { label: 'Noble Cheer Resort', to: '/projects/noble-cheer-resort' },
+];
+
 export function Navbar() {
   const scrollY = useScrollPosition();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
 
   // Shared link classes — border-b-2 on all links keeps heights consistent
   const desktopLinkBase = 'font-body text-sm font-medium pb-px border-b-2 transition-colors duration-300 ease-in-out';
@@ -145,6 +152,41 @@ export function Navbar() {
               );
             }
 
+            // Projects gets a hover dropdown
+            if (link.label === 'Projects') {
+              return (
+                <div
+                  key={link.to}
+                  className="relative"
+                  onMouseEnter={() => setProjectsOpen(true)}
+                  onMouseLeave={() => setProjectsOpen(false)}
+                >
+                  <span
+                    className={`${desktopLinkBase} border-transparent text-charcoal/80 hover:text-forest cursor-pointer select-none`}
+                    onClick={() => setProjectsOpen((o) => !o)}
+                  >
+                    {link.label}
+                  </span>
+
+                  {projectsOpen && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white shadow-md rounded-md py-2 min-w-[220px]">
+                      <div className="absolute -top-3 left-0 right-0 h-3" />
+                      {PROJECTS_DROPDOWN.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          onClick={() => setProjectsOpen(false)}
+                          className="block px-4 py-2 font-body text-sm text-charcoal hover:bg-forest-light hover:text-forest transition-colors duration-200"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             return (
               <NavLink
                 key={link.to}
@@ -238,6 +280,26 @@ export function Navbar() {
                     </Link>
                   )
                 )}
+              </div>
+            );
+          }
+
+          if (link.label === 'Projects') {
+            return (
+              <div key={link.to}>
+                <span className="block py-4 px-6 font-body text-base font-medium border-b border-gray-100 text-charcoal select-none">
+                  {link.label}
+                </span>
+                {PROJECTS_DROPDOWN.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setMenuOpen(false)}
+                    className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             );
           }
