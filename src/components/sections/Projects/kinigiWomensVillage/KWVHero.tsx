@@ -118,7 +118,7 @@ export default function KWVHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.7 }}
         >
-          Kinigi Women's Village
+          Kinigi Women Village
         </motion.h1>
 
         {/* Tagline */}
@@ -140,7 +140,7 @@ export default function KWVHero() {
           transition={{ delay: 0.7, duration: 0.5 }}
         >
           {[
-            { value: '2024', label: 'Year Built', divider: true },
+            { value: '2022', label: 'Year Built', divider: true },
             { value: 'Kinigi', label: 'Location', divider: true },
             { value: 'Culture Center', label: 'Category', divider: false },
           ].map((stat) => (
