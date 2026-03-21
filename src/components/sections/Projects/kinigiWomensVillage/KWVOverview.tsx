@@ -13,56 +13,6 @@ const T = { duration: 0.6, ease: 'easeOut' as const }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const meta = [
-  {
-    label: 'Project Name',
-    value: 'Kinigi Women Village',
-    accent: 'green',
-    svg: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-        <polyline points="9 22 9 12 15 12 15 22" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Established',
-    value: '2022',
-    accent: 'gold',
-    svg: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="2">
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <line x1="16" y1="2" x2="16" y2="6" />
-        <line x1="8" y1="2" x2="8" y2="6" />
-        <line x1="3" y1="10" x2="21" y2="10" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Location',
-    value: 'Kinigi, under Sabyinyo Volcano',
-    accent: 'green',
-    svg: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-        <circle cx="12" cy="10" r="3" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Category',
-    value: 'Culture Center',
-    accent: 'gold',
-    svg: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="2">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-    ),
-  },
-]
-
 const activities = [
   {
     title: 'Craft Making',
@@ -153,51 +103,6 @@ function ActivityCard({ activity, index }: ActivityCardProps) {
 export default function KWVOverview() {
   return (
     <section id="kwv-overview" className="bg-white py-16 px-6 md:px-16">
-
-      {/* ── Part 1: Meta bar ──────────────────────────────────────────── */}
-      <motion.div
-        className="max-w-6xl mx-auto mb-16"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={VP}
-        transition={T}
-      >
-        <div className="rounded-2xl px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-6" style={{ backgroundColor: '#f9f6f0' }}>
-          {meta.map((item, i) => (
-            <div
-              key={item.label}
-              className={`flex items-start gap-3 ${i < 3 ? 'md:border-r md:pr-6' : ''}`}
-              style={{ borderColor: '#e5e7eb' }}
-            >
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{
-                  backgroundColor:
-                    item.accent === 'green'
-                      ? 'rgba(46,125,50,0.08)'
-                      : 'rgba(201,168,76,0.08)',
-                }}
-              >
-                {item.svg}
-              </div>
-              <div>
-                <p
-                  className="text-xs mb-0.5"
-                  style={{ color: '#9ca3af', fontFamily: '"DM Sans", sans-serif' }}
-                >
-                  {item.label}
-                </p>
-                <p
-                  className="text-sm font-black"
-                  style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}
-                >
-                  {item.value}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
 
       {/* ── Part 2: Split content + image ────────────────────────────── */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center mb-16">
