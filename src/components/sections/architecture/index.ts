@@ -1,6 +1,6 @@
 export { default as ArchHero }     from './ArchHero'
 export { default as ArchServices } from './ArchServices'
 export { ArchProcess }             from './ArchProcess'
-export { default as ArchWhyUs }    from './ArchWhyUs'
+export { ArchWhyUs }               from './ArchWhyUs'
 export { default as ArchProjects } from './ArchProjects'
 export { default as ArchCTA }      from './ArchCTA'
