@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import hero0 from '../../../assets/Hero/headfam.jpeg'
 import hero1 from '../../../assets/Hero/headfam1.jpeg'
 import hero2 from '../../../assets/Hero/headfam2.jpeg'
 import hero3 from '../../../assets/Hero/headfam3.jpeg'
@@ -64,7 +63,7 @@ const MOSAIC: MosaicProject[] = [
     route: '/projects/cultural-tourism-site',
   },
   {
-    image: hero0,
+    image: hero4,
     category: 'Resort',
     date: 'Ongoing',
     title: 'Eco Resort Development',
@@ -219,81 +218,6 @@ export default function EcoProjects() {
           Every project tells a story of community, sustainability, and craftsmanship. Here are
           some of the structures HeadFam Africa has brought to life.
         </p>
-      </motion.div>
-
-      {/* Part 2 — Featured project */}
-      <motion.div
-        className="max-w-6xl mx-auto mb-10"
-        initial={{ opacity: 0, scale: 0.97 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={VP}
-        transition={{ duration: 0.7, ease: 'easeOut' as const }}
-      >
-        <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-md">
-          <img
-            src={hero0}
-            alt="Kinigi Women's Center"
-            onError={onImgError}
-            className="w-full md:w-[45%] h-56 md:h-auto object-cover"
-          />
-
-          <div className="flex flex-col justify-center p-6 md:p-10" style={{ backgroundColor: '#2E7D32', flex: 1 }}>
-            <span
-              className="inline-block text-white text-xs font-bold tracking-widest px-3 py-1 rounded-full mb-4 self-start"
-              style={{ backgroundColor: 'rgba(255,255,255,0.15)', fontFamily: '"DM Sans", sans-serif' }}
-            >
-              FEATURED BUILD
-            </span>
-
-            <h3
-              className="text-2xl md:text-3xl font-black text-white mb-4"
-              style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
-            >
-              Kinigi Women's Center
-            </h3>
-
-            <p
-              className="text-sm leading-relaxed mb-6"
-              style={{ color: 'rgba(255,255,255,0.8)', fontFamily: '"DM Sans", sans-serif' }}
-            >
-              A landmark eco-construction project built with sustainable local materials and a
-              local workforce. The Kinigi Women's Center is now a thriving hub of community
-              empowerment, cultural celebration, and eco-conscious design.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-8">
-              {[
-                { value: '2024', label: 'Completed', border: true },
-                { value: 'Kinigi', label: 'Location', border: true },
-                { value: 'Women Center', label: 'Category', border: false },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  style={stat.border ? { borderRight: '1px solid rgba(255,255,255,0.2)', paddingRight: '1rem' } : {}}
-                >
-                  <p className="text-lg font-black text-white" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
-                    {stat.value}
-                  </p>
-                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: '"DM Sans", sans-serif' }}>
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {['Local Materials', 'Local Workforce', 'Community Owned', 'Eco-Certified'].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs text-white px-3 py-1 rounded-full"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.12)', fontFamily: '"DM Sans", sans-serif' }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
       </motion.div>
 
       {/* Part 3 — Image-overlay card grid */}

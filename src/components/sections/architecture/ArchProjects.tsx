@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import hero0 from "../../../assets/Hero/headfam.jpeg";
 import hero1 from "../../../assets/Hero/headfam1.jpeg";
 import hero2 from "../../../assets/Hero/headfam2.jpeg";
 import hero3 from "../../../assets/Hero/headfam3.jpeg";
@@ -59,7 +58,7 @@ const portfolioProjects: PortfolioProject[] = [
     route: "/projects/cultural-tourism-site",
   },
   {
-    image: hero0,
+    image: hero4,
     category: "Resort",
     date: "Ongoing",
     title: "Eco Resort Architecture",
@@ -69,8 +68,6 @@ const portfolioProjects: PortfolioProject[] = [
     route: "/projects/eco-resort-development",
   },
 ];
-
-const featuredTags = ["Local Materials", "Open Community Space", "Eco-Certified", "Cultural Identity"];
 
 const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = "#e8f5e9";
@@ -188,100 +185,6 @@ export function ArchProjects() {
           designs HeadFam Africa has developed and delivered across Rwanda and East
           Africa.
         </p>
-      </motion.div>
-
-      {/* Part 2 — Featured Project */}
-      <motion.div
-        className="max-w-6xl mx-auto mb-10"
-        initial={{ opacity: 0, scale: 0.97 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      >
-        <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-md">
-          <img
-            src={hero0}
-            alt="Kinigi Women's Center"
-            className="w-full md:w-[45%] h-56 md:h-auto object-cover"
-            onError={handleImgError}
-          />
-
-          <div
-            className="flex-1 p-6 md:p-10 flex flex-col justify-center"
-            style={{ backgroundColor: "#1a1a1a" }}
-          >
-            <span
-              className="inline-block text-white text-xs font-bold tracking-widest px-3 py-1 rounded-full mb-4 self-start"
-              style={{ backgroundColor: "rgba(255,255,255,0.1)", fontFamily: "DM Sans" }}
-            >
-              FEATURED DESIGN
-            </span>
-
-            <h3
-              className="text-2xl md:text-3xl font-black text-white mb-4"
-              style={{ fontFamily: "Playfair Display" }}
-            >
-              Kinigi Women's Center
-            </h3>
-
-            <p
-              className="text-sm leading-relaxed mb-6"
-              style={{ color: "rgba(255,255,255,0.75)", fontFamily: "DM Sans" }}
-            >
-              A culturally rooted architectural design that celebrates Rwandan
-              heritage through sustainable local materials, open community spaces,
-              and eco-conscious structural systems. The Kinigi Women's Center stands
-              as a landmark of what architecture can achieve when it listens to the
-              land and the people.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-8">
-              {[
-                { value: "2024", label: "Completed" },
-                { value: "Kinigi", label: "Location" },
-                { value: "Cultural", label: "Typology" },
-              ].map((stat, i) => (
-                <div
-                  key={stat.label}
-                  style={
-                    i < 2
-                      ? { borderRight: "1px solid rgba(255,255,255,0.15)", paddingRight: "1rem" }
-                      : undefined
-                  }
-                >
-                  <p
-                    className="text-lg font-black text-white"
-                    style={{ fontFamily: "Playfair Display" }}
-                  >
-                    {stat.value}
-                  </p>
-                  <p
-                    className="text-xs"
-                    style={{ color: "rgba(255,255,255,0.45)", fontFamily: "DM Sans" }}
-                  >
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {featuredTags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-white text-xs px-3 py-1 rounded-full"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    fontFamily: "DM Sans",
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
       </motion.div>
 
       {/* Part 3 — Portfolio Grid */}
