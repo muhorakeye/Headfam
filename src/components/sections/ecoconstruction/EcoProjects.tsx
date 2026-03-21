@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import hero0 from '../../../assets/Hero/headfam.jpeg'
 import hero1 from '../../../assets/Hero/headfam1.jpeg'
@@ -22,6 +23,7 @@ interface MosaicProject {
   title: string
   description: string
   tags: string[]
+  route: string
 }
 
 const MOSAIC: MosaicProject[] = [
@@ -32,6 +34,7 @@ const MOSAIC: MosaicProject[] = [
     title: 'Eco-Friendly Living — Ndera',
     description: 'Modern eco-residential project in Ndera built with sustainable materials and energy-efficient design.',
     tags: ['Local Materials', 'Energy-Efficient'],
+    route: '/projects/ndera-residential',
   },
   {
     image: hero2,
@@ -40,6 +43,7 @@ const MOSAIC: MosaicProject[] = [
     title: 'Kinigi Coffee Shop',
     description: 'A cultural coffee experience built with local materials in a gorgeous natural setting near Kinigi.',
     tags: ['Cultural', 'Local Materials'],
+    route: '/projects/kinigi-coffee-shop',
   },
   {
     image: hero3,
@@ -48,6 +52,7 @@ const MOSAIC: MosaicProject[] = [
     title: 'Eco Landscape — Kigali',
     description: 'Breathtaking outdoor landscape design combining ecological sensitivity with artistic vision.',
     tags: ['Native Plants', 'Eco-Certified'],
+    route: '/projects/eco-landscape-kigali',
   },
   {
     image: hero4,
@@ -56,6 +61,7 @@ const MOSAIC: MosaicProject[] = [
     title: 'Cultural Tourism Site',
     description: 'A touristic site creation that celebrates local culture while generating sustainable income for the community.',
     tags: ['Community-Owned', 'Sustainable'],
+    route: '/projects/cultural-tourism-site',
   },
   {
     image: hero0,
@@ -64,12 +70,12 @@ const MOSAIC: MosaicProject[] = [
     title: 'Eco Resort Development',
     description: 'Full eco-resort development with nature views, water management systems, and responsible travel infrastructure.',
     tags: ['Eco-Resort', 'Responsible Travel'],
+    route: '/projects/eco-resort-development',
   },
 ]
 
 function MosaicCard({ project, index }: { project: MosaicProject; index: number }) {
-  const [hovered, setHovered] = useState(false)
-  const [arrowHovered, setArrowHovered] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <motion.div
@@ -77,105 +83,58 @@ function MosaicCard({ project, index }: { project: MosaicProject; index: number 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={VP1}
       transition={{ duration: 0.6, ease: 'easeOut' as const, delay: index * 0.1 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="group bg-white rounded-2xl overflow-hidden"
-      style={{
-        boxShadow: hovered
-          ? '0 20px 40px rgba(0,0,0,0.12)'
-          : '0 1px 3px rgba(0,0,0,0.06)',
-        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
-        transition: 'all 0.3s ease',
-      }}
+      className="relative overflow-hidden rounded-2xl cursor-pointer group h-64 sm:h-72"
+      onClick={() => navigate(project.route)}
     >
-      {/* Image block */}
-      <div className="relative overflow-hidden h-52">
-        <img
-          src={project.image}
-          alt={project.title}
-          onError={onImgError}
-          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-        />
-        <span
-          className="absolute top-4 left-4 z-10 text-white text-xs font-bold px-3 py-1 rounded-full"
-          style={{ backgroundColor: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}
-        >
-          {project.category}
-        </span>
-      </div>
+      <img
+        src={project.image}
+        alt={project.title}
+        onError={onImgError}
+        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-110"
+      />
+
+      {/* Permanent gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' }}
+      />
 
       {/* Content block */}
-      <div className="p-5">
-        <p
-          className="text-xs text-gray-400 mb-2"
-          style={{ fontFamily: '"DM Sans", sans-serif' }}
-        >
-          {project.date}
-        </p>
+      <div className="absolute bottom-0 left-0 right-0 p-5 z-10 flex items-end justify-between gap-3">
+        <div className="flex-1">
+          <span
+            className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-2 text-white"
+            style={{ backgroundColor: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}
+          >
+            {project.category}
+          </span>
+          <p
+            className="text-base font-black text-white leading-snug mb-1"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+          >
+            {project.title}
+          </p>
+          <p
+            className="text-xs leading-relaxed"
+            style={{
+              color: 'rgba(255,255,255,0.72)',
+              fontFamily: '"DM Sans", sans-serif',
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
+            {project.description}
+          </p>
+        </div>
 
-        <p
-          className="text-base font-black mb-2"
-          style={{
-            color: '#1a1a1a',
-            fontFamily: '"Playfair Display", Georgia, serif',
-            display: '-webkit-box',
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-          }}
-        >
-          {project.title}
-        </p>
-
-        <p
-          className="text-sm text-gray-500 leading-relaxed mb-4"
-          style={{
-            fontFamily: '"DM Sans", sans-serif',
-            display: '-webkit-box',
-            WebkitLineClamp: 3,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-          }}
-        >
-          {project.description}
-        </p>
-
-        {/* Bottom row */}
-        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-          <div className="flex flex-wrap gap-2">
-            {project.tags.slice(0, 2).map((tag) => (
-              <span
-                key={tag}
-                className="text-xs text-gray-400 px-2 py-1 rounded-full"
-                style={{ backgroundColor: '#f9f6f0', fontFamily: '"DM Sans", sans-serif' }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <a href="/contact">
-            <div
-              onMouseEnter={() => setArrowHovered(true)}
-              onMouseLeave={() => setArrowHovered(false)}
-              className="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0"
-              style={{
-                backgroundColor: arrowHovered ? '#2E7D32' : 'rgba(46,125,50,0.08)',
-              }}
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke={arrowHovered ? '#ffffff' : '#2E7D32'}
-                strokeWidth="2.5"
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </div>
-          </a>
+        {/* Arrow button */}
+        <div className="flex-shrink-0 self-end w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C]">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
         </div>
       </div>
     </motion.div>
@@ -337,9 +296,9 @@ export default function EcoProjects() {
         </div>
       </motion.div>
 
-      {/* Part 3 — Responsive card grid */}
+      {/* Part 3 — Image-overlay card grid */}
       <div className="max-w-6xl mx-auto mb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {MOSAIC.map((project, i) => (
             <MosaicCard key={project.title} project={project} index={i} />
           ))}
