@@ -25,6 +25,7 @@ This is a frontend-only rebuild of headfamafrica.com. All data is currently hard
 - Vite 8.0.0 with @vitejs/plugin-react
 - Tailwind CSS 4.2.1 via PostCSS (`@tailwindcss/postcss` in postcss.config.js)
 - react-router-dom 7.13.1 (createBrowserRouter)
+- framer-motion 12.38.0 (entrance animations on service/architecture pages)
 - axios 1.13.6 (installed, not yet used — ready for Phase 2)
 
 No test framework is configured.
@@ -60,7 +61,8 @@ src/
   hooks/               # useScrollPosition, useIntersectionObserver
   pages/               # One file per route. Orchestrates layout and sections.
     about/             # Sub-pages for the About section (WhoWeAre, OurProfile, OurTeam, OurPolicy)
-  router/              # createBrowserRouter config with 15 routes and ScrollToTop
+    services/          # Full service pages (EcoConstruction, ArchitectureDesign, Consultancy)
+  router/              # createBrowserRouter config with 18 routes and ScrollToTop
   types/               # TypeScript interfaces that must stay in sync with FastAPI schemas
   utils/               # constants.ts (company info, nav links), formatters.ts, api.ts
   App.tsx              # RouterProvider wrapper
@@ -163,7 +165,7 @@ layout or content."
 - Dummy data: 11 services, 3 projects, 4 team members, 4 impact stats
 - Hooks: useScrollPosition, useIntersectionObserver
 - Utils: constants.ts, formatters.ts, api.ts (axios instance ready for Phase 2)
-- Router: 15 routes total (11 main + 4 About sub-routes) with ScrollToTop in a Layout wrapper
+- Router: 18 routes total (11 main + 4 About sub-routes + 3 service sub-routes) with ScrollToTop in a Layout wrapper
 - Favicon: changed to logo.png
 
 ### Components
@@ -193,6 +195,13 @@ layout or content."
 - OurTeam: hero, placeholder cards grid
 - OurPolicy: hero, 3 policy cards with left green border
 
+### Service Sub-pages (all complete, under src/pages/services/)
+Routes: `/services/eco-construction`, `/services/architecture-design`, `/services/consultancy`
+Section components live in `src/components/sections/ecoconstruction/`, `src/components/sections/architecture/`, `src/components/sections/consultancy/`.
+- EcoConstruction: ArchHero (framer-motion entrance), EcoServices, EcoProcess (vertical timeline), EcoWhyUs (bento grid), EcoProjects (featured build + mosaic), EcoCTA
+- ArchitectureDesign: ArchHero (framer-motion entrance) + 5 placeholder sections
+- Consultancy: placeholder sections
+
 ### Pages (placeholder shells exist for all remaining routes)
 CommunityPage, ServicesPage, ServiceDetailPage, ProjectsPage,
 ProjectDetailPage, DonatePage, BookingPage, ContactPage, NotFoundPage
@@ -202,8 +211,12 @@ ProjectDetailPage, DonatePage, BookingPage, ContactPage, NotFoundPage
 ## What Is Pending
 
 ### Inner Pages (placeholder shells exist but need full content)
-Community, Services, ServiceDetail, Projects, ProjectDetail,
+Community, Services, ServiceDetail (generic), Projects, ProjectDetail,
 Donate, Booking, Contact, 404
+
+### Service Sub-pages (partially complete)
+- Consultancy: ArchHero exists, remaining sections are placeholders
+- ArchitectureDesign: ArchHero exists, remaining sections are placeholders
 
 ### Other
 - Real photography (replace placeholder images)
