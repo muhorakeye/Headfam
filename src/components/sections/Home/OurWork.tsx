@@ -35,7 +35,7 @@ const projects: Project[] = [
     title: "Kinigi Women's Center Now Open",
     description: 'Empowering women through eco-conscious construction and cultural identity in the heart of Kinigi.',
     image: img7,
-    route: '/projects/kinigi-womens-center',
+    route: '/projects/kinigi-womens-village',
   },
   {
     id: 3,

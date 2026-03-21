@@ -1,0 +1,7 @@
+export { default as KWVHero } from './KWVHero'
+export { default as KWVOverview } from './KWVOverview'
+export { default as KWVGallery } from './KWVGallery'
+export { default as KWVImpact } from './KWVImpact'
+export { default as KWVServices } from './KWVServices'
+export { default as KWVLocation } from './KWVLocation'
+export { default as KWVCTA } from './KWVCTA'

@@ -1,0 +1,7 @@
+export { default as NCRHero } from './NCRHero'
+export { default as NCROverview } from './NCROverview'
+export { default as NCRGallery } from './NCRGallery'
+export { default as NCRImpact } from './NCRImpact'
+export { default as NCRServices } from './NCRServices'
+export { default as NCRLocation } from './NCRLocation'
+export { default as NCRCTA } from './NCRCTA'
