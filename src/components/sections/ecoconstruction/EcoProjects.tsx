@@ -21,6 +21,7 @@ interface MosaicProject {
   date: string
   title: string
   description: string
+  tags: string[]
 }
 
 const MOSAIC: MosaicProject[] = [
@@ -30,6 +31,7 @@ const MOSAIC: MosaicProject[] = [
     date: 'December 2024',
     title: 'Eco-Friendly Living — Ndera',
     description: 'Modern eco-residential project in Ndera built with sustainable materials and energy-efficient design.',
+    tags: ['Local Materials', 'Energy-Efficient'],
   },
   {
     image: hero2,
@@ -37,6 +39,7 @@ const MOSAIC: MosaicProject[] = [
     date: 'May 2024',
     title: 'Kinigi Coffee Shop',
     description: 'A cultural coffee experience built with local materials in a gorgeous natural setting near Kinigi.',
+    tags: ['Cultural', 'Local Materials'],
   },
   {
     image: hero3,
@@ -44,6 +47,7 @@ const MOSAIC: MosaicProject[] = [
     date: 'Ongoing',
     title: 'Eco Landscape — Kigali',
     description: 'Breathtaking outdoor landscape design combining ecological sensitivity with artistic vision.',
+    tags: ['Native Plants', 'Eco-Certified'],
   },
   {
     image: hero4,
@@ -51,6 +55,7 @@ const MOSAIC: MosaicProject[] = [
     date: '2023',
     title: 'Cultural Tourism Site',
     description: 'A touristic site creation that celebrates local culture while generating sustainable income for the community.',
+    tags: ['Community-Owned', 'Sustainable'],
   },
   {
     image: hero0,
@@ -58,11 +63,14 @@ const MOSAIC: MosaicProject[] = [
     date: 'Ongoing',
     title: 'Eco Resort Development',
     description: 'Full eco-resort development with nature views, water management systems, and responsible travel infrastructure.',
+    tags: ['Eco-Resort', 'Responsible Travel'],
   },
 ]
 
-function MosaicCard({ project, index, height }: { project: MosaicProject; index: number; height: string }) {
+function MosaicCard({ project, index }: { project: MosaicProject; index: number }) {
   const [hovered, setHovered] = useState(false)
+  const [arrowHovered, setArrowHovered] = useState(false)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
@@ -71,59 +79,104 @@ function MosaicCard({ project, index, height }: { project: MosaicProject; index:
       transition={{ duration: 0.6, ease: 'easeOut' as const, delay: index * 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative overflow-hidden rounded-xl cursor-pointer"
-      style={{ height }}
+      className="group bg-white rounded-2xl overflow-hidden"
+      style={{
+        boxShadow: hovered
+          ? '0 20px 40px rgba(0,0,0,0.12)'
+          : '0 1px 3px rgba(0,0,0,0.06)',
+        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
+        transition: 'all 0.3s ease',
+      }}
     >
-      <img
-        src={project.image}
-        alt={project.title}
-        onError={onImgError}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
-        style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)' }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%)' }}
-      />
-
-      {/* Text block */}
-      <div className="absolute bottom-0 left-0 p-5 z-10">
+      {/* Image block */}
+      <div className="relative overflow-hidden h-52">
+        <img
+          src={project.image}
+          alt={project.title}
+          onError={onImgError}
+          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+        />
         <span
-          className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white"
+          className="absolute top-4 left-4 z-10 text-white text-xs font-bold px-3 py-1 rounded-full"
           style={{ backgroundColor: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}
         >
           {project.category}
         </span>
+      </div>
+
+      {/* Content block */}
+      <div className="p-5">
         <p
-          className="text-base font-black text-white mb-1"
-          style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+          className="text-xs text-gray-400 mb-2"
+          style={{ fontFamily: '"DM Sans", sans-serif' }}
+        >
+          {project.date}
+        </p>
+
+        <p
+          className="text-base font-black mb-2"
+          style={{
+            color: '#1a1a1a',
+            fontFamily: '"Playfair Display", Georgia, serif',
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
         >
           {project.title}
         </p>
+
         <p
-          className="text-xs leading-relaxed"
-          style={{ color: 'rgba(255,255,255,0.75)', fontFamily: '"DM Sans", sans-serif' }}
+          className="text-sm text-gray-500 leading-relaxed mb-4"
+          style={{
+            fontFamily: '"DM Sans", sans-serif',
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
         >
           {project.description}
         </p>
-      </div>
 
-      {/* VIEW PROJECT button */}
-      <div
-        className="absolute bottom-5 right-5 z-10 inline-flex items-center gap-2 px-3 py-2 transition-colors duration-300"
-        style={{
-          border: `1px solid ${hovered ? '#C9A84C' : 'white'}`,
-          color: hovered ? '#C9A84C' : 'white',
-        }}
-      >
-        <span style={{ width: 16, height: 1, backgroundColor: hovered ? '#C9A84C' : 'white', display: 'inline-block', transition: 'background-color 300ms' }} />
-        <span
-          className="text-xs font-bold tracking-widest"
-          style={{ fontFamily: '"DM Sans", sans-serif' }}
-        >
-          VIEW PROJECT
-        </span>
-        <span style={{ width: 16, height: 1, backgroundColor: hovered ? '#C9A84C' : 'white', display: 'inline-block', transition: 'background-color 300ms' }} />
+        {/* Bottom row */}
+        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+          <div className="flex flex-wrap gap-2">
+            {project.tags.slice(0, 2).map((tag) => (
+              <span
+                key={tag}
+                className="text-xs text-gray-400 px-2 py-1 rounded-full"
+                style={{ backgroundColor: '#f9f6f0', fontFamily: '"DM Sans", sans-serif' }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <a href="/contact">
+            <div
+              onMouseEnter={() => setArrowHovered(true)}
+              onMouseLeave={() => setArrowHovered(false)}
+              className="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0"
+              style={{
+                backgroundColor: arrowHovered ? '#2E7D32' : 'rgba(46,125,50,0.08)',
+              }}
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke={arrowHovered ? '#ffffff' : '#2E7D32'}
+                strokeWidth="2.5"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+          </a>
+        </div>
       </div>
     </motion.div>
   )
@@ -136,13 +189,13 @@ function QuoteBtn() {
       href="/contact"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="w-full md:w-auto px-8 py-3 rounded-full text-sm font-semibold inline-block text-center"
       style={{
         backgroundColor: hovered ? '#C9A84C' : '#2E7D32',
         color: '#ffffff',
         fontFamily: '"DM Sans", sans-serif',
         transition: 'background-color 0.3s',
       }}
-      className="px-8 py-3 rounded-full text-sm font-semibold inline-block"
     >
       Get a Quote
     </a>
@@ -156,6 +209,7 @@ function AllProjectsBtn() {
       href="/#our-work"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="w-full md:w-auto px-8 py-3 rounded-full text-sm font-semibold inline-block text-center"
       style={{
         backgroundColor: hovered ? '#2E7D32' : 'transparent',
         color: hovered ? '#ffffff' : '#2E7D32',
@@ -163,7 +217,6 @@ function AllProjectsBtn() {
         fontFamily: '"DM Sans", sans-serif',
         transition: 'background-color 0.3s, color 0.3s',
       }}
-      className="px-8 py-3 rounded-full text-sm font-semibold inline-block"
     >
       View All Projects
     </a>
@@ -172,7 +225,7 @@ function AllProjectsBtn() {
 
 export default function EcoProjects() {
   return (
-    <section id="eco-projects" className="py-16 px-6 md:px-16" style={{ backgroundColor: '#f9f6f0' }}>
+    <section id="eco-projects" className="py-10 md:py-16 px-4 md:px-16" style={{ backgroundColor: '#f9f6f0' }}>
 
       {/* Part 1 — Header */}
       <motion.div
@@ -194,7 +247,7 @@ export default function EcoProjects() {
         </div>
 
         <h2
-          className="text-3xl md:text-4xl font-black mb-4"
+          className="text-2xl md:text-4xl font-black mb-4"
           style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", Georgia, serif' }}
         >
           Structures We've Built
@@ -222,10 +275,10 @@ export default function EcoProjects() {
             src={hero0}
             alt="Kinigi Women's Center"
             onError={onImgError}
-            className="w-full md:w-[45%] h-72 md:h-auto object-cover"
+            className="w-full md:w-[45%] h-56 md:h-auto object-cover"
           />
 
-          <div className="flex flex-col justify-center p-10" style={{ backgroundColor: '#2E7D32', flex: 1 }}>
+          <div className="flex flex-col justify-center p-6 md:p-10" style={{ backgroundColor: '#2E7D32', flex: 1 }}>
             <span
               className="inline-block text-white text-xs font-bold tracking-widest px-3 py-1 rounded-full mb-4 self-start"
               style={{ backgroundColor: 'rgba(255,255,255,0.15)', fontFamily: '"DM Sans", sans-serif' }}
@@ -249,7 +302,7 @@ export default function EcoProjects() {
               empowerment, cultural celebration, and eco-conscious design.
             </p>
 
-            <div className="flex gap-6 mb-8 flex-wrap">
+            <div className="flex flex-wrap gap-4 mb-8">
               {[
                 { value: '2024', label: 'Completed', border: true },
                 { value: 'Kinigi', label: 'Location', border: true },
@@ -257,7 +310,7 @@ export default function EcoProjects() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  style={stat.border ? { borderRight: '1px solid rgba(255,255,255,0.2)', paddingRight: '1.5rem' } : {}}
+                  style={stat.border ? { borderRight: '1px solid rgba(255,255,255,0.2)', paddingRight: '1rem' } : {}}
                 >
                   <p className="text-lg font-black text-white" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
                     {stat.value}
@@ -284,25 +337,18 @@ export default function EcoProjects() {
         </div>
       </motion.div>
 
-      {/* Part 3 — Mosaic grid */}
+      {/* Part 3 — Responsive card grid */}
       <div className="max-w-6xl mx-auto mb-10">
-        {/* Top row — 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
-          {MOSAIC.slice(0, 3).map((project, i) => (
-            <MosaicCard key={project.title} project={project} index={i} height="16rem" />
-          ))}
-        </div>
-        {/* Bottom row — 2 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {MOSAIC.slice(3).map((project, i) => (
-            <MosaicCard key={project.title} project={project} index={i + 3} height="18rem" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {MOSAIC.map((project, i) => (
+            <MosaicCard key={project.title} project={project} index={i} />
           ))}
         </div>
       </div>
 
       {/* Part 4 — Bottom CTA row */}
       <motion.div
-        className="max-w-6xl mx-auto bg-white rounded-2xl px-10 py-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6"
+        className="max-w-6xl mx-auto bg-white rounded-2xl px-6 md:px-10 py-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={VP}
@@ -323,7 +369,7 @@ export default function EcoProjects() {
           </p>
         </div>
 
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
           <QuoteBtn />
           <AllProjectsBtn />
         </div>

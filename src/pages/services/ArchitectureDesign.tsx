@@ -4,7 +4,7 @@ import {
   ArchProcess,
   ArchWhyUs,
   ArchProjects,
-  ArchCTA,
+  //ArchCTA,
 } from '../../components/sections/architecture'
 
 export default function ArchitectureDesign() {
@@ -15,7 +15,7 @@ export default function ArchitectureDesign() {
       <ArchProcess />
       <ArchWhyUs />
       <ArchProjects />
-      <ArchCTA />
+      {/*<ArchCTA />*/}
     </main>
   )
 }

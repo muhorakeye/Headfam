@@ -10,45 +10,57 @@ import hero4 from "../../../assets/Hero/headfam4.jpeg";
 interface PortfolioProject {
   image: string;
   category: string;
+  date: string;
   title: string;
   description: string;
+  tags: string[];
 }
 
 const portfolioProjects: PortfolioProject[] = [
   {
     image: hero1,
     category: "Residential",
+    date: "December 2024",
     title: "Eco-Home — Ndera",
     description:
       "Sustainable residential design with solar-ready structure, natural ventilation, and locally sourced materials.",
+    tags: ["Local Materials", "Solar-Ready"],
   },
   {
     image: hero2,
     category: "Coffee Shop",
+    date: "May 2024",
     title: "Kinigi Coffee Shop",
     description:
       "Cultural coffee shop design inspired by local aesthetics, blending indoor and outdoor spaces naturally.",
+    tags: ["Cultural", "Eco-Design"],
   },
   {
     image: hero3,
     category: "Landscape",
+    date: "Ongoing",
     title: "Eco Landscape Design",
     description:
       "Outdoor landscape architecture emphasizing native plants, water conservation, and ecological sensitivity.",
+    tags: ["Native Plants", "Water Conservation"],
   },
   {
     image: hero4,
     category: "Cultural",
+    date: "2023",
     title: "Cultural Tourism Site",
     description:
       "Touristic site design celebrating local culture with sustainable infrastructure and community-owned spaces.",
+    tags: ["Community-Owned", "Eco-Certified"],
   },
   {
     image: hero0,
     category: "Resort",
+    date: "Ongoing",
     title: "Eco Resort Architecture",
     description:
       "Resort design integrating nature views, water management systems, and responsible travel infrastructure.",
+    tags: ["Eco-Resort", "Responsible Travel"],
   },
 ];
 
@@ -59,59 +71,115 @@ const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.src = "";
 };
 
-interface PortfolioCardProps {
-  project: PortfolioProject;
-  index: number;
-  height: string;
-}
+function PortfolioCard({ project, index }: { project: PortfolioProject; index: number }) {
+  const [hovered, setHovered] = useState(false);
+  const [arrowHovered, setArrowHovered] = useState(false);
 
-function PortfolioCard({ project, index, height }: PortfolioCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
-      className={`relative overflow-hidden rounded-xl cursor-pointer group ${height}`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="group bg-white rounded-2xl overflow-hidden"
+      style={{
+        boxShadow: hovered
+          ? "0 20px 40px rgba(0,0,0,0.12)"
+          : "0 1px 3px rgba(0,0,0,0.06)",
+        transform: hovered ? "translateY(-4px)" : "translateY(0)",
+        transition: "all 0.3s ease",
+      }}
     >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        onError={handleImgError}
-      />
-      <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%)" }}
-      />
-      <div className="absolute bottom-0 left-0 p-5 z-10">
+      {/* Image block */}
+      <div className="relative overflow-hidden h-52">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          onError={handleImgError}
+        />
         <span
-          className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white"
+          className="absolute top-4 left-4 z-10 text-white text-xs font-bold px-3 py-1 rounded-full"
           style={{ backgroundColor: "#2E7D32", fontFamily: "DM Sans" }}
         >
           {project.category}
         </span>
+      </div>
+
+      {/* Content block */}
+      <div className="p-5">
         <p
-          className="text-base font-black text-white mb-1"
-          style={{ fontFamily: "Playfair Display" }}
+          className="text-xs text-gray-400 mb-2"
+          style={{ fontFamily: "DM Sans" }}
+        >
+          {project.date}
+        </p>
+
+        <p
+          className="text-base font-black mb-2"
+          style={{
+            color: "#1a1a1a",
+            fontFamily: "Playfair Display",
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+          }}
         >
           {project.title}
         </p>
+
         <p
-          className="text-xs leading-relaxed"
-          style={{ color: "rgba(255,255,255,0.7)", fontFamily: "DM Sans" }}
+          className="text-sm text-gray-500 leading-relaxed mb-4"
+          style={{
+            fontFamily: "DM Sans",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+          }}
         >
           {project.description}
         </p>
-      </div>
-      <div className="absolute bottom-5 right-5 z-10">
-        <div
-          className="inline-flex items-center gap-2 border text-xs font-bold tracking-widest px-3 py-2 transition-colors duration-300 group-hover:border-[#C9A84C] group-hover:text-[#C9A84C] border-white text-white"
-          style={{ fontFamily: "DM Sans" }}
-        >
-          <span className="w-4 h-px bg-current inline-block" />
-          VIEW PROJECT
-          <span className="w-4 h-px bg-current inline-block" />
+
+        {/* Bottom row */}
+        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+          <div className="flex flex-wrap gap-2">
+            {project.tags.slice(0, 2).map((tag) => (
+              <span
+                key={tag}
+                className="text-xs text-gray-400 px-2 py-1 rounded-full"
+                style={{ backgroundColor: "#f9f6f0", fontFamily: "DM Sans" }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <a href="/contact">
+            <div
+              onMouseEnter={() => setArrowHovered(true)}
+              onMouseLeave={() => setArrowHovered(false)}
+              className="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0"
+              style={{
+                backgroundColor: arrowHovered ? "#2E7D32" : "rgba(46,125,50,0.08)",
+              }}
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke={arrowHovered ? "#ffffff" : "#2E7D32"}
+                strokeWidth="2.5"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+          </a>
         </div>
       </div>
     </motion.div>
@@ -125,7 +193,7 @@ export function ArchProjects() {
   return (
     <section
       id="arch-projects"
-      className="py-16 px-6 md:px-16"
+      className="py-10 md:py-16 px-4 md:px-16"
       style={{ backgroundColor: "#f9f6f0" }}
     >
       {/* Part 1 — Header */}
@@ -148,7 +216,7 @@ export function ArchProjects() {
         </div>
 
         <h2
-          className="text-3xl md:text-4xl font-black mb-4"
+          className="text-2xl md:text-4xl font-black mb-4"
           style={{ color: "#1a1a1a", fontFamily: "Playfair Display" }}
         >
           Designs We've Brought to Life
@@ -173,17 +241,15 @@ export function ArchProjects() {
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-md">
-          {/* Image */}
           <img
             src={hero0}
             alt="Kinigi Women's Center"
-            className="w-full md:w-[45%] h-72 md:h-auto object-cover"
+            className="w-full md:w-[45%] h-56 md:h-auto object-cover"
             onError={handleImgError}
           />
 
-          {/* Content */}
           <div
-            className="flex-1 p-10 flex flex-col justify-center"
+            className="flex-1 p-6 md:p-10 flex flex-col justify-center"
             style={{ backgroundColor: "#1a1a1a" }}
           >
             <span
@@ -211,8 +277,7 @@ export function ArchProjects() {
               land and the people.
             </p>
 
-            {/* Inline stats */}
-            <div className="flex gap-6 mb-8 flex-wrap">
+            <div className="flex flex-wrap gap-4 mb-8">
               {[
                 { value: "2024", label: "Completed" },
                 { value: "Kinigi", label: "Location" },
@@ -222,7 +287,7 @@ export function ArchProjects() {
                   key={stat.label}
                   style={
                     i < 2
-                      ? { borderRight: "1px solid rgba(255,255,255,0.15)", paddingRight: "1.5rem" }
+                      ? { borderRight: "1px solid rgba(255,255,255,0.15)", paddingRight: "1rem" }
                       : undefined
                   }
                 >
@@ -242,7 +307,6 @@ export function ArchProjects() {
               ))}
             </div>
 
-            {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {featuredTags.map((tag) => (
                 <span
@@ -264,22 +328,9 @@ export function ArchProjects() {
 
       {/* Part 3 — Portfolio Grid */}
       <div className="max-w-6xl mx-auto mb-10">
-        {/* Top row: 2 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-          {portfolioProjects.slice(0, 2).map((project, index) => (
-            <PortfolioCard key={project.title} project={project} index={index} height="h-72" />
-          ))}
-        </div>
-
-        {/* Bottom row: 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {portfolioProjects.slice(2).map((project, i) => (
-            <PortfolioCard
-              key={project.title}
-              project={project}
-              index={i + 2}
-              height="h-64"
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {portfolioProjects.map((project, index) => (
+            <PortfolioCard key={project.title} project={project} index={index} />
           ))}
         </div>
       </div>
@@ -292,7 +343,7 @@ export function ArchProjects() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="bg-white rounded-2xl px-10 py-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-white rounded-2xl px-6 md:px-10 py-8 shadow-sm flex flex-col md:flex-row items-center md:items-center justify-between gap-6 text-center md:text-left">
           <div>
             <h4
               className="text-xl font-black"
@@ -308,12 +359,12 @@ export function ArchProjects() {
             </p>
           </div>
 
-          <div className="flex gap-4 flex-wrap">
-            <Link to="/contact">
+          <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+            <Link to="/contact" className="w-full md:w-auto">
               <button
                 onMouseEnter={() => setBtn1Hovered(true)}
                 onMouseLeave={() => setBtn1Hovered(false)}
-                className="px-8 py-3 rounded-full text-sm font-semibold text-white transition-colors duration-200"
+                className="w-full md:w-auto px-8 py-3 rounded-full text-sm font-semibold text-white transition-colors duration-200"
                 style={{
                   backgroundColor: btn1Hovered ? "#C9A84C" : "#2E7D32",
                   fontFamily: "DM Sans",
@@ -323,11 +374,11 @@ export function ArchProjects() {
               </button>
             </Link>
 
-            <Link to="/#our-work">
+            <Link to="/#our-work" className="w-full md:w-auto">
               <button
                 onMouseEnter={() => setBtn2Hovered(true)}
                 onMouseLeave={() => setBtn2Hovered(false)}
-                className="px-8 py-3 rounded-full text-sm font-semibold transition-colors duration-200"
+                className="w-full md:w-auto px-8 py-3 rounded-full text-sm font-semibold transition-colors duration-200"
                 style={{
                   border: "2px solid #2E7D32",
                   backgroundColor: btn2Hovered ? "#2E7D32" : "transparent",
