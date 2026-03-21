@@ -142,12 +142,13 @@ layout or content."
 ## Component Rules
 
 - Named exports for all components. Never `export default` for components.
+  Exception: service sub-pages (`EcoConstruction`, `ArchitectureDesign`, `Consultancy`) use
+  `export default` and are imported with `@ts-ignore` in their parent pages. Do not change this.
+  Community section components also use default exports and are imported via `@ts-ignore` in
+  `CommunityPage.tsx`. This is a known pattern, not a mistake.
 - Props typed with an interface named `[ComponentName]Props`.
 - No `any` types, ever.
 - No inline styles. Tailwind classes only (with the arbitrary value exception above).
-  Exception: some sections/Home/ components are `.jsx` files (not `.tsx`) and have companion
-  `.d.ts` type declaration files (e.g., `OurWork.d.ts`). Do not convert these to `.tsx` —
-  the `.d.ts` pattern exists because `@ts-ignore` imports predated the type setup.
 - Components stay under 150 lines. Split into sub-components if larger.
 - Every component that renders data must handle loading, error, and empty states
   (relevant now for when Phase 2 API calls replace the dummy data arrays).
@@ -187,7 +188,7 @@ layout or content."
 - OurWork: 3-column mosaic bento grid using headfam6/7/8.jpeg, full-bleed image cards,
   hover zoom effect, gold VIEW PROJECT button
 - SupportOurWork: two-column layout, left CTA with two pill buttons, right 2x2 stat grid
-- DonateBanner: reusable donate CTA banner (`.jsx` with `.d.ts` companion file)
+- DonateBanner: reusable donate CTA banner (`.tsx`, named export)
 
 ### About Sub-pages (all complete, under src/pages/about/)
 - WhoWeAre: hero, Work Performance section, tabbed History/Mission/Vision, timeline, CTA strip
@@ -198,29 +199,27 @@ layout or content."
 ### Service Sub-pages (all complete, under src/pages/services/)
 Routes: `/services/eco-construction`, `/services/architecture-design`, `/services/consultancy`
 Section components live in `src/components/sections/ecoconstruction/`, `src/components/sections/architecture/`, `src/components/sections/consultancy/`.
-- EcoConstruction: ArchHero (framer-motion entrance), EcoServices, EcoProcess (vertical timeline), EcoWhyUs (bento grid), EcoProjects (featured build + mosaic), EcoCTA
-- ArchitectureDesign: ArchHero (framer-motion entrance) + 5 placeholder sections
-- Consultancy: placeholder sections
+- EcoConstruction: EcoHero (framer-motion entrance), EcoServices, EcoProcess (vertical timeline), EcoWhyUs (bento grid), EcoProjects (full-bleed image overlay cards)
+- ArchitectureDesign: ArchHero, ArchServices, ArchProcess, ArchWhyUs, ArchProjects, ArchCTA
+- Consultancy: ConsultancyHero, ConsultancyServices, ConsultancyProcess, ConsultancyWhyUs, ConsultancyProjects, ConsultancyCTA
 
-### Pages (placeholder shells exist for all remaining routes)
-CommunityPage, ServicesPage, ServiceDetailPage, ProjectsPage,
-ProjectDetailPage, DonatePage, BookingPage, ContactPage, NotFoundPage
+### Pages (complete)
+- CommunityPage: CommunityHero, CommunityMission, CommunityImpact, CommunityPrograms, CommunityStories, CommunityJoin
+- ContactPage: split form/info layout, WhatsApp CTA, social links, maps embed
+
+### Pages (placeholder shells exist, need full content)
+ServicesPage, ServiceDetailPage, ProjectsPage,
+ProjectDetailPage, DonatePage, BookingPage, NotFoundPage
 
 ---
 
 ## What Is Pending
 
 ### Inner Pages (placeholder shells exist but need full content)
-Community, Services, ServiceDetail (generic), Projects, ProjectDetail,
-Donate, Booking, Contact, 404
-
-### Service Sub-pages (partially complete)
-- Consultancy: ArchHero exists, remaining sections are placeholders
-- ArchitectureDesign: ArchHero exists, remaining sections are placeholders
+Services, ServiceDetail (generic), Projects, ProjectDetail, Donate, Booking, 404
 
 ### Other
 - Real photography (replace placeholder images)
-- Contact form (frontend only, no submission in Phase 1)
 - Donation tiers UI (frontend only, no payment processing in Phase 1)
 - Booking inquiry form (frontend only)
 - Final normalization pass across all pages

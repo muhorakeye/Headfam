@@ -47,16 +47,23 @@
 
 ---
 
+## Completed Pages (full content, not just shells)
+
+- [x] Community page (CommunityHero, CommunityMission, CommunityImpact, CommunityPrograms, CommunityStories, CommunityJoin)
+- [x] Contact page (split form/info layout, WhatsApp CTA, social links, maps embed)
+- [x] ArchitectureDesign service page (ArchHero, ArchServices, ArchProcess, ArchWhyUs, ArchProjects, ArchCTA)
+- [x] Consultancy service page (ConsultancyHero, ConsultancyServices, ConsultancyProcess, ConsultancyWhyUs, ConsultancyProjects, ConsultancyCTA)
+
+---
+
 ## Pending Pages
 
-- [ ] Community page
-- [ ] Services page
+- [ ] Services page (generic listing)
 - [ ] Service detail page (dynamic, :serviceId param)
 - [ ] Projects page
 - [ ] Project detail page (dynamic, :projectId param)
 - [ ] Donate page
 - [ ] Booking page
-- [ ] Contact page
 - [ ] 404 page
 
 ---
@@ -64,7 +71,6 @@
 ## Pending Features
 
 - [ ] Real photography (replace placeholder images)
-- [ ] Contact form (frontend only, no submission yet)
 - [ ] Donation tiers UI (frontend only, no payment yet)
 - [ ] Booking inquiry UI (frontend only)
 - [ ] Final normalization pass across all pages

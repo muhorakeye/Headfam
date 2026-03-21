@@ -44,22 +44,24 @@ export function Navbar() {
       }`}
     >
       {/* Main bar */}
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-[72px]">
-        {/* Logo */}
-        <Link
-          to="/"
-          onClick={() => setMenuOpen(false)}
-          aria-label={COMPANY.name}
-        >
-          <img
-            src="/logo.png"
-            alt="HeadFam Africa"
-            className="h-14 md:h-16 w-auto"
-          />
-        </Link>
+      <div className="max-w-7xl mx-auto px-6 flex items-center h-16 md:h-[72px]">
+        {/* Logo — fixed left */}
+        <div className="flex-shrink-0">
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+            aria-label={COMPANY.name}
+          >
+            <img
+              src="/logo.png"
+              alt="HeadFam Africa"
+              className="h-14 md:h-16 w-auto"
+            />
+          </Link>
+        </div>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+        {/* Desktop nav — centered */}
+        <nav className="hidden md:flex flex-1 justify-center items-center gap-8" aria-label="Main navigation">
           {NAV_LINKS.map((link) => {
             // About gets a hover dropdown
             if (link.label === 'About') {
@@ -159,25 +161,26 @@ export function Navbar() {
           <Link
             to="/donate"
             className={`font-body text-sm font-semibold text-amber border-b border-transparent hover:border-amber/60 transition-colors duration-300 ${
-              // Always amber regardless of scroll state — it's a CTA
               location.pathname === '/donate' ? 'border-amber/60' : ''
             }`}
           >
             Donate
           </Link>
+        </nav>
 
-          {/* Book CTA button */}
+        {/* Book a Consultation — CTA button, fixed right */}
+        <div className="hidden md:flex flex-shrink-0 ml-8">
           <Link
-            to="/booking"
+            to="/book-consultation"
             className="font-body text-sm font-semibold bg-forest text-white px-4 py-2 rounded-sm hover:bg-forest-dark transition-colors duration-300"
           >
             Book a Consultation
           </Link>
-        </nav>
+        </div>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 -mr-2"
+          className="md:hidden p-2 -mr-2 ml-auto"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -268,7 +271,7 @@ export function Navbar() {
         {/* Mobile Book CTA */}
         <div className="px-6 py-5">
           <Link
-            to="/booking"
+            to="/book-consultation"
             onClick={() => setMenuOpen(false)}
             className="block font-body text-base font-semibold bg-forest text-white px-4 py-3 rounded-sm text-center hover:bg-forest-dark transition-colors"
           >

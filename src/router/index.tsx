@@ -21,6 +21,7 @@ import { OurPolicy } from '../pages/about/OurPolicy';
 import Consultancy from '../pages/services/Consultancy';
 import EcoConstruction from '../pages/services/EcoConstruction';
 import ArchitectureDesign from '../pages/services/ArchitectureDesign';
+import BookConsultation from '../pages/BookConsultation';
 import { useEffect } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 
@@ -63,6 +64,7 @@ export const router = createBrowserRouter([
       { path: '/projects/:projectId', element: <ProjectDetailPage /> },
       { path: '/donate', element: <DonatePage /> },
       { path: '/booking', element: <BookingPage /> },
+      { path: '/book-consultation', element: <BookConsultation /> },
       { path: '/contact', element: <ContactPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
