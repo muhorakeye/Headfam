@@ -55,7 +55,7 @@ export default function KWVGallery() {
 
         {/* LEFT — Photo gallery grid */}
         <motion.div
-          className="flex-1"
+          className="flex-1 w-full"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -64,7 +64,10 @@ export default function KWVGallery() {
           <div className="grid grid-cols-2 gap-3">
 
             {/* First image — full width */}
-            <div className="col-span-2 relative overflow-hidden rounded-xl group h-64">
+            <div
+              className="relative overflow-hidden rounded-xl group col-span-2"
+              style={{ height: "280px", minHeight: "280px" }}
+            >
               <img
                 src={hero0}
                 alt="Women at work, Kinigi Village"
@@ -79,7 +82,11 @@ export default function KWVGallery() {
 
             {/* Next 4 images — 2 per row */}
             {[hero1, hero2, hero3, hero4].map((src, i) => (
-              <div key={i} className="relative overflow-hidden rounded-xl group h-44">
+              <div
+                key={i}
+                className="relative overflow-hidden rounded-xl group"
+                style={{ height: "200px", minHeight: "200px" }}
+              >
                 <img
                   src={src}
                   alt={`Kinigi Women Village, photo ${i + 2}`}
@@ -107,7 +114,7 @@ export default function KWVGallery() {
           {/* BLOCK 1 — Owner/founder testimonial */}
           <div
             className="rounded-3xl p-8 flex flex-col justify-between"
-            style={{ backgroundColor: '#2E7D32' }}
+            style={{ backgroundColor: '#2E7D32', minHeight: "280px" }}
           >
             <div>
               <p
@@ -174,7 +181,7 @@ export default function KWVGallery() {
           </div>
 
           {/* BLOCK 2 — Two community voice cards */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4" style={{ minHeight: "150px" }}>
 
             {/* Card 1 */}
             <div className="bg-white rounded-2xl p-6">

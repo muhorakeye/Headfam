@@ -236,7 +236,7 @@ export function Navbar() {
 
       {/* Mobile menu — max-height animation for smooth open/close */}
       <nav
-        className={`md:hidden overflow-hidden bg-white transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-[600px]' : 'max-h-0'
+        className={`md:hidden overflow-hidden bg-white transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-[900px]' : 'max-h-0'
           }`}
         aria-label="Mobile navigation"
       >
@@ -289,16 +289,10 @@ export function Navbar() {
                 <span className="block py-4 px-6 font-body text-base font-medium border-b border-gray-100 text-charcoal select-none">
                   {link.label}
                 </span>
-                {PROJECTS_DROPDOWN.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => setMenuOpen(false)}
-                    className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                <Link to="/projects/kinigi-womens-village" onClick={() => setMenuOpen(false)} className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors">Kinigi Women Village</Link>
+                <Link to="/projects/masaka-sweet-apartment" onClick={() => setMenuOpen(false)} className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors">Masaka Sweet Apartment</Link>
+                <Link to="/projects/noble-cheer-resort" onClick={() => setMenuOpen(false)} className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors">Noble Cheer Resort</Link>
+                <Link to="/projects/bambino-super-city" onClick={() => setMenuOpen(false)} className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors">Bambino Super City</Link>
               </div>
             );
           }
