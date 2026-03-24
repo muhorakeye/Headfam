@@ -1,8 +1,8 @@
 import type { JSX } from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import bambino0 from '../../../../assets/Bambino/B1.jpeg'
-import bambino1 from '../../../../assets/Bambino/B2.jpeg'
+import bambino0 from '../../../../assets/Bambino/B2.jpeg'
+import bambino1 from '../../../../assets/Bambino/B1.jpeg'
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#1b4332'
@@ -122,7 +122,7 @@ export default function BSCHero(): JSX.Element {
           {[
             { value: 'Kigali', label: 'Location', border: true },
             { value: 'Eco-Resort', label: 'Category', border: true },
-            { value: 'HeadFam', label: 'Builder', border: false },
+            { value: '2025', label: 'Year Built', border: false },
           ].map((stat) => (
             <div
               key={stat.label}
