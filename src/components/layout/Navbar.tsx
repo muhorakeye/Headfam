@@ -26,6 +26,7 @@ const PROJECTS_DROPDOWN = [
   { label: "Kinigi Women's Village", to: '/projects/kinigi-womens-village' },
   { label: 'Masaka Sweet Apartment', to: '/projects/masaka-sweet-apartment' },
   { label: 'Noble Cheer Resort', to: '/projects/noble-cheer-resort' },
+  { label: 'Bambino Super City', to: '/projects/bambino-super-city' },
 ];
 
 export function Navbar() {

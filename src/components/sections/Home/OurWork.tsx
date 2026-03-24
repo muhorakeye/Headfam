@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import img6 from '../../../assets/Hero/headfam6.jpeg'
 import img7 from '../../../assets/Hero/headfam7.jpeg'
 import img8 from '../../../assets/Hero/headfam8.jpeg'
+import imgBSC from '../../../assets/Bambino/B1.jpeg'
 
 interface Project {
   id: number
@@ -45,6 +46,15 @@ const projects: Project[] = [
     description: 'Culture, community, and sustainability combined in a gorgeous natural setting inspired by local aesthetics.',
     image: img8,
     route: '/projects/kinigi-coffee-shop',
+  },
+  {
+    id: 4,
+    category: 'Eco-Resort',
+    date: 'Ongoing',
+    title: 'Bambino Super City',
+    description: 'A landmark eco-resort development in Kigali. Sustainable design, local workforce, and real community impact.',
+    image: imgBSC,
+    route: '/projects/bambino-super-city',
   },
 ]
 

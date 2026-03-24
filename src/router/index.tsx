@@ -25,6 +25,7 @@ import BookConsultation from '../pages/BookConsultation';
 import KinigiWomensVillage from '../pages/projects/KinigiWomensVillage';
 import MasakaSweetApartment from '../pages/projects/MasakaSweetApartment';
 import NobleCheerResort from '../pages/projects/NobleCheerResort';
+import BambinoSuperCity from '../pages/projects/BambinoSuperCity';
 import { useEffect } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 
@@ -67,6 +68,7 @@ export const router = createBrowserRouter([
       { path: '/projects/kinigi-womens-village', element: <KinigiWomensVillage /> },
       { path: '/projects/masaka-sweet-apartment', element: <MasakaSweetApartment /> },
       { path: '/projects/noble-cheer-resort', element: <NobleCheerResort /> },
+      { path: '/projects/bambino-super-city', element: <BambinoSuperCity /> },
       { path: '/projects/:projectId', element: <ProjectDetailPage /> },
       { path: '/donate', element: <Donate /> },
       { path: '/booking', element: <BookingPage /> },

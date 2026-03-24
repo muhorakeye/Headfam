@@ -5,6 +5,7 @@ import hero1 from "../../../assets/Hero/headfam1.jpeg";
 import hero2 from "../../../assets/Hero/headfam2.jpeg";
 import hero3 from "../../../assets/Hero/headfam3.jpeg";
 import hero4 from "../../../assets/Hero/headfam4.jpeg";
+import heroBSC from "../../../assets/Bambino/B1.jpeg";
 
 interface PortfolioProject {
   image: string;
@@ -66,6 +67,16 @@ const portfolioProjects: PortfolioProject[] = [
       "Resort design integrating nature views, water management systems, and responsible travel infrastructure.",
     tags: ["Eco-Resort", "Responsible Travel"],
     route: "/projects/eco-resort-development",
+  },
+  {
+    image: heroBSC,
+    category: "Eco-Resort",
+    date: "Ongoing",
+    title: "Bambino Super City",
+    description:
+      "A landmark eco-resort development in Kigali. Sustainable design, local workforce, and real community impact.",
+    tags: ["Eco-Resort", "Kigali"],
+    route: "/projects/bambino-super-city",
   },
 ];
 
