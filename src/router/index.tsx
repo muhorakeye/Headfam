@@ -1,33 +1,34 @@
 // All application routes defined in one place
 // TODO: [Phase 2] add protected routes for admin dashboard
-import { createBrowserRouter } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
+import { createBrowserRouter, useLocation, Outlet } from 'react-router-dom';
 import { Navbar } from '../components/layout';
 import { Footer } from '../components/layout';
-import { HomePage } from '../pages/HomePage';
-import { AboutPage } from '../pages/AboutPage';
-import { CommunityPage } from '../pages/CommunityPage';
-import { ServicesPage } from '../pages/ServicesPage';
-import { ServiceDetailPage } from '../pages/ServiceDetailPage';
-import { ProjectsPage } from '../pages/ProjectsPage';
-import { ProjectDetailPage } from '../pages/ProjectDetailPage';
-import Donate from '../pages/Donate';
-import { BookingPage } from '../pages/BookingPage';
-import { ContactPage } from '../pages/ContactPage';
-import { NotFoundPage } from '../pages/NotFoundPage';
-import { WhoWeAre } from '../pages/about/WhoWeAre';
-import { OurProfile } from '../pages/about/OurProfile';
-import { OurTeam } from '../pages/about/OurTeam';
-import { OurPolicy } from '../pages/about/OurPolicy';
-import Consultancy from '../pages/services/Consultancy';
-import EcoConstruction from '../pages/services/EcoConstruction';
-import ArchitectureDesign from '../pages/services/ArchitectureDesign';
-import BookConsultation from '../pages/BookConsultation';
-import KinigiWomensVillage from '../pages/projects/KinigiWomensVillage';
-import MasakaSweetApartment from '../pages/projects/MasakaSweetApartment';
-import NobleCheerResort from '../pages/projects/NobleCheerResort';
-import BambinoSuperCity from '../pages/projects/BambinoSuperCity';
-import { useEffect } from 'react';
-import { useLocation, Outlet } from 'react-router-dom';
+
+// Route-level code splitting: each page loads only when its route is visited
+const HomePage            = lazy(() => import('../pages/HomePage').then(m => ({ default: m.HomePage })));
+const AboutPage           = lazy(() => import('../pages/AboutPage').then(m => ({ default: m.AboutPage })));
+const WhoWeAre            = lazy(() => import('../pages/about/WhoWeAre').then(m => ({ default: m.WhoWeAre })));
+const OurProfile          = lazy(() => import('../pages/about/OurProfile').then(m => ({ default: m.OurProfile })));
+const OurTeam             = lazy(() => import('../pages/about/OurTeam').then(m => ({ default: m.OurTeam })));
+const OurPolicy           = lazy(() => import('../pages/about/OurPolicy').then(m => ({ default: m.OurPolicy })));
+const CommunityPage       = lazy(() => import('../pages/CommunityPage').then(m => ({ default: m.CommunityPage })));
+const ServicesPage        = lazy(() => import('../pages/ServicesPage').then(m => ({ default: m.ServicesPage })));
+const ServiceDetailPage   = lazy(() => import('../pages/ServiceDetailPage').then(m => ({ default: m.ServiceDetailPage })));
+const EcoConstruction     = lazy(() => import('../pages/services/EcoConstruction'));
+const ArchitectureDesign  = lazy(() => import('../pages/services/ArchitectureDesign'));
+const Consultancy         = lazy(() => import('../pages/services/Consultancy'));
+const ProjectsPage        = lazy(() => import('../pages/ProjectsPage').then(m => ({ default: m.ProjectsPage })));
+const ProjectDetailPage   = lazy(() => import('../pages/ProjectDetailPage').then(m => ({ default: m.ProjectDetailPage })));
+const KinigiWomensVillage = lazy(() => import('../pages/projects/KinigiWomensVillage'));
+const MasakaSweetApartment = lazy(() => import('../pages/projects/MasakaSweetApartment'));
+const NobleCheerResort    = lazy(() => import('../pages/projects/NobleCheerResort'));
+const BambinoSuperCity    = lazy(() => import('../pages/projects/BambinoSuperCity'));
+const Donate              = lazy(() => import('../pages/Donate'));
+const BookingPage         = lazy(() => import('../pages/BookingPage').then(m => ({ default: m.BookingPage })));
+const BookConsultation    = lazy(() => import('../pages/BookConsultation'));
+const ContactPage         = lazy(() => import('../pages/ContactPage').then(m => ({ default: m.ContactPage })));
+const NotFoundPage        = lazy(() => import('../pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,7 +43,9 @@ function Layout() {
     <>
       <ScrollToTop />
       <Navbar />
-      <Outlet />
+      <Suspense fallback={<div className="min-h-screen bg-stone" />}>
+        <Outlet />
+      </Suspense>
       <Footer />
     </>
   );

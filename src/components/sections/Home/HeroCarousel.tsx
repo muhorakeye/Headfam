@@ -27,7 +27,7 @@ export default function HeroCarousel() {
 
   return (
     <div
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-[50vh] sm:h-[60vh] md:h-screen overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -55,7 +55,7 @@ export default function HeroCarousel() {
       />
 
       {/* Static text overlay — does not move during slide transitions */}
-      <div className="absolute bottom-24 left-10 z-20">
+      <div className="absolute bottom-12 left-6 md:bottom-24 md:left-10 z-20">
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-4">
           Eco-Construction.
         </h1>
@@ -105,7 +105,7 @@ export default function HeroCarousel() {
       </button>
 
       {/* Dot indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+      <div className="absolute bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
         {slides.map((_, i) => (
           <button
             key={i}

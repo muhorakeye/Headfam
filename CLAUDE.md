@@ -62,8 +62,8 @@ src/
   pages/               # One file per route. Orchestrates layout and sections.
     about/             # Sub-pages for the About section (WhoWeAre, OurProfile, OurTeam, OurPolicy)
     services/          # Full service pages (EcoConstruction, ArchitectureDesign, Consultancy)
-    projects/          # Specific project detail pages (KinigiWomensVillage, MasakaSweetApartment, NobleCheerResort)
-  router/              # createBrowserRouter config with 22 routes and ScrollToTop in Layout
+    projects/          # Specific project detail pages (KinigiWomensVillage, MasakaSweetApartment, NobleCheerResort, BambinoSuperCity)
+  router/              # createBrowserRouter config with 23 routes and ScrollToTop in Layout
   types/               # TypeScript interfaces that must stay in sync with FastAPI schemas
   utils/               # constants.ts (company info, nav links), formatters.ts, api.ts
   App.tsx              # RouterProvider wrapper
@@ -144,7 +144,7 @@ layout or content."
 
 - Named exports for all components. Never `export default` for components.
   Exception: service sub-pages (`EcoConstruction`, `ArchitectureDesign`, `Consultancy`), project
-  detail pages (`KinigiWomensVillage`, `MasakaSweetApartment`, `NobleCheerResort`), and Community
+  detail pages (`KinigiWomensVillage`, `MasakaSweetApartment`, `NobleCheerResort`, `BambinoSuperCity`), and Community
   section components use `export default` and are imported via `@ts-ignore`. Do not change this pattern.
 - Props typed with an interface named `[ComponentName]Props`.
 - No `any` types, ever.
@@ -166,7 +166,7 @@ layout or content."
 - Dummy data: 11 services, 3 projects, 4 team members, 4 impact stats
 - Hooks: useScrollPosition, useIntersectionObserver
 - Utils: constants.ts, formatters.ts, api.ts (axios instance ready for Phase 2)
-- Router: 22 routes total. Layout wraps all routes with Navbar, Footer, and ScrollToTop. Routes include `/book-consultation` and `/donate` (fully built), plus generic dynamic routes `/services/:serviceId` and `/projects/:projectId` (still shells).
+- Router: 23 routes total. Layout wraps all routes with Navbar, Footer, and ScrollToTop. Routes include `/book-consultation` and `/donate` (fully built), plus generic dynamic routes `/services/:serviceId` and `/projects/:projectId` (still shells).
 - Favicon: changed to logo.png
 
 ### Components
@@ -209,10 +209,12 @@ Section components live in `src/components/sections/ecoconstruction/`, `src/comp
 - Donate (`/donate`, `src/pages/Donate.tsx`): donation tiers UI with framer-motion
 - BookConsultation (`/book-consultation`, `src/pages/BookConsultation.tsx`): booking inquiry form with framer-motion
 
-### Project Detail Pages (all 3 complete, under src/pages/projects/)
-Routes: `/projects/kinigi-womens-village`, `/projects/masaka-sweet-apartment`, `/projects/noble-cheer-resort`
-Section components live in `src/components/sections/Projects/kinigiWomensVillage/`, `.../masakaSweetApartment/`, `.../nobleCheerResort/`.
-Each has: Hero, Overview, Gallery, Impact, Services, Location, CTA sections.
+### Project Detail Pages (all 4 complete, under src/pages/projects/)
+Routes: `/projects/kinigi-womens-village`, `/projects/masaka-sweet-apartment`, `/projects/noble-cheer-resort`, `/projects/bambino-super-city`
+Section components live in `src/components/sections/Projects/kinigiWomensVillage/`, `.../masakaSweetApartment/`, `.../nobleCheerResort/`, `.../bambinoSuperCity/`.
+KWV, MSA, NCR each have: Hero, Overview, Gallery, Impact, Services, Location, CTA sections.
+BambinoSuperCity has: BSCHero, BSCOverview, BSCServices, BSCImpact, BSCGallery (no Location or CTA yet).
+Note: these pages use their own hardcoded section data, independent of `src/data/projects.ts`.
 
 ### Pages (placeholder shells exist, need full content)
 ServicesPage, ServiceDetailPage (`/services/:serviceId`), ProjectsPage,
@@ -230,8 +232,6 @@ Services, ServiceDetail (generic `/services/:serviceId`), Projects, ProjectDetai
 
 ### Other
 - Real photography (replace placeholder images)
-- Donation tiers UI (frontend only, no payment processing in Phase 1)
-- Booking inquiry form (frontend only)
 - Final normalization pass across all pages
 
 ---

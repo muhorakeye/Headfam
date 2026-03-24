@@ -146,13 +146,13 @@ export default function KWVGallery() {
                       className="text-sm font-bold text-white"
                       style={{ fontFamily: '"DM Sans", sans-serif' }}
                     >
-                      Village Founder
+                      Doreen KANYESIGYE
                     </p>
                     <p
                       className="text-xs"
                       style={{ color: 'rgba(255,255,255,0.6)', fontFamily: '"DM Sans", sans-serif' }}
                     >
-                      Kinigi Women Village, 2022
+                      Village Founder
                     </p>
                   </div>
                 </div>

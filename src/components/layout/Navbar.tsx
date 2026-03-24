@@ -12,8 +12,8 @@ interface ServiceDropdownItem {
 
 const SERVICE_DROPDOWN: ServiceDropdownItem[] = [
   { label: 'Eco-Construction Consultancy', to: '/services/consultancy' },
-  { label: 'Eco-Construction', to: '/services/eco-construction' },
   { label: 'Architecture Design', to: '/services/architecture-design' },
+  { label: 'Eco-Construction', to: '/services/eco-construction' },
 ];
 
 const ABOUT_DROPDOWN = [
@@ -23,7 +23,7 @@ const ABOUT_DROPDOWN = [
 ];
 
 const PROJECTS_DROPDOWN = [
-  { label: "Kinigi Women's Village", to: '/projects/kinigi-womens-village' },
+  { label: "Kinigi Women Village", to: '/projects/kinigi-womens-village' },
   { label: 'Masaka Sweet Apartment', to: '/projects/masaka-sweet-apartment' },
   { label: 'Noble Cheer Resort', to: '/projects/noble-cheer-resort' },
   { label: 'Bambino Super City', to: '/projects/bambino-super-city' },
@@ -47,9 +47,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300 ease-in-out ${
-        scrollY > 80 ? 'shadow-sm' : ''
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300 ease-in-out ${scrollY > 80 ? 'shadow-sm' : ''
+        }`}
     >
       {/* Main bar */}
       <div className="max-w-7xl mx-auto px-6 flex items-center h-16 md:h-[72px]">
@@ -237,9 +236,8 @@ export function Navbar() {
 
       {/* Mobile menu — max-height animation for smooth open/close */}
       <nav
-        className={`md:hidden overflow-hidden bg-white transition-all duration-300 ease-in-out ${
-          menuOpen ? 'max-h-[600px]' : 'max-h-0'
-        }`}
+        className={`md:hidden overflow-hidden bg-white transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-[600px]' : 'max-h-0'
+          }`}
         aria-label="Mobile navigation"
       >
         {NAV_LINKS.map((link) => {
@@ -312,8 +310,7 @@ export function Navbar() {
                 end={link.to === '/'}
                 onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
-                  `block py-4 px-6 font-body text-base font-medium border-b border-gray-100 transition-colors ${
-                    isActive ? 'text-forest' : 'text-charcoal hover:text-forest'
+                  `block py-4 px-6 font-body text-base font-medium border-b border-gray-100 transition-colors ${isActive ? 'text-forest' : 'text-charcoal hover:text-forest'
                   }`
                 }
               >

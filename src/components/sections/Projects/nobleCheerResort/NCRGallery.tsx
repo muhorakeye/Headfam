@@ -139,7 +139,7 @@ export default function NCRGallery(): JSX.Element {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-white" style={{ fontFamily: '"DM Sans", sans-serif' }}>
-                      Alice
+                      Alice UWAMAHORO
                     </p>
                     <p className="text-xs" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: '"DM Sans", sans-serif' }}>
                       Owner, Noble Cheer Resort
