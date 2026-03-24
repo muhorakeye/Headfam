@@ -1,15 +1,13 @@
-import { MSAHero, MSAOverview, MSAGallery, MSAImpact, MSAServices, MSALocation, MSACTA } from '../../components/sections/Projects/masakaSweetApartment'
+import { MSAHero, MSAOverview, MSAServices, MSAImpact, MSAGallery } from '../../components/sections/Projects/masakaSweetApartment'
 
 export default function MasakaSweetApartment() {
   return (
     <main>
       <MSAHero />
       <MSAOverview />
-      <MSAGallery />
-      <MSAImpact />
       <MSAServices />
-      <MSALocation />
-      <MSACTA />
+      <MSAImpact />
+      <MSAGallery />
     </main>
   )
 }

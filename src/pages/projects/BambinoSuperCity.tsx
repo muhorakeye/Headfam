@@ -1,15 +1,13 @@
-import { BSCHero, BSCOverview, BSCGallery, BSCImpact, BSCServices, BSCLocation, BSCCTA } from '../../components/sections/Projects/bambinoSuperCity'
+import { BSCHero, BSCOverview, BSCServices, BSCImpact, BSCGallery } from '../../components/sections/Projects/bambinoSuperCity'
 
 export default function BambinoSuperCity() {
   return (
     <main>
       <BSCHero />
       <BSCOverview />
-      <BSCGallery />
-      <BSCImpact />
       <BSCServices />
-      <BSCLocation />
-      <BSCCTA />
+      <BSCImpact />
+      <BSCGallery />
     </main>
   )
 }
