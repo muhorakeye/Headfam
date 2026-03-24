@@ -1,12 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
-import img0 from "../../../assets/Hero/headfam.jpeg";
-import img1 from "../../../assets/Hero/headfam1.jpeg";
-import img2 from "../../../assets/Hero/headfam2.jpeg";
-import img3 from "../../../assets/Hero/headfam3.jpeg";
-import img4 from "../../../assets/Hero/Headfam4.jpeg";
-import img5 from "../../../assets/Hero/headfam5.jpeg";
+import img0 from "../../../assets/Hero/hero1.jpeg";
+import img1 from "../../../assets/Hero/hero2.jpeg";
+import img2 from "../../../assets/Hero/hero3.jpeg";
+import img3 from "../../../assets/Hero/hero4.jpeg";
+import img4 from "../../../assets/Hero/hero6.jpg";
 
-const slides = [img0, img1, img2, img3, img4, img5];
+const slides = [img0, img1, img2, img3, img4];
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);

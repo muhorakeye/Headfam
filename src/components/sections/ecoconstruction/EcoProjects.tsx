@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import hero1 from '../../../assets/Hero/headfam1.jpeg'
-import hero2 from '../../../assets/Hero/headfam2.jpeg'
+import hero1 from '../../../assets/masaka/m1.jpg'
+import hero2 from '../../../assets/Noble/n1.jpeg'
 import hero3 from '../../../assets/Hero/headfam3.jpeg'
-import hero4 from '../../../assets/Hero/Headfam4.jpeg'
-import heroBSC from '../../../assets/Bambino/B1.jpeg'
+import hero4 from '../../../assets/Bambino/B3.jpeg'
 
 const VP  = { once: true, amount: 0.2 as const }
 const VP1 = { once: true, amount: 0.1 as const }
@@ -29,55 +28,37 @@ interface MosaicProject {
 const MOSAIC: MosaicProject[] = [
   {
     image: hero1,
-    category: 'Residential',
-    date: 'December 2024',
-    title: 'Eco-Friendly Living, Ndera',
-    description: 'Modern eco-residential project in Ndera built with sustainable materials and energy-efficient design.',
-    tags: ['Local Materials', 'Energy-Efficient'],
-    route: '/projects/ndera-residential',
+    category: 'Culture Center',
+    date: '2022',
+    title: 'Kinigi Women Village',
+    description: 'A culture center built by HeadFam Africa in Kinigi, Musanze — empowering women through craft, income, and community beneath Sabyinyo Volcano.',
+    tags: ['Culture Center', 'Musanze'],
+    route: '/projects/kinigi-womens-village',
   },
   {
     image: hero2,
-    category: 'Coffee Shop',
-    date: 'May 2024',
-    title: 'Kinigi Coffee Shop',
-    description: 'A cultural coffee experience built with local materials in a gorgeous natural setting near Kinigi.',
-    tags: ['Cultural', 'Local Materials'],
-    route: '/projects/kinigi-coffee-shop',
+    category: 'Eco-Residential',
+    date: '2023',
+    title: 'Masaka Sweet Apartment',
+    description: 'An eco-friendly residential apartment built by HeadFam Africa opposite Masaka Hospital in Kigali — sustainable living designed for modern Kigali.',
+    tags: ['Eco-Residential', 'Kigali'],
+    route: '/projects/masaka-sweet-apartment',
   },
   {
     image: hero3,
-    category: 'Landscape',
+    category: 'Eco-Resort & Campsite',
     date: 'Ongoing',
-    title: 'Eco Landscape, Kigali',
-    description: 'Outdoor landscape design combining ecological sensitivity with a strong visual character.',
-    tags: ['Native Plants', 'Eco-Certified'],
-    route: '/projects/eco-landscape-kigali',
+    title: 'Noble Cheer Resort',
+    description: 'A mixed eco-resort and campsite built by HeadFam Africa on the Musanze-Rubavu road — nature-integrated construction serving guests and community.',
+    tags: ['Eco-Resort', 'Musanze'],
+    route: '/projects/noble-cheer-resort',
   },
   {
     image: hero4,
-    category: 'Cultural',
-    date: '2023',
-    title: 'Cultural Tourism Site',
-    description: 'A touristic site creation that celebrates local culture while generating sustainable income for the community.',
-    tags: ['Community-Owned', 'Sustainable'],
-    route: '/projects/cultural-tourism-site',
-  },
-  {
-    image: hero4,
-    category: 'Resort',
-    date: 'Ongoing',
-    title: 'Eco Resort Development',
-    description: 'Full eco-resort development with nature views, water management systems, and responsible travel infrastructure.',
-    tags: ['Eco-Resort', 'Responsible Travel'],
-    route: '/projects/eco-resort-development',
-  },
-  {
-    image: heroBSC,
     category: 'Eco-Resort',
-    date: 'Ongoing',
+    date: '2025',
     title: 'Bambino Super City',
-    description: 'A landmark eco-resort development in Kigali. Sustainable design, local workforce, and real community impact.',
+    description: 'A landmark eco-resort built by HeadFam Africa in Kigali — sustainable design, local workforce, and a new standard for eco-hospitality in Rwanda.',
     tags: ['Eco-Resort', 'Kigali'],
     route: '/projects/bambino-super-city',
   },

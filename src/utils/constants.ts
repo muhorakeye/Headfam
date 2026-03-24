@@ -3,7 +3,7 @@ export const COMPANY = {
   name: 'HeadFam Africa',
   tagline: 'Eco-Construction for Community Development',
   email: 'info@headfamafrica.com',
-  phone: '+250 788 000 000',
+  phone: '+250 788 326 612',
   address: 'KG 123 St, Kigali, Rwanda',
   foundedYear: 2012,
 } as const;
