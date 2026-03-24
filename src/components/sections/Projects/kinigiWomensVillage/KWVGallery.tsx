@@ -220,50 +220,6 @@ export default function KWVGallery() {
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-white rounded-2xl p-6">
-              <p
-                className="text-3xl font-black leading-none mb-2"
-                style={{ color: '#2E7D32', fontFamily: '"Playfair Display", serif' }}
-              >
-                &ldquo;
-              </p>
-              <p
-                className="text-sm leading-relaxed mb-4"
-                style={{ color: '#374151', fontFamily: '"DM Sans", sans-serif' }}
-              >
-                The building HeadFam constructed is strong, beautiful, and feels like it belongs
-                here. We are proud of what they built for us.
-              </p>
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: '#C9A84C' }}
-                >
-                  <span
-                    className="text-white font-black text-sm"
-                    style={{ fontFamily: '"Playfair Display", serif' }}
-                  >
-                    M
-                  </span>
-                </div>
-                <div>
-                  <p
-                    className="text-sm font-bold"
-                    style={{ color: '#1a1a1a', fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    Marie K.
-                  </p>
-                  <p
-                    className="text-xs"
-                    style={{ color: '#9ca3af', fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    Village Member
-                  </p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </motion.div>
 
