@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import hero1 from "../../../assets/Hero/headfam1.jpeg";
 import hero3 from "../../../assets/Hero/headfam3.jpeg";
-import hero4 from "../../../assets/Hero/headfam4.jpeg";
+import hero4 from "../../../assets/Hero/Headfam4.jpeg";
 
 interface Reason {
   title: string;

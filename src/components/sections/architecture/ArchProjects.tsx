@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import hero1 from "../../../assets/masaka/m1.jpg";
+import hero1 from "../../../assets/Masaka/m1.jpg";
 import hero2 from "../../../assets/Noble/n1.jpeg";
 import hero3 from "../../../assets/Hero/headfam3.jpeg";
 import hero4 from "../../../assets/Bambino/B3.jpeg";

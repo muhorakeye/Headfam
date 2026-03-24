@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import hero0 from '../../../assets/Hero/headfam.jpeg'
-import hero1 from '../../../assets/masaka/m1.jpg'
+import hero1 from '../../../assets/Masaka/m1.jpg'
 import hero2 from '../../../assets/Noble/n1.jpeg'
 import hero3 from '../../../assets/Bambino/B3.jpeg'
 

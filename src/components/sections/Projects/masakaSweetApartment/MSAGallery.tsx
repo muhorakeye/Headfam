@@ -4,7 +4,7 @@ import hero0 from '../../../../assets/Hero/headfam.jpeg'
 import hero1 from '../../../../assets/Hero/headfam1.jpeg'
 import hero2 from '../../../../assets/Hero/headfam2.jpeg'
 import hero3 from '../../../../assets/Hero/headfam3.jpeg'
-import hero4 from '../../../../assets/Hero/headfam4.jpeg'
+import hero4 from '../../../../assets/Hero/Headfam4.jpeg'
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'

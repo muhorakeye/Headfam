@@ -1,7 +1,7 @@
 import type { JSX } from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/masaka/m1.jpg'
+import hero0 from '../../../../assets/Masaka/m1.jpg'
 import hero1 from '../../../../assets/Hero/headfam1.jpeg'
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
