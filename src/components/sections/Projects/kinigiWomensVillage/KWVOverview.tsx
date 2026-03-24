@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import hero2 from '../../../../assets/Hero/headfam2.jpeg'
-import hero3 from '../../../../assets/Hero/headfam3.jpeg'
+import hero2 from '../../../../assets/KWV/k3.jpeg'
+import hero3 from '../../../../assets/KWV/k4.jpeg'
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -10,93 +9,6 @@ const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
 
 const VP = { once: true, amount: 0.2 as const }
 const T = { duration: 0.6, ease: 'easeOut' as const }
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
-
-const activities = [
-  {
-    title: 'Craft Making',
-    body: 'Women gather daily to weave baskets, create textiles, and produce handcrafted jewelry and artifacts rooted in Rwandan cultural tradition. Every piece is made by hand with skill passed down through generations.',
-    accent: '#2E7D32',
-    svg: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
-        <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z" />
-        <circle cx="12" cy="10" r="3" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Selling & Earning',
-    body: 'The crafts produced at the village are sold to local visitors, tourists near Sabyinyo Volcano, and through community markets. The income earned goes directly to each woman and her family.',
-    accent: '#C9A84C',
-    svg: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="2">
-        <line x1="12" y1="1" x2="12" y2="23" />
-        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Family & Community Growth',
-    body: 'The income generated creates a ripple effect — children stay in school, families eat better, and the whole Kinigi community becomes stronger. The village is a living investment in Rwanda\'s future.',
-    accent: '#2E7D32',
-    svg: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-  },
-]
-
-// ─── Activity card with hover ─────────────────────────────────────────────────
-
-interface ActivityCardProps {
-  activity: typeof activities[number]
-  index: number
-}
-
-function ActivityCard({ activity, index }: ActivityCardProps) {
-  const [hovered, setHovered] = useState(false)
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={VP}
-      transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.15 }}
-      className="rounded-2xl p-8 cursor-default"
-      style={{
-        backgroundColor: hovered ? 'white' : '#f9f6f0',
-        boxShadow: hovered ? '0 4px 24px rgba(0,0,0,0.08)' : 'none',
-        transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
-        transition: 'all 0.3s ease',
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div
-        className="h-1 w-10 rounded-full mb-5"
-        style={{ backgroundColor: activity.accent }}
-      />
-      <div className="mb-4">{activity.svg}</div>
-      <p
-        className="text-lg font-black mb-3"
-        style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}
-      >
-        {activity.title}
-      </p>
-      <p
-        className="text-sm leading-relaxed"
-        style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
-      >
-        {activity.body}
-      </p>
-    </motion.div>
-  )
-}
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -136,9 +48,9 @@ export default function KWVOverview() {
             className="text-sm leading-relaxed mb-4"
             style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
           >
-            Kinigi Women Village is a culture center established in 2022, nestled in the breathtaking
-            landscape beneath Sabyinyo Volcano in Musanze District, Rwanda. The center was created
-            with a single powerful purpose — to give women in the Kinigi community a space to grow,
+            Kinigi Women Village is a culture center established in 2022, set in the hills beneath
+            Sabyinyo Volcano in Musanze District, Rwanda. The center was created
+            with one clear purpose: to give women in the Kinigi community a space to grow,
             earn, and thrive.
           </p>
 
@@ -146,8 +58,8 @@ export default function KWVOverview() {
             className="text-sm leading-relaxed mb-4"
             style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
           >
-            Through the center, women come together to create beautiful handcrafted products — from
-            woven baskets and traditional textiles to handmade jewelry and cultural artifacts. These
+            Through the center, women come together to create handcrafted products: woven baskets,
+            traditional textiles, handmade jewelry, and cultural artifacts. These
             crafts are rooted in Rwandan heritage and carry the stories, skills, and identity of the
             women who make them.
           </p>
@@ -156,9 +68,9 @@ export default function KWVOverview() {
             className="text-sm leading-relaxed"
             style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
           >
-            By selling their crafts, the women of Kinigi Women Village generate their own income —
-            money that flows directly back into their families and their community. The village is
-            more than a workplace; it is a movement toward financial independence, cultural
+            By selling their crafts, the women of Kinigi Women Village earn their own income,
+            money that goes directly back into their families and their community. The village is
+            more than a workplace. It is a step toward financial independence, cultural
             preservation, and collective strength.
           </p>
 
@@ -230,28 +142,6 @@ export default function KWVOverview() {
           />
         </motion.div>
       </div>
-
-      {/* ── Part 3: Activity cards ────────────────────────────────────── */}
-      <motion.div
-        className="max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 32 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={VP}
-        transition={T}
-      >
-        <h2
-          className="text-2xl font-black text-center mb-10"
-          style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}
-        >
-          Life at Kinigi Women Village
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {activities.map((activity, i) => (
-            <ActivityCard key={activity.title} activity={activity} index={i} />
-          ))}
-        </div>
-      </motion.div>
 
     </section>
   )

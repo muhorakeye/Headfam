@@ -38,7 +38,7 @@ const PILLARS = [
   {
     accentColor: '#2E7D32',
     title: 'Cultural Preservation',
-    body: 'We design every structure to honor local culture, heritage, and tradition — using sustainable local materials that reflect the identity of the people who call these places home.',
+    body: 'We design every structure to honor local culture, heritage, and tradition, using sustainable local materials that reflect the identity of the people who call these places home.',
     svg: (
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -75,7 +75,7 @@ export default function CommunityMission() {
           className="text-3xl md:text-4xl font-black leading-tight mb-6"
           style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          We Don't Just Build Structures — We Build Futures
+          We Build Structures. And We Build Futures.
         </h2>
 
         <p
@@ -169,7 +169,7 @@ export default function CommunityMission() {
             className="text-xl md:text-2xl font-black leading-snug mb-6"
             style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", Georgia, serif' }}
           >
-            We are more than builders — we are creators of sustainable dreams, shaping a greener future for Rwanda and all of East Africa.
+            We are builders, yes. But we are also people who believe that every structure we put up should leave the community around it better than it was before.
           </h3>
           <p
             className="text-sm font-semibold"

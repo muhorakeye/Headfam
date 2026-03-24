@@ -18,12 +18,12 @@ interface ArchStat {
 const reasons: Reason[] = [
   {
     title: "Rooted in Local Culture",
-    body: "Every design we create reflects the cultural identity of its location. We don't import foreign aesthetics — we draw inspiration from Rwanda's rich heritage, materials, and traditions.",
+    body: "Every design we create reflects the cultural identity of its location. We do not import foreign aesthetics. We draw inspiration from Rwanda's heritage, local materials, and traditions.",
     accent: "#2E7D32",
   },
   {
     title: "Sustainability Is Structural",
-    body: "Eco-friendly design isn't a feature we add on — it's baked into every structural and material decision from day one. Energy efficiency, water conservation, and carbon reduction are baseline requirements.",
+    body: "Eco-friendly design is not a feature we add on. It is baked into every structural and material decision from day one. Energy efficiency, water conservation, and carbon reduction are baseline requirements.",
     accent: "#C9A84C",
   },
   {
@@ -38,7 +38,7 @@ const reasons: Reason[] = [
   },
   {
     title: "End-to-End Capability",
-    body: "Unlike standalone architects, HeadFam can design AND construct — meaning your design vision carries all the way through to the finished structure without translation loss.",
+    body: "Unlike standalone architects, HeadFam can design and construct. Your design vision carries all the way through to the finished structure, with no gaps between what was drawn and what was built.",
     accent: "#2E7D32",
   },
 ];
@@ -97,9 +97,8 @@ export function ArchWhyUs() {
           className="text-sm leading-relaxed"
           style={{ color: "#6b7280", fontFamily: "DM Sans" }}
         >
-          HeadFam Africa doesn't just design buildings — we design experiences,
-          communities, and futures. Here's what sets our architectural practice
-          apart.
+          HeadFam Africa designs buildings that serve people well and fit their place.
+          Here is what sets our architectural practice apart.
         </p>
       </motion.div>
 

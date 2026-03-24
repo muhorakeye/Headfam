@@ -19,7 +19,7 @@ interface Reason {
 const REASONS: Reason[] = [
   {
     title: '12+ Years On the Ground',
-    body: 'We have over a decade of experience working directly in East African eco-construction and tourism development — not theory, real field knowledge.',
+    body: 'We have over a decade of experience working directly in East African eco-construction and tourism development. Not theory. Real field knowledge.',
     accent: '#2E7D32',
   },
   {
@@ -29,12 +29,12 @@ const REASONS: Reason[] = [
   },
   {
     title: 'End-to-End Capability',
-    body: 'Unlike standalone consultants, HeadFam can take your project from advice all the way through to construction — giving our consultancy real teeth.',
+    body: 'Unlike standalone consultants, HeadFam can take your project from advice all the way through to construction. Our consultancy comes with the ability to actually build what we recommend.',
     accent: '#2E7D32',
   },
   {
     title: 'Local Relationships',
-    body: 'We have deep relationships with local governments, communities, and suppliers across Rwanda — opening doors that outside consultants simply cannot.',
+    body: 'We have deep relationships with local governments, communities, and suppliers across Rwanda, opening doors that outside consultants simply cannot.',
     accent: '#C9A84C',
   },
   {
@@ -78,7 +78,7 @@ export default function ConsultancyWhyUs() {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          We don't just consult — we get involved. Every recommendation we make is backed by real
+          We do not just advise. We get involved. Every recommendation we make is backed by real
           field experience, community relationships, and a genuine commitment to sustainable outcomes.
         </p>
       </motion.div>
@@ -191,8 +191,8 @@ export default function ConsultancyWhyUs() {
             className="text-lg md:text-xl font-black text-white leading-snug mb-4"
             style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
           >
-            HeadFam didn't just give us advice — they walked with us through every decision. Their
-            knowledge of the local context was invaluable.
+            HeadFam didn't just give us advice. They walked with us through every decision. Their
+            knowledge of the local context made a real difference.
           </p>
           <div className="flex items-center gap-3">
             <div

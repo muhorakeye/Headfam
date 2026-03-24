@@ -88,7 +88,7 @@ const services: Service[] = [
   {
     title: 'Landscape',
     description:
-      'Breathtaking outdoor spaces that harmonize with their surroundings emphasizing water conservation, native plant usage, and eco-friendly materials.',
+      'Outdoor spaces designed to fit their surroundings, with a focus on water conservation, native plants, and eco-friendly materials.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <path d="M12 22V12" />
@@ -101,7 +101,7 @@ const services: Service[] = [
   {
     title: 'Culture Centers',
     description:
-      'Planning, design, and establishment of culture centers that celebrate the rich tapestry of cultures in an environmentally responsible manner.',
+      'Planning, design, and establishment of culture centers that celebrate local traditions and heritage, built with care for the environment.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <line x1="2" y1="20" x2="22" y2="20" />

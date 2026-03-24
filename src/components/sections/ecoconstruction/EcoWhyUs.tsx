@@ -21,19 +21,19 @@ interface Reason {
 const REASONS: Reason[] = [
   {
     title: 'Sustainable Materials Only',
-    body: 'We source locally available, environmentally certified materials for every project — reducing carbon footprint and supporting local economies.',
+    body: 'We source locally available, environmentally certified materials for every project, reducing carbon footprint and supporting local economies.',
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2"><path d="M17 8C8 10 5.9 16.17 3.82 22"/><path d="M9.1 17.4C9.7 14 12 11 17 8c1 5-1 9-8 9.4z"/></svg>),
     accent: '#2E7D32',
   },
   {
     title: 'Community-Led Builds',
-    body: 'We hire the majority of our workforce from within 10km of every build site — creating stable local employment and circulating money within communities.',
+    body: 'We hire the majority of our workforce from within 10km of every build site, creating stable local employment and circulating money within communities.',
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>),
     accent: '#C9A84C',
   },
   {
     title: 'End-to-End Delivery',
-    body: 'From initial consultancy through architectural design to full construction — HeadFam Africa handles every phase, eliminating coordination gaps and cost overruns.',
+    body: 'From initial consultancy through architectural design to full construction, HeadFam Africa handles every phase. This eliminates coordination gaps and keeps costs predictable.',
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>),
     accent: '#2E7D32',
   },
@@ -77,8 +77,8 @@ export default function EcoWhyUs() {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          HeadFam Africa doesn't just construct buildings — we create environments that serve
-          people, honor culture, and respect the planet. Here's what makes us different.
+          HeadFam Africa constructs buildings that serve people, honor culture, and respect the
+          planet. Here is what makes us different.
         </p>
       </motion.div>
 
@@ -279,7 +279,7 @@ export default function EcoWhyUs() {
             style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
           >
             HeadFam built our eco-lodge using only local materials and local workers. The result
-            exceeded every expectation — and the community around us benefited directly.
+            exceeded every expectation, and the community around us benefited directly.
           </p>
           <div className="flex items-center gap-3">
             <div

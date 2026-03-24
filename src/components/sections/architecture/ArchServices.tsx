@@ -33,7 +33,7 @@ const SERVICES: Service[] = [
     id: 1,
     title: 'Resort & Lodge Design',
     short: 'Luxury eco-resort and lodge architecture',
-    description: 'We design eco-friendly resorts and lodges that blend seamlessly with their natural surroundings — prioritizing water management, conservation, and a luxurious guest experience rooted in nature.',
+    description: 'We design eco-friendly resorts and lodges that sit naturally within their surroundings, prioritizing water management, conservation, and a memorable guest experience rooted in nature.',
     detail1: { label: 'Best for', value: 'Tourism developers, hospitality investors' },
     detail2: { label: 'Key feature', value: 'Nature integration, water systems, guest experience' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>),
@@ -42,7 +42,7 @@ const SERVICES: Service[] = [
     id: 2,
     title: 'Cultural Center Design',
     short: 'Spaces that celebrate culture and heritage',
-    description: 'We design culture centers that celebrate the rich tapestry of local cultures in an environmentally responsible manner — spaces that are inclusive, educational, and architecturally meaningful.',
+    description: 'We design culture centers that celebrate local traditions and heritage. These are spaces that are inclusive, educational, and architecturally meaningful.',
     detail1: { label: 'Best for', value: 'Government, NGOs, cultural organizations' },
     detail2: { label: 'Key feature', value: 'Cultural identity, community spaces, sustainability' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>),
@@ -60,7 +60,7 @@ const SERVICES: Service[] = [
     id: 4,
     title: 'Landscape Architecture',
     short: 'Outdoor spaces in harmony with nature',
-    description: 'We combine artistic vision with ecological sensitivity to design landscapes that harmonize with their surroundings — whether a private garden, public park, or corporate campus — emphasizing water conservation and native plants.',
+    description: 'We combine artistic vision with ecological sensitivity to design landscapes that sit well within their surroundings, whether a private garden, public park, or corporate campus, with a focus on water conservation and native plants.',
     detail1: { label: 'Best for', value: 'Resorts, parks, private estates, urban spaces' },
     detail2: { label: 'Key feature', value: 'Native plants, water conservation, eco-materials' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>),
@@ -133,10 +133,9 @@ export default function ArchServices() {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          Architecture design is a discipline focused on covering and meeting the needs of clients
-          to create living spaces through creativity. HeadFam Africa delivers satisfactory
-          architectural design deeply rooted in understanding the unique needs of clients —
-          sustainable, environmentally responsible, culturally rich, and inclusive.
+          Architecture design is about understanding what people truly need and translating that into
+          real spaces. HeadFam Africa delivers architectural design rooted in the unique needs of each
+          client: sustainable, culturally grounded, and built to last.
         </p>
       </motion.div>
 
@@ -301,9 +300,8 @@ export default function ArchServices() {
             className="text-sm leading-relaxed"
             style={{ color: 'rgba(255,255,255,0.75)', fontFamily: '"DM Sans", sans-serif' }}
           >
-            Every architectural design we create is rooted in understanding the unique needs and
-            desires of our clients — sustainable, environmentally responsible, and deeply
-            connected to place.
+            Every architectural design we create starts with listening to our clients. The result is
+            sustainable, grounded in local culture, and genuinely connected to place.
           </p>
         </div>
 

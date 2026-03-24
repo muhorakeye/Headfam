@@ -70,7 +70,7 @@ export function ArchCTA() {
               style={{ color: "rgba(255,255,255,0.75)", fontFamily: "DM Sans" }}
             >
               From eco-homes to cultural centers, resort architecture to landscape
-              design — HeadFam Africa brings creativity, sustainability, and deep
+              design, HeadFam Africa brings creativity, sustainability, and deep
               local knowledge to every project we design.
             </p>
 

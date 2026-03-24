@@ -62,7 +62,8 @@ src/
   pages/               # One file per route. Orchestrates layout and sections.
     about/             # Sub-pages for the About section (WhoWeAre, OurProfile, OurTeam, OurPolicy)
     services/          # Full service pages (EcoConstruction, ArchitectureDesign, Consultancy)
-  router/              # createBrowserRouter config with 18 routes and ScrollToTop
+    projects/          # Specific project detail pages (KinigiWomensVillage, MasakaSweetApartment, NobleCheerResort)
+  router/              # createBrowserRouter config with 22 routes and ScrollToTop in Layout
   types/               # TypeScript interfaces that must stay in sync with FastAPI schemas
   utils/               # constants.ts (company info, nav links), formatters.ts, api.ts
   App.tsx              # RouterProvider wrapper
@@ -142,10 +143,9 @@ layout or content."
 ## Component Rules
 
 - Named exports for all components. Never `export default` for components.
-  Exception: service sub-pages (`EcoConstruction`, `ArchitectureDesign`, `Consultancy`) use
-  `export default` and are imported with `@ts-ignore` in their parent pages. Do not change this.
-  Community section components also use default exports and are imported via `@ts-ignore` in
-  `CommunityPage.tsx`. This is a known pattern, not a mistake.
+  Exception: service sub-pages (`EcoConstruction`, `ArchitectureDesign`, `Consultancy`), project
+  detail pages (`KinigiWomensVillage`, `MasakaSweetApartment`, `NobleCheerResort`), and Community
+  section components use `export default` and are imported via `@ts-ignore`. Do not change this pattern.
 - Props typed with an interface named `[ComponentName]Props`.
 - No `any` types, ever.
 - No inline styles. Tailwind classes only (with the arbitrary value exception above).
@@ -166,7 +166,7 @@ layout or content."
 - Dummy data: 11 services, 3 projects, 4 team members, 4 impact stats
 - Hooks: useScrollPosition, useIntersectionObserver
 - Utils: constants.ts, formatters.ts, api.ts (axios instance ready for Phase 2)
-- Router: 18 routes total (11 main + 4 About sub-routes + 3 service sub-routes) with ScrollToTop in a Layout wrapper
+- Router: 22 routes total. Layout wraps all routes with Navbar, Footer, and ScrollToTop. Routes include `/book-consultation` and `/donate` (fully built), plus generic dynamic routes `/services/:serviceId` and `/projects/:projectId` (still shells).
 - Favicon: changed to logo.png
 
 ### Components
@@ -206,17 +206,27 @@ Section components live in `src/components/sections/ecoconstruction/`, `src/comp
 ### Pages (complete)
 - CommunityPage: CommunityHero, CommunityMission, CommunityImpact, CommunityPrograms, CommunityStories, CommunityJoin
 - ContactPage: split form/info layout, WhatsApp CTA, social links, maps embed
+- Donate (`/donate`, `src/pages/Donate.tsx`): donation tiers UI with framer-motion
+- BookConsultation (`/book-consultation`, `src/pages/BookConsultation.tsx`): booking inquiry form with framer-motion
+
+### Project Detail Pages (all 3 complete, under src/pages/projects/)
+Routes: `/projects/kinigi-womens-village`, `/projects/masaka-sweet-apartment`, `/projects/noble-cheer-resort`
+Section components live in `src/components/sections/Projects/kinigiWomensVillage/`, `.../masakaSweetApartment/`, `.../nobleCheerResort/`.
+Each has: Hero, Overview, Gallery, Impact, Services, Location, CTA sections.
 
 ### Pages (placeholder shells exist, need full content)
-ServicesPage, ServiceDetailPage, ProjectsPage,
-ProjectDetailPage, DonatePage, BookingPage, NotFoundPage
+ServicesPage, ServiceDetailPage (`/services/:serviceId`), ProjectsPage,
+ProjectDetailPage (`/projects/:projectId`), BookingPage (`/booking`), NotFoundPage
+
+Note: `DonatePage.tsx` and `BookingPage.tsx` in `src/pages/` are old shells. `DonatePage.tsx` is not
+in the router at all. `BookingPage.tsx` is at `/booking` but still a shell.
 
 ---
 
 ## What Is Pending
 
 ### Inner Pages (placeholder shells exist but need full content)
-Services, ServiceDetail (generic), Projects, ProjectDetail, Donate, Booking, 404
+Services, ServiceDetail (generic `/services/:serviceId`), Projects, ProjectDetail (generic `/projects/:projectId`), Booking, 404
 
 ### Other
 - Real photography (replace placeholder images)

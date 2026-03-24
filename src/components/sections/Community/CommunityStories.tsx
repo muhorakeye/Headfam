@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const STORIES = [
   {
     initial: 'M',
-    quote: "HeadFam Africa didn't just build our women's center — they built our confidence. For the first time, our community has a space that belongs to us, built by our own people.",
+    quote: "HeadFam Africa didn't just build our women's center. They built our confidence. For the first time, our community has a space that belongs to us, built by our own people.",
     name: 'Marie Uwase',
     role: "Kinigi Women's Center Member",
     location: 'Kinigi, Rwanda',

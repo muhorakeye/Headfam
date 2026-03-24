@@ -21,7 +21,7 @@ const steps: Step[] = [
     number: "01",
     title: "Client Brief & Discovery",
     description:
-      "Deep listening session — understanding your vision, functional requirements, cultural context, site conditions, and sustainability goals. No assumptions, no templates.",
+      "We start by listening carefully: understanding your vision, functional requirements, cultural context, site conditions, and sustainability goals. No assumptions, no templates.",
     deliverable: "Written project brief and design scope",
     accent: "#2E7D32",
     svg: (
@@ -44,7 +44,7 @@ const steps: Step[] = [
     number: "02",
     title: "Concept Development",
     description:
-      "Initial concept sketches and spatial layouts — exploring how the building can respond to its environment, honor local culture, and meet your needs creatively.",
+      "We develop initial concept sketches and spatial layouts, exploring how the building can respond to its environment, honor local culture, and meet your needs creatively.",
     deliverable: "Concept sketches and spatial diagrams",
     accent: "#C9A84C",
     svg: (
@@ -196,7 +196,7 @@ export function ArchProcess() {
           className="text-sm leading-relaxed"
           style={{ color: "#6b7280", fontFamily: "DM Sans" }}
         >
-          From first brief to final drawing — a structured creative process that
+          From first brief to final drawing, a structured creative process that
           puts your vision, your culture, and your environment at the center of
           every design decision.
         </p>

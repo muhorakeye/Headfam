@@ -88,7 +88,7 @@ const TAB_CONTENT: Record<Tab, TabData> = {
   'Our Mission': {
     heading: 'Mission Statement',
     body: [
-      'Our mission is to turn your vision into a breathtaking reality.',
+      'Our mission is to turn your vision into a real, lasting structure.',
       'To provide excellent services which promote global eco-constructions.',
     ],
     image: hero2,
@@ -158,7 +158,7 @@ export function WhoWeAreSection() {
             <p className="font-body text-sm text-gray-500 leading-relaxed mb-10">
               HeadFam Africa is an eco-construction company that prioritizes professional, sustainable, affordable, and innovative eco-friendly buildings which promote tourism and community engagement.
               We provide consultancy and create beautiful and functional structures including coffee shops, campsites, resorts, apartments, landscapes, culture centers, touristic site creation, lodges, and eco-residential properties that embrace the local environment.
-              Our team values environmental stewardship, preserving natural beauty and culture through the use of sustainable local materials. We are more than builders, we are creators of sustainable dreams, shaping a greener future.
+              Our team values environmental stewardship, preserving natural beauty and culture through the use of sustainable local materials. We build structures that serve communities and last for generations.
             </p>
             <ReachOutBtn />
           </div>

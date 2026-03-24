@@ -21,7 +21,7 @@ const portfolioProjects: PortfolioProject[] = [
     image: hero1,
     category: "Residential",
     date: "December 2024",
-    title: "Eco-Home — Ndera",
+    title: "Eco-Home, Ndera",
     description:
       "Sustainable residential design with solar-ready structure, natural ventilation, and locally sourced materials.",
     tags: ["Local Materials", "Solar-Ready"],

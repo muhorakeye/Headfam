@@ -20,7 +20,7 @@ const PROGRAMS = [
     badge: 'EDUCATION',
     badgeColor: '#2E7D32',
     title: 'School Building Initiative',
-    body: 'HeadFam Africa constructs and renovates school facilities near active build sites — giving children in underserved areas access to safe, modern learning environments.',
+    body: 'HeadFam Africa constructs and renovates school facilities near active build sites, giving children in underserved areas access to safe, modern learning environments.',
     stat: '3',
     statLabel: 'Schools Supported',
   },
@@ -29,7 +29,7 @@ const PROGRAMS = [
     badge: 'SKILLS',
     badgeColor: '#C9A84C',
     title: 'Construction Skills Training',
-    body: 'We run hands-on training programs that equip young people and adults with certified eco-construction skills — turning community members into future builders.',
+    body: 'We run hands-on training programs that equip young people and adults with certified eco-construction skills, turning community members into future builders.',
     stat: '500+',
     statLabel: 'People Trained',
   },
@@ -38,7 +38,7 @@ const PROGRAMS = [
     badge: 'LIVELIHOODS',
     badgeColor: '#2E7D32',
     title: 'Local Employment Program',
-    body: 'Every HeadFam project commits to hiring the majority of its workforce from within 10km of the build site — creating stable jobs and circulating money within communities.',
+    body: 'Every HeadFam project commits to hiring the majority of its workforce from within 10km of the build site, creating stable jobs and circulating money within communities.',
     stat: '100%',
     statLabel: 'Local Hiring Goal',
   },
@@ -118,7 +118,7 @@ export default function CommunityPrograms() {
         </h2>
 
         <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: '"DM Sans", sans-serif' }}>
-          From skills training to school building — every program HeadFam Africa runs is designed to leave a lasting positive footprint on the communities we serve.
+          From skills training to school building, every program HeadFam Africa runs is designed to leave a lasting positive footprint on the communities we serve.
         </p>
       </motion.div>
 

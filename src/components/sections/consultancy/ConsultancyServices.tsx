@@ -70,9 +70,9 @@ const SERVICES: Service[] = [
   {
     id: 3,
     title: 'Community Involvement',
-    short: 'Leverage local people in every project',
+    short: 'Local people involved in every project',
     description:
-      'We leverage local community involvement in every project — ensuring that tourism and construction initiatives create genuine, lasting benefit for the people who live there.',
+      'We involve local communities at every stage, ensuring that tourism and construction initiatives create genuine, lasting benefit for the people who live there.',
     detail1: { label: "Who it's for", value: 'Developers building near local communities' },
     detail2: { label: 'Outcome', value: 'Community buy-in, local hiring, revenue sharing' },
     svg: (
@@ -85,9 +85,9 @@ const SERVICES: Service[] = [
   {
     id: 4,
     title: 'Landscape & Architecture Consultancy',
-    short: 'Design spaces that harmonize with nature',
+    short: 'Design spaces that fit within nature',
     description:
-      'We offer expert consultancy in landscape design and architecture — creating breathtaking outdoor spaces and structures that harmonize with their natural surroundings and local culture.',
+      'We offer consultancy in landscape design and architecture, creating outdoor spaces and structures that sit well within their natural surroundings and local culture.',
     detail1: { label: "Who it's for", value: 'Resorts, eco-lodges, cultural centers, parks' },
     detail2: { label: 'Outcome', value: 'Award-worthy spaces rooted in place and culture' },
     svg: (

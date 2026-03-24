@@ -22,28 +22,28 @@ const STEPS: Step[] = [
     number: '01',
     title: 'Site Identification',
     description:
-      'We begin by identifying the right location — evaluating environmental conditions, community context, access to resources, and development potential before a single plan is drawn.',
+      'We begin by identifying the right location, evaluating environmental conditions, community context, access to resources, and development potential before a single plan is drawn.',
     accent: '#2E7D32',
   },
   {
     number: '02',
     title: 'Site Planning',
     description:
-      'Our team develops a detailed site plan — mapping out structures, drainage, landscaping, energy systems, and community integration to ensure the build is both functional and sustainable.',
+      'Our team develops a detailed site plan, mapping out structures, drainage, landscaping, energy systems, and community integration to ensure the build is both functional and sustainable.',
     accent: '#C9A84C',
   },
   {
     number: '03',
     title: 'Architectural Design',
     description:
-      'We create eco-friendly architectural designs deeply rooted in understanding client needs — sustainable, environmentally responsible, culturally rich, and built to minimize negative environmental impact.',
+      'We create eco-friendly architectural designs deeply rooted in understanding client needs: sustainable, culturally rich, and built to minimize negative environmental impact.',
     accent: '#2E7D32',
   },
   {
     number: '04',
     title: 'Eco Building Execution',
     description:
-      'We execute the build using certified sustainable materials, local labor, and energy-efficient techniques — delivering structures that are durable, beautiful, and kind to the planet.',
+      'We execute the build using certified sustainable materials, local labor, and energy-efficient techniques, delivering structures that are durable, beautiful, and kind to the planet.',
     accent: '#C9A84C',
   },
 ]
@@ -89,7 +89,7 @@ export default function EcoProcess() {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          Every HeadFam Africa project follows a proven four-step process — from identifying the
+          Every HeadFam Africa project follows a proven four-step process, from identifying the
           right site to executing the build with sustainable materials and methods.
         </p>
       </motion.div>

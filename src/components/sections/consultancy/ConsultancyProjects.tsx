@@ -28,7 +28,7 @@ const PROJECTS: Project[] = [
     image: hero1,
     category: 'Residential',
     date: 'December 2024',
-    title: 'Eco-Friendly Living — Ndera',
+    title: 'Eco-Friendly Living, Ndera',
     body: 'Consultancy support for site identification, community engagement, and sustainable material selection for a modern eco-residential project in Ndera, Kigali.',
     tags: ['Site Assessment', 'Community Involvement'],
   },
@@ -37,7 +37,7 @@ const PROJECTS: Project[] = [
     category: 'Coffee Shop',
     date: 'May 2024',
     title: 'Kinigi Coffee Shop',
-    body: 'Investment validation and landscape consultancy for the Kinigi coffee shop — ensuring the build honored the natural setting and created lasting local employment.',
+    body: 'Investment validation and landscape consultancy for the Kinigi coffee shop, ensuring the build honored the natural setting and created lasting local employment.',
     tags: ['Investment Validation', 'Landscape Consultancy'],
   },
   {
@@ -130,7 +130,7 @@ export default function ConsultancyProjects() {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          From investment validation to community engagement — here are some of the real projects
+          From investment validation to community engagement, here are some of the real projects
           our consultancy work has helped bring to life.
         </p>
       </motion.div>
@@ -170,7 +170,7 @@ export default function ConsultancyProjects() {
               className="text-sm leading-relaxed mb-6"
               style={{ color: 'rgba(255,255,255,0.8)', fontFamily: '"DM Sans", sans-serif' }}
             >
-              HeadFam provided full consultancy support for the Kinigi Women's Center — from site
+              HeadFam provided full consultancy support for the Kinigi Women's Center, from site
               assessment and investment validation through to community stakeholder alignment and
               project oversight. The result is a landmark eco-construction that empowers women and
               celebrates local culture.
@@ -324,7 +324,7 @@ export default function ConsultancyProjects() {
             className="text-sm mt-1"
             style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
           >
-            Tell us about it — we'll tell you how we can help.
+            Tell us about it and we will tell you how we can help.
           </p>
         </div>
 

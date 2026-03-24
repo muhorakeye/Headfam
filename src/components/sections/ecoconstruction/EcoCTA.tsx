@@ -73,7 +73,7 @@ export default function EcoCTA() {
               className="text-sm leading-relaxed mb-8"
               style={{ color: 'rgba(255,255,255,0.75)', fontFamily: '"DM Sans", sans-serif' }}
             >
-              From eco-resorts to cultural centers, eco-residential homes to campsites — HeadFam
+              From eco-resorts to cultural centers, eco-residential homes to campsites, HeadFam
               Africa brings 12+ years of sustainable construction expertise to every project we
               take on.
             </p>

@@ -11,32 +11,26 @@ const stats = [
     number: '2022',
     label: 'Year Established',
     description: 'Founded to empower women in Kinigi',
-    gold: true,
+    accent: '#2E7D32',
   },
   {
-    number: '100+',
+    number: '104+',
     label: 'Women Involved',
-    description: 'Active members creating and selling crafts',
-    gold: false,
+    description: 'Active members creating and selling crafts daily',
+    accent: '#C9A84C',
   },
   {
     number: '∞',
     label: 'Crafts Produced',
     description: 'Handmade products rooted in Rwandan heritage',
-    gold: false,
-  },
-  {
-    number: '30%',
-    label: 'Revenue to Community',
-    description: "HeadFam's contribution to local programs",
-    gold: true,
+    accent: '#2E7D32',
   },
 ]
 
 const impacts = [
   {
     title: 'Financial Independence',
-    body: 'Women earn direct income from selling their crafts — money they control and invest in their families.',
+    body: 'Women earn direct income from selling their crafts. It is money they control and invest back into their families.',
     accent: '#2E7D32',
   },
   {
@@ -46,12 +40,12 @@ const impacts = [
   },
   {
     title: "Children's Education",
-    body: 'Increased family income means more children stay in school — creating a long-term cycle of growth.',
+    body: 'Increased family income means more children stay in school, creating a long-term cycle of growth for the whole community.',
     accent: '#2E7D32',
   },
   {
     title: 'Community Pride',
-    body: 'The village has become a landmark of Kinigi — attracting visitors near Sabyinyo Volcano and building local identity.',
+    body: 'The village has become a landmark of Kinigi. It draws local visitors and tourists who visit Virunga National Park, bringing more people through the area and building a strong sense of local identity.',
     accent: '#C9A84C',
   },
 ]
@@ -94,154 +88,103 @@ export default function KWVImpact() {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          Since 2022, the village has grown into a thriving hub of creativity, income, and community
-          pride — beneath the shadow of Sabyinyo Volcano.
+          Since 2022, the village has grown into a busy center of creativity, income, and community
+          pride, sitting at the foot of Sabyinyo Volcano.
         </p>
       </motion.div>
 
-      {/* ── Part 2: Stats grid ───────────────────────────────────────── */}
-      <motion.div
-        className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
-        initial={{ opacity: 0, y: 32 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={VP}
-        transition={T}
-      >
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="rounded-2xl p-6 text-center"
-            style={{ backgroundColor: stat.gold ? '#C9A84C' : '#f9f6f0' }}
-          >
-            <p
-              className="text-4xl font-black mb-2"
-              style={{
-                color: stat.gold ? 'white' : '#2E7D32',
-                fontFamily: '"Playfair Display", serif',
-              }}
-            >
-              {stat.number}
-            </p>
-            <p
-              className="text-sm font-bold mb-2"
-              style={{
-                color: stat.gold ? 'white' : '#1a1a1a',
-                fontFamily: '"DM Sans", sans-serif',
-              }}
-            >
-              {stat.label}
-            </p>
-            <p
-              className="text-xs leading-relaxed"
-              style={{
-                color: stat.gold ? 'rgba(255,255,255,0.8)' : '#6b7280',
-                fontFamily: '"DM Sans", sans-serif',
-              }}
-            >
-              {stat.description}
-            </p>
-          </div>
-        ))}
-      </motion.div>
+      {/* ── Part 3: Two-column split ──────────────────────────────────── */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start mb-16">
 
-      {/* ── Part 3: Impact stories ───────────────────────────────────── */}
-      <motion.div
-        className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 mb-16"
-        initial={{ opacity: 0, y: 32 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={VP}
-        transition={T}
-      >
-        {/* Left: quote card */}
-        <div
-          className="flex-1 rounded-3xl p-10 flex flex-col justify-between"
-          style={{ backgroundColor: '#2E7D32' }}
+        {/* LEFT — Vertical stat cards */}
+        <motion.div
+          className="flex flex-col gap-4 w-full md:w-2/5"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <div>
-            <p
-              className="text-6xl font-black leading-none mb-4"
-              style={{
-                color: 'rgba(255,255,255,0.2)',
-                fontFamily: '"Playfair Display", serif',
-              }}
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm transition-shadow duration-300"
+              style={{ borderLeft: `4px solid ${stat.accent}` }}
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={VP}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.12 }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 16px rgba(0,0,0,0.10)' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 1px 3px rgba(0,0,0,0.06)' }}
             >
-              "
-            </p>
-            <p
-              className="text-xl font-black text-white leading-snug mb-6"
-              style={{ fontFamily: '"Playfair Display", serif' }}
-            >
-              Before the village, I had no income of my own. Now I sell my baskets every week and my
-              children are in school. This place changed everything for us.
-            </p>
-          </div>
-
-          <div>
-            <div className="h-px mb-5" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }} />
-            <div className="flex items-center gap-4">
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}
+              <p
+                className="text-5xl font-black mb-2"
+                style={{ color: stat.accent, fontFamily: '"Playfair Display", serif' }}
               >
-                <span
-                  className="text-white font-black text-lg"
-                  style={{ fontFamily: '"Playfair Display", serif' }}
-                >
-                  A
-                </span>
-              </div>
-              <div>
-                <p
-                  className="text-sm font-bold text-white"
-                  style={{ fontFamily: '"DM Sans", sans-serif' }}
-                >
-                  Alphonsine Mukamana
-                </p>
-                <p
-                  className="text-xs"
-                  style={{
-                    color: 'rgba(255,255,255,0.6)',
-                    fontFamily: '"DM Sans", sans-serif',
-                  }}
-                >
-                  Village Member, Kinigi
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right: impact list */}
-        <div className="flex-1 flex flex-col justify-center gap-5">
-          {impacts.map((item, i) => (
-            <div key={item.title}>
-              <div className="flex items-start gap-4">
-                <div
-                  className="w-1 rounded-full flex-shrink-0 self-stretch"
-                  style={{ backgroundColor: item.accent, minHeight: '40px' }}
-                />
-                <div>
-                  <p
-                    className="text-base font-black mb-1"
-                    style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}
-                  >
-                    {item.title}
-                  </p>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    {item.body}
-                  </p>
-                </div>
-              </div>
-              {i < impacts.length - 1 && (
-                <div className="h-px bg-gray-100 mt-4" />
-              )}
-            </div>
+                {stat.number}
+              </p>
+              <p
+                className="text-base font-black mb-1"
+                style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}
+              >
+                {stat.label}
+              </p>
+              <p
+                className="text-sm"
+                style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
+              >
+                {stat.description}
+              </p>
+            </motion.div>
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+
+        {/* RIGHT — Impact breakdown list */}
+        <motion.div
+          className="flex-1"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
+          <h3
+            className="text-2xl font-black mb-8"
+            style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}
+          >
+            What This Project Has Made Possible
+          </h3>
+
+          <div className="flex flex-col gap-5">
+            {impacts.map((item, i) => (
+              <div key={item.title}>
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-1 rounded-full flex-shrink-0 self-stretch"
+                    style={{ backgroundColor: item.accent, minHeight: '40px' }}
+                  />
+                  <div>
+                    <p
+                      className="text-base font-black mb-1"
+                      style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}
+                    >
+                      {item.title}
+                    </p>
+                    <p
+                      className="text-sm leading-relaxed"
+                      style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
+                    >
+                      {item.body}
+                    </p>
+                  </div>
+                </div>
+                {i < impacts.length - 1 && (
+                  <div className="h-px bg-gray-100 mt-4" />
+                )}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+      </div>
 
       {/* ── Part 4: Bottom stat strip ────────────────────────────────── */}
       <motion.div
@@ -276,8 +219,8 @@ export default function KWVImpact() {
               }}
             >
               HeadFam Africa designed and constructed the Kinigi Women Village using sustainable
-              local materials and a local workforce. Our role was to create the foundation — the
-              women of Kinigi built everything else.
+              local materials and a local workforce. Our role was to create the physical foundation.
+              The women of Kinigi built everything else.
             </p>
           </div>
 

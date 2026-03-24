@@ -33,7 +33,7 @@ const SERVICES: Service[] = [
     id: 1,
     title: 'Lodges',
     short: 'Sustainable eco-lodge retreats',
-    description: 'HeadFam Africa eco lodges blend sustainable living into a serene retreat — based in natural environments, benefiting local populations, and providing awareness and education programs for guests.',
+    description: 'HeadFam Africa eco lodges sit within natural environments and offer guests a calm, sustainable stay. They benefit local populations and include awareness and education programs for visitors.',
     detail1: { label: 'Best for', value: 'Safari operators, nature tourism developers' },
     detail2: { label: 'Key feature', value: 'Natural environment integration, community benefit' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>),
@@ -51,7 +51,7 @@ const SERVICES: Service[] = [
     id: 3,
     title: 'Coffee Shops',
     short: 'Culture, community and sustainability',
-    description: "HeadFam Africa's Kinigi coffee shop combines culture, community, and sustainability — offering an authentic coffee experience in a gorgeous natural setting inspired by local aesthetics.",
+    description: "HeadFam Africa's Kinigi coffee shop brings together culture, community, and sustainability. It offers an authentic coffee experience in a beautiful natural setting built around local aesthetics.",
     detail1: { label: 'Best for', value: 'Tourism destinations, cultural centers' },
     detail2: { label: 'Key feature', value: 'Local aesthetics, cultural integration, community' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>),
@@ -60,7 +60,7 @@ const SERVICES: Service[] = [
     id: 4,
     title: 'Apartments',
     short: 'Energy-efficient sustainable living spaces',
-    description: 'HeadFam Africa helps apartment complexes adopt energy-efficient technologies, waste reduction strategies, and sustainable building materials — transforming units into environmentally responsible living spaces.',
+    description: 'HeadFam Africa helps apartment complexes adopt energy-efficient technologies, waste reduction strategies, and sustainable building materials, turning units into low-impact living spaces.',
     detail1: { label: 'Best for', value: 'Real estate developers, urban housing projects' },
     detail2: { label: 'Key feature', value: 'Energy efficiency, waste reduction, low carbon footprint' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>),
@@ -69,7 +69,7 @@ const SERVICES: Service[] = [
     id: 5,
     title: 'Eco-Residential',
     short: "Low-impact homes for Rwanda's future",
-    description: 'HeadFam Africa provides sustainable design, construction, and maintenance for eco-homes — meeting needs such as water conservation, waste recycling, pollution control, energy generation, and CO2 reduction.',
+    description: 'HeadFam Africa designs, builds, and maintains eco-homes that address real needs: water conservation, waste recycling, pollution control, energy generation, and lower CO2 output.',
     detail1: { label: 'Best for', value: 'Homeowners, residential developers' },
     detail2: { label: 'Key feature', value: 'Solar panels, water conservation, CO2 reduction' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>),
@@ -78,7 +78,7 @@ const SERVICES: Service[] = [
     id: 6,
     title: 'Landscape',
     short: 'Breathtaking eco-conscious outdoor spaces',
-    description: 'HeadFam Africa excels in landscape consultancy — combining artistic vision with ecological sensitivity to design landscapes that harmonize with their surroundings, emphasizing water conservation and native plant usage.',
+    description: 'HeadFam Africa designs landscapes that combine visual character with ecological care. Every space we create works with its surroundings, using native plants and water-conscious techniques.',
     detail1: { label: 'Best for', value: 'Resorts, parks, corporate campuses, private gardens' },
     detail2: { label: 'Key feature', value: 'Native plants, water conservation, eco-materials' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 8C8 10 5.9 16.17 3.82 22"/><path d="M9.1 17.4C9.7 14 12 11 17 8c1 5-1 9-8 9.4z"/></svg>),
@@ -87,7 +87,7 @@ const SERVICES: Service[] = [
     id: 7,
     title: 'Culture Centers',
     short: 'Spaces that celebrate culture responsibly',
-    description: 'HeadFam Africa assists in planning, designing, and establishing culture centers and touristic sites that celebrate the rich tapestry of local cultures in an environmentally responsible manner.',
+    description: 'HeadFam Africa helps plan, design, and establish culture centers and touristic sites that celebrate local traditions and identity, built with care for the environment.',
     detail1: { label: 'Best for', value: 'Government, NGOs, cultural organizations' },
     detail2: { label: 'Key feature', value: 'Cultural preservation, community engagement, sustainability' },
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>),
@@ -151,10 +151,9 @@ export default function EcoServices() {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          HeadFam Africa provides exceptional services in resort construction, lodging, campsite
-          developments, coffee shop build-outs, apartment design, and eco-residential projects —
-          incorporating innovative building methods that elevate sustainability, energy efficiency,
-          and durability.
+          HeadFam Africa builds resorts, lodges, campsites, coffee shops, apartments, and
+          eco-residential homes using building methods that prioritize sustainability, energy
+          efficiency, and long-term durability.
         </p>
       </motion.div>
 

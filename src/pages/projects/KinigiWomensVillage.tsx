@@ -5,10 +5,10 @@ export default function KinigiWomensVillage() {
     <main>
       <KWVHero />
       <KWVOverview />
-      <KWVGallery />
-      <KWVImpact />
       <KWVServices />
+      <KWVImpact />
       <KWVLocation />
+      <KWVGallery />
       <KWVCTA />
     </main>
   )
