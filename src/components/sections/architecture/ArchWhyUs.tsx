@@ -107,6 +107,7 @@ export function ArchWhyUs() {
         {/* Left — image mosaic */}
         <motion.div
           className="flex-1 relative"
+          style={{ minHeight: "300px" }}
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}

@@ -161,6 +161,7 @@ export default function EcoWhyUs() {
         {/* Row 2 — Block 4: Wide image with overlay */}
         <motion.div
           className="md:col-span-2 rounded-2xl overflow-hidden relative"
+          style={{ minHeight: "300px" }}
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={VP}

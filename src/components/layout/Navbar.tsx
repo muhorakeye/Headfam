@@ -234,107 +234,64 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu — max-height animation for smooth open/close */}
-      <nav
-        className={`md:hidden overflow-hidden bg-white transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-[900px]' : 'max-h-0'
-          }`}
-        aria-label="Mobile navigation"
-      >
-        {NAV_LINKS.map((link) => {
-          if (link.label === 'About') {
-            return (
-              <div key={link.to}>
-                <span className="block py-4 px-6 font-body text-base font-medium border-b border-gray-100 text-charcoal select-none">
-                  {link.label}
-                </span>
-                {ABOUT_DROPDOWN.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => setMenuOpen(false)}
-                    className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            );
-          }
+      {/* Mobile menu — fullscreen overlay */}
+      {menuOpen && (
+        <div className="md:hidden fixed inset-0 z-50 bg-white overflow-y-auto">
+          {/* Close button */}
+          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+            <Link to="/" onClick={() => setMenuOpen(false)}>
+              <img src="/logo.png" alt="HeadFam Africa" className="h-10 w-auto" />
+            </Link>
+            <button onClick={() => setMenuOpen(false)} aria-label="Close menu" className="p-2 text-charcoal">
+              <span className="text-2xl leading-none">✕</span>
+            </button>
+          </div>
 
-          if (link.label === 'Services') {
-            return (
-              <div key={link.to}>
-                <span className="block py-4 px-6 font-body text-base font-medium border-b border-gray-100 text-charcoal select-none">
-                  {link.label}
-                </span>
-                {SERVICE_DROPDOWN.map((item) =>
-                  item.comingSoon ? null : (
-                    <Link
-                      key={item.to}
-                      to={item.to!}
-                      onClick={() => setMenuOpen(false)}
-                      className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  )
-                )}
-              </div>
-            );
-          }
+          <div className="px-6 py-4 space-y-1">
 
-          if (link.label === 'Projects') {
-            return (
-              <div key={link.to}>
-                <span className="block py-4 px-6 font-body text-base font-medium border-b border-gray-100 text-charcoal select-none">
-                  {link.label}
-                </span>
-                <Link to="/projects/kinigi-womens-village" onClick={() => setMenuOpen(false)} className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors">Kinigi Women Village</Link>
-                <Link to="/projects/masaka-sweet-apartment" onClick={() => setMenuOpen(false)} className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors">Masaka Sweet Apartment</Link>
-                <Link to="/projects/noble-cheer-resort" onClick={() => setMenuOpen(false)} className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors">Noble Cheer Resort</Link>
-                <Link to="/projects/bambino-super-city" onClick={() => setMenuOpen(false)} className="block py-3 pl-10 pr-6 font-body text-sm text-charcoal/70 hover:text-forest border-b border-gray-100 transition-colors">Bambino Super City</Link>
-              </div>
-            );
-          }
+            {/* HOME */}
+            <Link to="/" onClick={() => setMenuOpen(false)} className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}>HOME</Link>
 
-          return (
-            <div key={link.to}>
-              <NavLink
-                to={link.to}
-                end={link.to === '/'}
-                onClick={() => setMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block py-4 px-6 font-body text-base font-medium border-b border-gray-100 transition-colors ${isActive ? 'text-forest' : 'text-charcoal hover:text-forest'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
+            {/* ABOUT */}
+            <div>
+              <span className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}>ABOUT</span>
+              <Link to="/about/who-we-are" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Who We Are</Link>
+              <Link to="/about/our-team" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Our Team</Link>
+              <Link to="/about/our-policy" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Our Policy</Link>
             </div>
-          );
-        })}
 
-        {/* Mobile Donate */}
-        <Link
-          to="/donate"
-          onClick={() => setMenuOpen(false)}
-          className="block py-4 px-6 font-body text-base font-bold border-b border-gray-100"
-          style={{ color: '#C9A84C' }}
-        >
-          DONATE
-        </Link>
+            {/* SERVICES */}
+            <div>
+              <span className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}>SERVICES</span>
+              <Link to="/services/consultancy" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Eco-Construction Consultancy</Link>
+              <Link to="/services/eco-construction" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Eco-Construction</Link>
+              <Link to="/services/architecture-design" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Architecture Design</Link>
+            </div>
 
-        {/* Mobile Book CTA */}
-        <div className="px-6 py-5">
-          <Link
-            to="/book-consultation"
-            onClick={() => setMenuOpen(false)}
-            className="block font-body text-base font-semibold bg-forest text-white px-4 py-3 rounded-sm text-center hover:bg-forest-dark transition-colors"
-          >
-            Book a Consultation
-          </Link>
+            {/* COMMUNITY */}
+            <Link to="/community" onClick={() => setMenuOpen(false)} className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}>COMMUNITY</Link>
+
+            {/* PROJECTS */}
+            <div>
+              <span className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", serif' }}>PROJECTS</span>
+              <Link to="/projects/kinigi-womens-village" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Kinigi Women Village</Link>
+              <Link to="/projects/masaka-sweet-apartment" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Masaka Sweet Apartment</Link>
+              <Link to="/projects/noble-cheer-resort" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Noble Cheer Resort</Link>
+              <Link to="/projects/bambino-super-city" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Bambino Super City</Link>
+            </div>
+
+            {/* BOOK */}
+            <Link to="/book-consultation" onClick={() => setMenuOpen(false)} className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}>BOOK A CONSULTATION</Link>
+
+            {/* DONATE */}
+            <Link to="/donate" onClick={() => setMenuOpen(false)} className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#C9A84C', fontFamily: '"DM Sans", sans-serif' }}>DONATE</Link>
+
+            {/* CONTACT */}
+            <Link to="/contact" onClick={() => setMenuOpen(false)} className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}>CONTACT</Link>
+
+          </div>
         </div>
-      </nav>
+      )}
     </header>
   );
 }

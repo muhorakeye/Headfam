@@ -161,7 +161,7 @@ export default function CommunityPrograms() {
               Now officially open, the Kinigi Women's Center is a landmark eco-construction project that empowers women through skills training, income-generating activities, and a safe community gathering space built with sustainable local materials.
             </p>
 
-            <div className="flex gap-8 mb-8">
+            <div className="flex flex-wrap gap-6 mb-8">
               <div style={{ borderRight: '1px solid rgba(255,255,255,0.2)', paddingRight: '2rem' }}>
                 <p className="text-2xl font-black text-white" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>2024</p>
                 <p className="text-xs" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: '"DM Sans", sans-serif' }}>Year Opened</p>

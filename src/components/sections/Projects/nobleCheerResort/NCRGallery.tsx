@@ -54,16 +54,16 @@ export default function NCRGallery(): JSX.Element {
 
         {/* LEFT — Photo gallery grid */}
         <motion.div
-          className="flex-1"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          className="flex-1 w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <div className="grid grid-cols-2 gap-3">
 
             {/* Row 1 — full width */}
-            <div className="col-span-2 relative overflow-hidden rounded-xl group h-72">
+            <div className="col-span-2 relative overflow-hidden rounded-xl group" style={{ height: "280px", minHeight: "280px" }}>
               <img
                 src={hero0}
                 alt="Noble Cheer Resort overview"
@@ -75,7 +75,7 @@ export default function NCRGallery(): JSX.Element {
 
             {/* Row 2 */}
             {[hero1, hero2].map((src, i) => (
-              <div key={`r2-${i}`} className="relative overflow-hidden rounded-xl group h-52">
+              <div key={`r2-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Noble Cheer Resort ${i + 2}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
               </div>
@@ -83,7 +83,7 @@ export default function NCRGallery(): JSX.Element {
 
             {/* Row 3 */}
             {[hero3, hero4].map((src, i) => (
-              <div key={`r3-${i}`} className="relative overflow-hidden rounded-xl group h-52">
+              <div key={`r3-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Noble Cheer Resort ${i + 4}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
               </div>
@@ -94,16 +94,16 @@ export default function NCRGallery(): JSX.Element {
         {/* RIGHT — Testimonials */}
         <motion.div
           className="w-full md:w-80 lg:w-96 flex flex-col gap-5"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
 
           {/* BLOCK 1 — Manager testimonial */}
           <div
             className="rounded-3xl p-8 flex flex-col justify-between"
-            style={{ backgroundColor: '#2E7D32' }}
+            style={{ backgroundColor: '#2E7D32', minHeight: "280px" }}
           >
             <div>
               <p
@@ -160,7 +160,7 @@ export default function NCRGallery(): JSX.Element {
           </div>
 
           {/* BLOCK 2 — Guest testimonial */}
-          <div className="bg-white rounded-2xl p-6">
+          <div className="bg-white rounded-2xl p-6" style={{ minHeight: "150px" }}>
             <p
               className="text-3xl font-black leading-none mb-2"
               style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}

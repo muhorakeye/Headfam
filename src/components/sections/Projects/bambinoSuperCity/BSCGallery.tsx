@@ -58,16 +58,16 @@ export default function BSCGallery(): JSX.Element {
 
         {/* LEFT — Photo gallery grid */}
         <motion.div
-          className="flex-1"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          className="flex-1 w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <div className="grid grid-cols-2 gap-3">
 
             {/* Row 1 — full width */}
-            <div className="col-span-2 relative overflow-hidden rounded-xl group h-72">
+            <div className="col-span-2 relative overflow-hidden rounded-xl group" style={{ height: "280px", minHeight: "280px" }}>
               <img
                 src={bambinoS}
                 alt="Bambino Super City overview"
@@ -79,7 +79,7 @@ export default function BSCGallery(): JSX.Element {
 
             {/* Row 2 */}
             {[bambinoB1, bambinoB3].map((src, i) => (
-              <div key={`r2-${i}`} className="relative overflow-hidden rounded-xl group h-52">
+              <div key={`r2-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Bambino Super City ${i + 2}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
               </div>
@@ -87,7 +87,7 @@ export default function BSCGallery(): JSX.Element {
 
             {/* Row 3 */}
             {[bambinoB6, bambinoB7].map((src, i) => (
-              <div key={`r3-${i}`} className="relative overflow-hidden rounded-xl group h-52">
+              <div key={`r3-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Bambino Super City ${i + 4}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
               </div>
@@ -102,9 +102,9 @@ export default function BSCGallery(): JSX.Element {
             >
               INTERIOR &amp; DESIGN
             </p>
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {[bambinoBD1, bambinoBD2, bambinoBD3, bambinoBD4].map((src, i) => (
-                <div key={`design-${i}`} className="relative overflow-hidden rounded-lg group h-24">
+                <div key={`design-${i}`} className="relative overflow-hidden rounded-lg group" style={{ height: "100px", minHeight: "100px" }}>
                   <img
                     src={src}
                     alt={`Bambino interior ${i + 1}`}
@@ -121,16 +121,16 @@ export default function BSCGallery(): JSX.Element {
         {/* RIGHT — Testimonials */}
         <motion.div
           className="w-full md:w-80 lg:w-96 flex flex-col gap-5"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
 
           {/* BLOCK 1 — Owner testimonial */}
           <div
             className="rounded-3xl p-8 flex flex-col justify-between"
-            style={{ backgroundColor: '#2E7D32' }}
+            style={{ backgroundColor: '#2E7D32', minHeight: "280px" }}
           >
             <div>
               <p
@@ -187,7 +187,7 @@ export default function BSCGallery(): JSX.Element {
           </div>
 
           {/* BLOCK 2 — Guest testimonial */}
-          <div className="bg-white rounded-2xl p-6">
+          <div className="bg-white rounded-2xl p-6" style={{ minHeight: "150px" }}>
             <p
               className="text-3xl font-black leading-none mb-2"
               style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}

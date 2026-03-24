@@ -55,7 +55,7 @@ export default function MSAHero(): JSX.Element {
 
       {/* Content block */}
       <div
-        className="absolute left-10 md:left-16 z-20 max-w-xl"
+        className="absolute left-4 md:left-16 z-20 max-w-xs sm:max-w-sm md:max-w-xl"
         style={{ top: '50%', transform: 'translateY(-50%)' }}
       >
         {/* Breadcrumb */}
@@ -113,7 +113,7 @@ export default function MSAHero(): JSX.Element {
 
         {/* Stats row */}
         <motion.div
-          className="flex gap-8 mb-8"
+          className="flex flex-wrap gap-4 md:gap-8 mb-8"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.5 }}
@@ -125,7 +125,7 @@ export default function MSAHero(): JSX.Element {
           ].map((stat) => (
             <div
               key={stat.label}
-              className={stat.border ? 'pr-8' : ''}
+              className={stat.border ? 'pr-4 md:pr-8' : ''}
               style={stat.border ? { borderRight: '1px solid rgba(255,255,255,0.2)' } : {}}
             >
               <p
@@ -153,7 +153,7 @@ export default function MSAHero(): JSX.Element {
         >
           <button
             onClick={scrollToOverview}
-            className="px-8 py-4 rounded-full text-sm font-bold text-white transition-colors duration-300"
+            className="px-5 md:px-8 py-3 md:py-4 rounded-full text-xs md:text-sm font-bold text-white transition-colors duration-300"
             style={{ backgroundColor: btn1Hovered ? '#C9A84C' : '#2E7D32' }}
             onMouseEnter={() => setBtn1Hovered(true)}
             onMouseLeave={() => setBtn1Hovered(false)}
@@ -163,7 +163,7 @@ export default function MSAHero(): JSX.Element {
 
           <a
             href="/contact"
-            className="px-8 py-4 rounded-full text-sm font-semibold transition-colors duration-300"
+            className="px-5 md:px-8 py-3 md:py-4 rounded-full text-xs md:text-sm font-semibold transition-colors duration-300"
             style={{
               border: '2px solid white',
               backgroundColor: btn2Hovered ? 'white' : 'transparent',

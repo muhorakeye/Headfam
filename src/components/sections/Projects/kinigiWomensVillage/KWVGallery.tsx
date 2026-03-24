@@ -56,9 +56,9 @@ export default function KWVGallery() {
         {/* LEFT — Photo gallery grid */}
         <motion.div
           className="flex-1 w-full"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <div className="grid grid-cols-2 gap-3">
@@ -105,9 +105,9 @@ export default function KWVGallery() {
         {/* RIGHT — Testimonial */}
         <motion.div
           className="w-full md:w-96 flex flex-col gap-6"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
 

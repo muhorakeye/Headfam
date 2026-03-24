@@ -52,7 +52,7 @@ export default function KWVHero() {
 
       {/* Content block */}
       <div
-        className="absolute left-10 md:left-16 z-20 max-w-xl"
+        className="absolute left-4 md:left-16 z-20 max-w-xs sm:max-w-sm md:max-w-xl"
         style={{ top: '50%', transform: 'translateY(-50%)' }}
       >
         {/* Breadcrumb */}
@@ -110,7 +110,7 @@ export default function KWVHero() {
 
         {/* Stats row */}
         <motion.div
-          className="flex gap-8 mb-8"
+          className="flex flex-wrap gap-4 md:gap-8 mb-8"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.5 }}
@@ -122,7 +122,7 @@ export default function KWVHero() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className={stat.divider ? 'pr-8' : ''}
+              className={stat.divider ? 'pr-4 md:pr-8' : ''}
               style={stat.divider ? { borderRight: '1px solid rgba(255,255,255,0.2)' } : {}}
             >
               <p
@@ -150,7 +150,7 @@ export default function KWVHero() {
         >
           <button
             onClick={scrollToOverview}
-            className="px-8 py-4 rounded-full text-sm font-bold text-white transition-colors duration-300"
+            className="px-5 md:px-8 py-3 md:py-4 rounded-full text-xs md:text-sm font-bold text-white transition-colors duration-300"
             style={{
               backgroundColor: exploreHovered ? '#C9A84C' : '#2E7D32',
               fontFamily: '"DM Sans", sans-serif',
@@ -163,7 +163,7 @@ export default function KWVHero() {
 
           <a href="/contact">
             <button
-              className="px-8 py-4 rounded-full text-sm font-semibold border-2 border-white transition-colors duration-300"
+              className="px-5 md:px-8 py-3 md:py-4 rounded-full text-xs md:text-sm font-semibold border-2 border-white transition-colors duration-300"
               style={{
                 backgroundColor: contactHovered ? 'white' : 'transparent',
                 color: contactHovered ? '#1a1a1a' : 'white',

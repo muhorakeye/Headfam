@@ -102,11 +102,12 @@ export default function BSCOverview(): JSX.Element {
             alt="Bambino Super City"
             onError={onImgError}
             className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-xl"
+            style={{ minHeight: "240px" }}
           />
 
-          {/* Floating stat card */}
+          {/* Floating stat card — hidden on mobile to prevent overflow */}
           <div
-            className="absolute -bottom-6 -left-6 z-10 bg-white rounded-xl shadow-lg p-5"
+            className="hidden md:block absolute -bottom-6 -left-6 z-10 bg-white rounded-xl shadow-lg p-5"
             style={{ borderLeft: '4px solid #2E7D32' }}
           >
             <p
@@ -129,12 +130,12 @@ export default function BSCOverview(): JSX.Element {
             </p>
           </div>
 
-          {/* Floating thumbnail */}
+          {/* Floating thumbnail — hidden on mobile to prevent overflow */}
           <img
             src={bambinoB5}
             alt="Bambino Super City detail"
             onError={onImgError}
-            className="absolute -top-6 -right-6 z-10 w-36 h-24 object-cover rounded-xl shadow-lg border-4 border-white"
+            className="hidden md:block absolute -top-6 -right-6 z-10 w-36 h-24 object-cover rounded-xl shadow-lg border-4 border-white"
           />
         </motion.div>
       </div>
