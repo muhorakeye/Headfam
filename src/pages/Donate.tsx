@@ -9,23 +9,22 @@ type DonationType = 'once' | 'monthly'
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const impactStats = [
-  { number: '30%', label: 'Revenue Donated', sub: 'Every project, without exception' },
+  { number: '30%', label: 'Builds Eco-Homes', sub: 'Every project, without exception' },
   { number: '500+', label: 'Jobs Created', sub: 'Local workers across Rwanda' },
-  { number: '3', label: 'Community Programs', sub: 'Skills, schools, livelihoods' },
+  { number: '3', label: 'Eco-Homes Built', sub: 'For low-income families near build sites' },
   { number: '12+', label: 'Years of Impact', sub: 'Serving East African communities' },
 ]
 
 const presets = [10, 25, 50, 100, 250, 500]
 
 const programs = [
-  { label: 'Skills Training Programs', percent: 35, color: '#2E7D32' },
-  { label: 'School Building', percent: 25, color: '#C9A84C' },
-  { label: 'Health & Basic Needs', percent: 20, color: '#2E7D32' },
-  { label: 'Local Business Support', percent: 20, color: '#C9A84C' },
+  { label: 'Eco-House Construction', percent: 70, color: '#2E7D32' },
+  { label: 'Building Materials', percent: 20, color: '#C9A84C' },
+  { label: 'Local Workforce Wages', percent: 10, color: '#2E7D32' },
 ]
 
 const promises = [
-  '100% of your donation reaches community programs',
+  '100% of your donation goes toward eco-house construction for families in need',
   'We publish annual impact reports showing exactly how funds are used',
   'Every donor receives a personal thank-you from our team',
   'Your contribution is acknowledged in our project community reports',
@@ -102,7 +101,7 @@ export default function Donate() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          30% of Every Project Funds Community Programs
+          30% of Every Project Builds Eco-Homes for Families in Need
         </motion.h1>
 
         <motion.p
@@ -112,8 +111,7 @@ export default function Donate() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          Your donation directly funds skills training, school building, and income programs for
-          families near our construction sites across Rwanda.
+          Your donation helps HeadFam Africa build eco-houses for low-income families living near our construction sites across Rwanda.
         </motion.p>
 
         <motion.p
@@ -198,8 +196,7 @@ export default function Donate() {
                 className="text-sm mb-8"
                 style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
               >
-                Every contribution — large or small — goes directly to community programs near our
-                build sites.
+                Every contribution — large or small — goes toward building eco-houses for low-income families near our build sites.
               </p>
 
               {/* Donation type toggle */}
@@ -511,54 +508,6 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* ── Section 4: Community Stories Strip ──────────────────────────── */}
-      <section className="py-16 px-6 md:px-16" style={{ backgroundColor: '#1a1a1a' }}>
-        <motion.div
-          className="max-w-4xl mx-auto text-center"
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div
-            className="text-8xl font-black leading-none"
-            style={{ color: 'rgba(255,255,255,0.06)', fontFamily: '"Playfair Display", serif' }}
-          >
-            "
-          </div>
-
-          <p
-            className="text-xl md:text-2xl font-black text-white leading-snug mb-8 max-w-3xl mx-auto"
-            style={{ fontFamily: '"Playfair Display", serif' }}
-          >
-            HeadFam Africa didn't just build our women's center — they built our confidence. For the
-            first time, our community has a space that belongs to us, built by our own people.
-          </p>
-
-          <div className="flex items-center justify-center gap-4">
-            <div
-              className="w-12 h-12 rounded-full flex items-center justify-center text-white font-black flex-shrink-0"
-              style={{ backgroundColor: '#2E7D32', fontFamily: '"Playfair Display", serif' }}
-            >
-              M
-            </div>
-            <div className="text-left">
-              <p
-                className="text-sm font-bold text-white"
-                style={{ fontFamily: '"DM Sans", sans-serif' }}
-              >
-                Marie Uwase
-              </p>
-              <p
-                className="text-xs"
-                style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"DM Sans", sans-serif' }}
-              >
-                Kinigi Women's Center Member
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </section>
     </main>
   )
 }

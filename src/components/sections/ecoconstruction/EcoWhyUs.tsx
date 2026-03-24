@@ -217,7 +217,7 @@ export default function EcoWhyUs() {
             className="text-xs leading-relaxed"
             style={{ color: 'rgba(255,255,255,0.8)', fontFamily: '"DM Sans", sans-serif' }}
           >
-            Every project donates 30% of revenue directly to low-income families near the build site.
+            Every project puts 30% of revenue toward building eco-houses for low-income families near the build site.
           </p>
         </motion.div>
 

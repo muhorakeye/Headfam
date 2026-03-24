@@ -7,7 +7,7 @@ const policies = [
   },
   {
     title: 'Community First',
-    body: '30% of every project\'s revenue is donated directly to low-income communities near each build site. We hire locally and involve communities throughout every phase.',
+    body: '30% of every project\'s revenue is used to build eco-houses for low-income families living near each construction site. We hire locally and involve communities throughout every phase.',
   },
   {
     title: 'Quality & Safety',

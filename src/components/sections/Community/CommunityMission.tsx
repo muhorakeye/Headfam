@@ -27,7 +27,7 @@ const PILLARS = [
   {
     accentColor: '#C9A84C',
     title: 'Revenue Sharing',
-    body: "30% of every project's revenue is donated directly to low-income families living near each build site — funding education, health, and basic needs.",
+    body: "30% of every project's revenue is used to build eco-houses for low-income families living near each construction site, giving them a safe, sustainable home.",
     svg: (
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="2">
         <line x1="12" y1="1" x2="12" y2="23"/>
@@ -146,7 +146,7 @@ export default function CommunityMission() {
               className="text-xs text-gray-500 leading-relaxed"
               style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
-              Every project donates 30% to the community near the build site.
+              Every project builds eco-homes for families near the construction site.
             </p>
             <div className="h-0.5 w-8 mt-3 rounded-full" style={{ backgroundColor: '#2E7D32' }} />
           </div>

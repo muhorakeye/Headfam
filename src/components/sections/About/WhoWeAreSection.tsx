@@ -108,7 +108,7 @@ const TAB_CONTENT: Record<Tab, TabData> = {
 const TIMELINE = [
   { year: '2012', label: 'Founded',        body: 'HeadFam Africa established in Kigali with a focus on affordable eco-residential construction using locally sourced materials.' },
   { year: '2014', label: 'First Resort',   body: 'Delivered our first eco-resort project in the Virunga foothills, setting the benchmark for sustainable tourism construction in Rwanda.' },
-  { year: '2016', label: 'Community Fund', body: '30% revenue donation program officially launched, channeling construction income directly into schools and skills programs near build sites.' },
+  { year: '2016', label: 'Community Fund', body: '30% revenue program officially launched, committing construction income to building eco-houses for low-income families living near each build site.' },
   { year: '2018', label: 'Expansion',      body: 'Expanded service offerings to include full landscape design, culture centers, and touristic site creation across East Africa.' },
   { year: '2020', label: 'Kinigi Campus',  body: "Broke ground on the Kinigi Women's Center and Kinigi Coffee Shop, two of our most community-defining projects to date." },
   { year: '2024', label: 'Today',          body: "Over 500 local jobs created, 12+ years of expertise, and a growing portfolio of landmark eco-structures shaping Rwanda's green future." },

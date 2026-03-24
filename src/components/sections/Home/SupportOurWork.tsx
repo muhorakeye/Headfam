@@ -6,7 +6,7 @@ const stats = [
   {
     number: "30%",
     label: "Revenue Donated",
-    description: "Goes directly to low-income communities near each build site",
+    description: "Used to build eco-houses for low-income families near each construction site",
     dark: true,
   },
   {
@@ -109,8 +109,7 @@ export function SupportOurWork() {
             Support Sustainable Construction in Africa
           </h2>
           <p className="text-base text-gray-500 leading-relaxed mb-8">
-            30% of Every Project Funds Community Programs. Your donation directly funds skills training, school building, and income programs for families
-             near our construction sites across Rwanda.
+            30% of every project goes toward building eco-houses for low-income families living near our construction sites across Rwanda.
           </p>
           <div className="flex flex-wrap gap-4">
             <PrimaryButton />
