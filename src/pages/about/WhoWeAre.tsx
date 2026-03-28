@@ -73,33 +73,78 @@ const TAB_CONTENT: Record<Tab, TabContent> = {
   },
   'Our Mission': {
     heading: 'Turning Vision Into Reality',
-    body: [
-      'HeadFam Africa was founded with a single belief: that construction should serve people and planet equally. Beginning in Kigali, Rwanda, our first projects were modest eco-homes built with local materials for local families.',
-      'Over the years we expanded into resorts, cultural centers, and community facilities, always keeping the same promise: hire locally, build sustainably, give back generously.',
-      'Today HeadFam Africa is recognized across East Africa as a pioneer of eco-construction, having delivered more than a dozen landmark projects and created over 500 local jobs since inception.',
-    ],
+    body: [],
     image: hero0,
     showCta: false,
   },
   'Our Vision': {
     heading: 'First Resort for Global Investments',
-    body: [
-      'To be the first resort for global investments, building a legacy of sustainable, community-centered construction that spans East Africa and beyond.',
-      'We envision a future where every structure we raise becomes a landmark of responsible development, where construction rooted in tradition creates the wonders of nature for today and tomorrow.',
-    ],
+    body: [],
     image: hero3,
-    showCta: true,
+    showCta: false,
   },
   'Our Values': {
-    heading: 'From Kigali to East Africa',
-    body: [
-      'What began as a small team of passionate builders has grown into a full-service eco-construction company with expertise spanning architecture, consultancy, landscape design, and sustainable development.',
-      'We have completed coffee shops, campsites, eco-lodges, resorts, apartments, culture centers, and eco-residential properties, each one raising the standard for what responsible construction looks like in Africa.',
-    ],
+    heading: '',
+    body: [],
     image: hero1,
-    showCta: true,
+    showCta: false,
   },
 };
+
+// ─── Values data ──────────────────────────────────────────────────────────────
+interface ValueItem {
+  title: string;
+  description: string;
+  svg: JSX.Element;
+  accent: string;
+}
+
+const VALUES: ValueItem[] = [
+  {
+    title: 'Innovation',
+    description: 'We continuously push the boundaries of eco-construction, adopting new techniques, materials, and methods that set new standards for sustainable building in Africa.',
+    svg: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V17H9v-2.8C7.21 13.16 6 11.22 6 9a6 6 0 0 1 6-6z"/>
+      </svg>
+    ),
+    accent: GREEN,
+  },
+  {
+    title: 'Safety',
+    description: 'Every structure we build meets rigorous safety standards. Our team is trained in eco-construction best practices that protect both people and the surrounding environment.',
+    svg: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    ),
+    accent: GREEN,
+  },
+  {
+    title: 'Environmental Care',
+    description: 'We design and build with the planet in mind, minimizing waste, conserving water, reducing carbon footprints, and using locally sourced sustainable materials on every project.',
+    svg: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M17 8C8 10 5.9 16.17 3.82 22"/>
+        <path d="M9.1 17.4C9.7 14 12 11 17 8c1 5-1 9-8 9.4z"/>
+      </svg>
+    ),
+    accent: GOLD,
+  },
+  {
+    title: 'Community Engagement',
+    description: 'We hire locally, involve communities in every phase, and donate 30% of project revenue to low-income families near our build sites, because construction should lift people up.',
+    svg: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    ),
+    accent: GOLD,
+  },
+];
 
 // ─── Donut SVG ────────────────────────────────────────────────────────────────
 // circumference = 2π×40 ≈ 251.2 | offset for 85% = 251.2 × 0.15 ≈ 37.68
@@ -147,8 +192,7 @@ export function WhoWeAre() {
         </p>
       </div>
 
-      {/* ── Section 1: Work Performance ── */}
-      {/* Left: label + heading + body + stat | Right: image */}
+      {/* ── Section 1: About the Company ── */}
       <section className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-14 items-center">
 
@@ -227,48 +271,115 @@ export function WhoWeAre() {
           </div>
 
           {/* Tab panel */}
-          <div className="flex flex-col md:flex-row gap-12 items-start">
-            <div className="flex-1">
-              <h3 className="text-2xl font-black mb-5" style={{ ...PLAYFAIR, color: GREEN }}>
-                {content.heading}
-              </h3>
-              {content.body.map((p, i) => (
-                <p key={i} className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>{p}</p>
+          {activeTab === 'Our Values' ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {VALUES.map((value) => (
+                <div
+                  key={value.title}
+                  className="rounded-2xl p-8 flex gap-4 items-start"
+                  style={{ backgroundColor: '#f9f6f0' }}
+                >
+                  <div className="flex-shrink-0" style={{ color: value.accent }}>{value.svg}</div>
+                  <div>
+                    <div className="h-0.5 w-8 mb-3 rounded-full" style={{ backgroundColor: value.accent }} />
+                    <p className="text-base font-black mb-2" style={{ ...PLAYFAIR, color: DARK }}>{value.title}</p>
+                    <p className="text-sm text-gray-500 leading-relaxed" style={DM}>{value.description}</p>
+                  </div>
+                </div>
               ))}
-              {activeTab === 'Our Story' && (
-                <div className="flex flex-wrap gap-8 mt-8">
-                  {[
-                    { number: '12+',  label: 'Years of Experience' },
-                    { number: '500+', label: 'Local Jobs Created' },
-                    { number: '30%',  label: 'Revenue Donated' },
-                    { number: '3',    label: 'Landmark Projects' },
-                  ].map((stat, i, arr) => (
-                    <div
-                      key={stat.label}
-                      style={i < arr.length - 1 ? { borderRight: '1px solid #e5e7eb', paddingRight: '2rem' } : {}}
-                    >
-                      <p className="text-3xl font-black" style={{ ...PLAYFAIR, color: GREEN }}>{stat.number}</p>
-                      <p className="text-xs text-gray-400 mt-1" style={DM}>{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {content.showCta && (
-                <div className="mt-6">
-                  <GetStartedBtn />
-                </div>
-              )}
             </div>
+          ) : (
+            <div className="flex flex-col md:flex-row gap-12 items-start">
+              <div className="flex-1">
 
-            <div className="flex-1">
-              <img src={content.image} alt={content.heading} onError={onImgError}
-                className="w-full object-cover shadow-lg"
-                style={{ height: 320, borderRadius: 12 }} />
+                {/* Our Story */}
+                {activeTab === 'Our Story' && (
+                  <>
+                    <h3 className="text-2xl font-black mb-5" style={{ ...PLAYFAIR, color: GREEN }}>
+                      {content.heading}
+                    </h3>
+                    {content.body.map((p, i) => (
+                      <p key={i} className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>{p}</p>
+                    ))}
+                    <div className="flex flex-wrap gap-8 mt-8">
+                      {[
+                        { number: '12+',  label: 'Years of Experience' },
+                        { number: '500+', label: 'Local Jobs Created' },
+                        { number: '30%',  label: 'Revenue Donated' },
+                        { number: '3',    label: 'Landmark Projects' },
+                      ].map((stat, i, arr) => (
+                        <div
+                          key={stat.label}
+                          style={i < arr.length - 1 ? { borderRight: '1px solid #e5e7eb', paddingRight: '2rem' } : {}}
+                        >
+                          <p className="text-3xl font-black" style={{ ...PLAYFAIR, color: GREEN }}>{stat.number}</p>
+                          <p className="text-xs text-gray-400 mt-1" style={DM}>{stat.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-6">
+                      <GetStartedBtn />
+                    </div>
+                  </>
+                )}
+
+                {/* Our Mission */}
+                {activeTab === 'Our Mission' && (
+                  <>
+                    <div className="mb-4" style={{ color: GREEN }}>
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V17H9v-2.8C7.21 13.16 6 11.22 6 9a6 6 0 0 1 6-6z"/>
+                      </svg>
+                    </div>
+                    <p className="text-xs tracking-widest mb-3" style={{ ...DM, color: GOLD }}>OUR MISSION</p>
+                    <h3 className="text-xl font-black mb-4" style={{ ...PLAYFAIR, color: GREEN }}>
+                      Turning Vision Into Reality
+                    </h3>
+                    <p className="text-sm text-gray-500 leading-relaxed mb-3" style={DM}>
+                      Our mission is to turn your vision into a breathtaking reality.
+                    </p>
+                    <p className="text-sm text-gray-500 leading-relaxed" style={DM}>
+                      To provide excellent services which promote global eco-constructions.
+                    </p>
+                  </>
+                )}
+
+                {/* Our Vision */}
+                {activeTab === 'Our Vision' && (
+                  <>
+                    <div className="mb-4" style={{ color: GOLD }}>
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                      </svg>
+                    </div>
+                    <p className="text-xs tracking-widest mb-3" style={{ ...DM, color: GOLD }}>OUR VISION</p>
+                    <p className="text-base font-semibold mb-2" style={{ ...DM, color: GOLD }}>
+                      Where Construction Rooted in Tradition
+                    </p>
+                    <p className="text-sm text-gray-400 italic mb-4" style={DM}>
+                      Creating the Wonders of Nature, Today's Future.
+                    </p>
+                    <h3 className="text-xl font-black mb-4" style={{ ...PLAYFAIR, color: GREEN }}>
+                      First Resort for Global Investments
+                    </h3>
+                    <p className="text-sm text-gray-500 leading-relaxed" style={DM}>
+                      To be the first resort for global investments, building a legacy of sustainable, community-centered construction that spans East Africa and beyond.
+                    </p>
+                  </>
+                )}
+
+              </div>
+
+              <div className="flex-1">
+                <img src={content.image} alt={content.heading} onError={onImgError}
+                  className="w-full object-cover shadow-lg"
+                  style={{ height: 320, borderRadius: 12 }} />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
-
 
       {/* ── CTA strip ── */}
       <motion.div
