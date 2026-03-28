@@ -82,7 +82,7 @@ export default function CommunityStories() {
             className="text-xs font-bold tracking-widest"
             style={{ color: '#C9A84C', fontFamily: '"DM Sans", sans-serif' }}
           >
-            REAL VOICES
+            Community Voices
           </span>
           <span className="inline-block w-10 h-0.5" style={{ backgroundColor: '#C9A84C' }} />
         </div>
