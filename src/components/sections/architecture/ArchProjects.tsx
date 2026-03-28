@@ -23,7 +23,7 @@ const portfolioProjects: PortfolioProject[] = [
     date: "2022",
     title: "Kinigi Women Village",
     description:
-      "A culture center built by HeadFam Africa in Kinigi, Musanze — empowering women through craft, income, and community beneath Sabyinyo Volcano.",
+      "A culture center built by HeadFam Africa in Kinigi, Musanze, empowering women through craft, income, and community beneath Sabyinyo Volcano.",
     tags: ["Culture Center", "Musanze"],
     route: "/projects/kinigi-womens-village",
   },
@@ -33,7 +33,7 @@ const portfolioProjects: PortfolioProject[] = [
     date: "2023",
     title: "Masaka Sweet Apartment",
     description:
-      "An eco-friendly residential apartment built by HeadFam Africa opposite Masaka Hospital in Kigali — sustainable living designed for modern Kigali.",
+      "An eco-friendly residential apartment built by HeadFam Africa opposite Masaka Hospital in Kigali, offering sustainable living designed for modern Kigali.",
     tags: ["Eco-Residential", "Kigali"],
     route: "/projects/masaka-sweet-apartment",
   },
@@ -43,7 +43,7 @@ const portfolioProjects: PortfolioProject[] = [
     date: "Ongoing",
     title: "Noble Cheer Resort",
     description:
-      "A mixed eco-resort and campsite built by HeadFam Africa on the Musanze-Rubavu road — nature-integrated construction serving guests and community.",
+      "A mixed eco-resort and campsite built by HeadFam Africa on the Musanze-Rubavu road, nature-integrated construction serving guests and community.",
     tags: ["Eco-Resort", "Musanze"],
     route: "/projects/noble-cheer-resort",
   },
@@ -53,7 +53,7 @@ const portfolioProjects: PortfolioProject[] = [
     date: "2025",
     title: "Bambino Super City",
     description:
-      "A landmark eco-resort built by HeadFam Africa in Kigali — sustainable design, local workforce, and a new standard for eco-hospitality in Rwanda.",
+      "A landmark eco-resort built by HeadFam Africa in Kigali, featuring sustainable design, a local workforce, and a new standard for eco-hospitality in Rwanda.",
     tags: ["Eco-Resort", "Kigali"],
     route: "/projects/bambino-super-city",
   },

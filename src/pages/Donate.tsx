@@ -196,7 +196,7 @@ export default function Donate() {
                 className="text-sm mb-8"
                 style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
               >
-                Every contribution — large or small — goes toward building eco-houses for low-income families near our build sites.
+                Every contribution, large or small, goes toward building eco-houses for low-income families near our build sites.
               </p>
 
               {/* Donation type toggle */}

@@ -25,7 +25,7 @@ const SERVICES: Service[] = [
     title: 'Business Info on Tourism',
     short: 'Market insights on tourism destinations',
     description:
-      'We provide detailed business information and market insights on tourism destinations — helping investors and developers make informed, responsible decisions about where and how to build.',
+      'We provide detailed business information and market insights on tourism destinations, helping investors and developers make informed, responsible decisions about where and how to build.',
     detail1: { label: "Who it's for", value: 'Investors, developers, tourism operators' },
     detail2: { label: 'Outcome', value: 'Informed investment decisions backed by local knowledge' },
     svg: (
@@ -41,7 +41,7 @@ const SERVICES: Service[] = [
     title: 'Investment Validation',
     short: 'Assess and validate responsible tourism ideas',
     description:
-      'We assess and validate investment ideas for responsible tourism — identifying opportunities, risks, and long-term viability to ensure your project creates genuine sustainable value.',
+      'We assess and validate investment ideas for responsible tourism, identifying opportunities, risks, and long-term viability to ensure your project creates genuine sustainable value.',
     detail1: { label: "Who it's for", value: 'Entrepreneurs, NGOs, impact investors' },
     detail2: { label: 'Outcome', value: 'Validated project roadmap with risk assessment' },
     svg: (
@@ -55,7 +55,7 @@ const SERVICES: Service[] = [
     title: 'Mediation',
     short: 'Bridge investors, communities and government',
     description:
-      'We mediate between players in responsible tourism ecosystems — bridging the gap between investors, communities, government bodies, and local stakeholders for aligned outcomes.',
+      'We mediate between players in responsible tourism ecosystems, bridging the gap between investors, communities, government bodies, and local stakeholders for aligned outcomes.',
     detail1: { label: "Who it's for", value: 'Multi-stakeholder projects and partnerships' },
     detail2: { label: 'Outcome', value: 'Aligned stakeholders, reduced conflict, faster progress' },
     svg: (

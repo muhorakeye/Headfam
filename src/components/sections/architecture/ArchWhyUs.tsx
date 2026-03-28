@@ -28,7 +28,7 @@ const reasons: Reason[] = [
   },
   {
     title: "Client-Centered Process",
-    body: "We design with you, not for you. Our iterative process ensures your voice shapes every stage — from first concept through to final documentation.",
+    body: "We design with you, not for you. Our iterative process ensures your voice shapes every stage, from first concept through to final documentation.",
     accent: "#2E7D32",
   },
   {
@@ -279,7 +279,7 @@ export function ArchWhyUs() {
               className="text-lg md:text-xl font-black text-white leading-snug mb-4"
               style={{ fontFamily: "Playfair Display" }}
             >
-              The HeadFam team didn't just design our lodge — they understood
+              The HeadFam team didn't just design our lodge. They understood
               our relationship with the land. The result is a structure that
               feels like it has always been there.
             </p>

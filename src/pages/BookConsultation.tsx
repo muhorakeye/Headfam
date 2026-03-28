@@ -22,7 +22,7 @@ const benefits = [
   },
   {
     title: 'No Obligation',
-    body: 'This is an exploratory session — you decide what happens next.',
+    body: 'This is an exploratory session. You decide what happens next.',
   },
   {
     title: 'Expert Guidance',

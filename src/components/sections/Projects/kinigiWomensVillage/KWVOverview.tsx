@@ -88,7 +88,7 @@ export default function KWVOverview() {
               className="text-xs mt-1"
               style={{ color: '#9ca3af', fontFamily: '"DM Sans", sans-serif' }}
             >
-              — HeadFam Africa, on Kinigi Women Village
+              HeadFam Africa, on Kinigi Women Village
             </p>
           </div>
         </motion.div>

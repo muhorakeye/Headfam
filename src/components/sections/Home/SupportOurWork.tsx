@@ -105,7 +105,7 @@ export function SupportOurWork() {
             30% of Our Income Builds Homes for Families in Need
           </h2>
           <p className="text-base text-gray-500 leading-relaxed mb-8">
-            With every project we complete, HeadFam Africa commits 30% of our income to building an eco-friendly home for one low-income family living near the construction site. We believe that building sustainably means building for everyone — and we are working toward expanding our community support to include income programs and skills engagement for the families and communities around every site we work on.
+            With every project we complete, HeadFam Africa commits 30% of our income to building an eco-friendly home for one low-income family living near the construction site. We believe that building sustainably means building for everyone, and we are working toward expanding our community support to include income programs and skills engagement for the families and communities around every site we work on.
           </p>
           <div className="flex flex-wrap gap-4">
             <PrimaryButton />

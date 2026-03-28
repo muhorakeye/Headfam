@@ -14,7 +14,7 @@ const STEPS: Step[] = [
     number: '01',
     title: 'Discovery Call',
     description:
-      'We start with a focused conversation to understand your vision, goals, site conditions, and budget. No jargon — just honest, practical dialogue.',
+      'We start with a focused conversation to understand your vision, goals, site conditions, and budget. No jargon, just honest, practical dialogue.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -37,7 +37,7 @@ const STEPS: Step[] = [
     number: '03',
     title: 'Strategy Development',
     description:
-      'We develop a tailored consultancy strategy — including investment validation, stakeholder mapping, community engagement plans, and sustainability frameworks.',
+      'We develop a tailored consultancy strategy, covering investment validation, stakeholder mapping, community engagement plans, and sustainability frameworks.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -48,7 +48,7 @@ const STEPS: Step[] = [
     number: '04',
     title: 'Stakeholder Alignment',
     description:
-      'We facilitate dialogue between all parties — investors, local communities, government, and partners — to build consensus and prevent costly misalignment.',
+      'We facilitate dialogue between all parties, including investors, local communities, government, and partners, to build consensus and prevent costly misalignment.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -105,7 +105,7 @@ export default function ConsultancyProcess() {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          From first conversation to final delivery — a clear, structured process that keeps you
+          From first conversation to final delivery: a clear, structured process that keeps you
           informed and in control at every stage.
         </p>
       </motion.div>

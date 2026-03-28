@@ -64,7 +64,7 @@ const steps: Step[] = [
     number: "03",
     title: "Design Refinement",
     description:
-      "Present concepts, gather feedback, and refine iteratively — adjusting materials, proportions, flow, and sustainability features until the design truly reflects your vision.",
+      "Present concepts, gather feedback, and refine iteratively, adjusting materials, proportions, flow, and sustainability features until the design truly reflects your vision.",
     deliverable: "Refined design drawings and material palette",
     accent: "#2E7D32",
     svg: (
@@ -86,7 +86,7 @@ const steps: Step[] = [
     number: "04",
     title: "Technical Documentation",
     description:
-      "Full technical drawings, specifications, and construction documents — giving builders everything they need to execute the vision precisely and sustainably.",
+      "Full technical drawings, specifications, and construction documents, giving builders everything they need to execute the vision precisely and sustainably.",
     deliverable: "Full construction documents and specifications",
     accent: "#C9A84C",
     svg: (
@@ -110,7 +110,7 @@ const steps: Step[] = [
     number: "05",
     title: "Construction Support",
     description:
-      "We remain involved through the build — answering technical questions, reviewing progress, and ensuring the constructed result matches the designed intent precisely.",
+      "We remain involved through the build, answering technical questions, reviewing progress, and ensuring the constructed result matches the designed intent precisely.",
     deliverable: "Site visits, RFI responses, design oversight",
     accent: "#2E7D32",
     svg: (

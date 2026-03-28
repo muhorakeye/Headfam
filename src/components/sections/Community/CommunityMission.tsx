@@ -14,7 +14,7 @@ const PILLARS = [
   {
     accentColor: '#2E7D32',
     title: 'Local Employment',
-    body: 'We prioritize hiring skilled workers from the communities surrounding each project — putting money directly into local hands and building long-term livelihoods.',
+    body: 'We prioritize hiring skilled workers from the communities surrounding each project, putting money directly into local hands and building long-term livelihoods.',
     svg: (
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -175,7 +175,7 @@ export default function CommunityMission() {
             className="text-sm font-semibold"
             style={{ color: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}
           >
-            — HeadFam Africa
+            HeadFam Africa
           </p>
           <img
             src={hero3}

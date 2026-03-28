@@ -46,7 +46,7 @@ export default function KWVGallery() {
           className="text-sm"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          Real moments from the village — the crafts, the community, and the culture.
+          Real moments from the village: the crafts, the community, and the culture.
         </p>
       </motion.div>
 

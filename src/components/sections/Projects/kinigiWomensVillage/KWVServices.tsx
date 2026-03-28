@@ -37,7 +37,7 @@ const services: Service[] = [
     title: 'Eco-Construction',
     short: 'Built with local materials and local hands',
     description:
-      'The construction of Kinigi Women Village was executed using sustainable local materials sourced from within Musanze District. HeadFam Africa hired workers from the Kinigi community — ensuring that the project created jobs before it even opened its doors. Eco-building techniques minimized waste and environmental disruption near the Sabyinyo Volcano ecosystem.',
+      'The construction of Kinigi Women Village was executed using sustainable local materials sourced from within Musanze District. HeadFam Africa hired workers from the Kinigi community, ensuring that the project created jobs before it even opened its doors. Eco-building techniques minimized waste and environmental disruption near the Sabyinyo Volcano ecosystem.',
     detail1: { label: 'Materials', value: 'Locally sourced, sustainable, low-impact' },
     detail2: { label: 'Workforce', value: '100% hired from Kinigi and surrounding areas' },
     svg: (

@@ -171,8 +171,14 @@ export function WhoWeAre() {
               We Build Sustainable Structures Across East Africa
             </h2>
 
-            <p className="text-sm text-gray-500 leading-relaxed mb-10" style={DM}>
-              Every project we undertake is designed to minimize environmental impact while maximizing community benefit. From eco-resorts to cultural centers, we build with purpose and with people.
+            <p className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>
+              HeadFam Africa's story begins in 2000, when the company was founded under the name Headren Cooperative with a simple but meaningful mission: to build affordable structures for people across Rwanda. For years, they built. But as the work grew, so did a deeper awareness.
+            </p>
+            <p className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>
+              In 2004, our founder noticed something that others were overlooking. Buildings were going up across Rwanda, but the environment was being left behind. Forests cleared, materials wasted, communities burdened with structures they could barely afford, and beneath it all, a truth that could not be ignored: when the environment suffers, people suffer too. He made a decision. He left Rwanda and traveled to Kenya to study eco-construction, to find a better way.
+            </p>
+            <p className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>
+              He returned in 2012 with answers. New techniques. Sustainable materials. A philosophy that put people and planet at the center of every build. The company was reborn as HeadFam Africa, with a mission to protect the environment, make sustainable construction affordable, use local materials, and build structures that genuinely improve lives. Today, HeadFam Africa has built 50+ eco-structures across Rwanda, created over 500 jobs for Rwandan people, and attracted international attention to what responsible construction in Africa can look like.
             </p>
 
             <DonutChart pct="85%" label="Eco-Certified Projects" />

@@ -13,7 +13,7 @@ export function ServiceDetailPage() {
       <section className="py-20 bg-stone">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="font-display text-3xl font-bold text-charcoal">
-            Service detail — content coming next phase
+            Service detail: content coming next phase
           </h2>
         </div>
       </section>
