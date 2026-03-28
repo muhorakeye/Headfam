@@ -21,7 +21,7 @@ function ImpactButton() {
   const [hovered, setHovered] = useState(false);
   return (
     <Link
-      to="/about"
+      to="/about/who-we-are"
       className="px-10 py-4 text-sm font-semibold text-white rounded-none transition-colors duration-300"
       style={{ backgroundColor: hovered ? "#333333" : "#1a1a1a" }}
       onMouseEnter={() => setHovered(true)}

@@ -7,7 +7,6 @@ import { Footer } from '../components/layout';
 
 // Route-level code splitting: each page loads only when its route is visited
 const HomePage            = lazy(() => import('../pages/HomePage').then(m => ({ default: m.HomePage })));
-const AboutPage           = lazy(() => import('../pages/AboutPage').then(m => ({ default: m.AboutPage })));
 const WhoWeAre            = lazy(() => import('../pages/about/WhoWeAre').then(m => ({ default: m.WhoWeAre })));
 const OurProfile          = lazy(() => import('../pages/about/OurProfile').then(m => ({ default: m.OurProfile })));
 const OurTeam             = lazy(() => import('../pages/about/OurTeam').then(m => ({ default: m.OurTeam })));
@@ -56,8 +55,7 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: '/', element: <HomePage /> },
-      { path: '/about', element: <AboutPage /> },
-      { path: '/about/who-we-are', element: <WhoWeAre /> },
+{ path: '/about/who-we-are', element: <WhoWeAre /> },
       { path: '/about/our-profile', element: <OurProfile /> },
       { path: '/about/our-team', element: <OurTeam /> },
       { path: '/about/our-policy', element: <OurPolicy /> },

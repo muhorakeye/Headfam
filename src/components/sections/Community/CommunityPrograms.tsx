@@ -68,7 +68,7 @@ function LearnMoreBtn() {
   const [hovered, setHovered] = useState(false)
   return (
     <Link
-      to="/about"
+      to="/about/who-we-are"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
