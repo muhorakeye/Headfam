@@ -232,7 +232,7 @@ function ContactForm() {
         <Label text="Phone Number" />
         <input
           type="tel"
-          placeholder="e.g. +250 788 000 000"
+          placeholder="e.g. +250 788 326 612"
           value={formData.phone}
           onChange={set('phone')}
           onFocus={() => setFocused('phone')}

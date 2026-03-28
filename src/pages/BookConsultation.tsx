@@ -420,7 +420,7 @@ export default function BookConsultation() {
                       <InputField
                         name="phone"
                         type="tel"
-                        placeholder="+250 788 000 000"
+                        placeholder="+250 788 326 612"
                         value={formData.phone}
                         focused={focused}
                         onChange={handleInput}

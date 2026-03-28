@@ -6,7 +6,7 @@ const stats = [
   {
     number: "30%",
     label: "Revenue Donated",
-    description: "Used to build eco-houses for low-income families near each construction site",
+    description: "Goes directly to low-income communities near each build site",
     dark: true,
   },
   {
@@ -29,11 +29,7 @@ const stats = [
   },
 ];
 
-interface StatBoxProps {
-  stat: { number: string; label: string; description: string; dark: boolean };
-}
-
-function StatBox({ stat }: StatBoxProps) {
+function StatBox({ stat }) {
   return (
     <div
       className="rounded-2xl p-6 text-center"
@@ -106,10 +102,10 @@ export function SupportOurWork() {
             Support Our Work
           </p>
           <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "#1a1a1a" }}>
-            Support Sustainable Construction in Africa
+            30% of Our Income Builds Homes for Families in Need
           </h2>
           <p className="text-base text-gray-500 leading-relaxed mb-8">
-            30% of every project goes toward building eco-houses for low-income families living near our construction sites across Rwanda.
+            With every project we complete, HeadFam Africa commits 30% of our income to building an eco-friendly home for one low-income family living near the construction site. We believe that building sustainably means building for everyone — and we are working toward expanding our community support to include income programs and skills engagement for the families and communities around every site we work on.
           </p>
           <div className="flex flex-wrap gap-4">
             <PrimaryButton />

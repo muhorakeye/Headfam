@@ -3,8 +3,8 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 BEFORE STARTING ANY TASK: Read this entire file.
-Check PROGRESS.md to understand what is done and what is next.
-Never build a feature that is already marked complete in PROGRESS.md.
+PROGRESS.md is significantly outdated. The "What Is Done" and "What Is Pending" sections in this file are authoritative. Do not rely on PROGRESS.md.
+Never build a feature that is already marked complete in this file.
 Always obey the Phase 2 integration rules in this file.
 Never use em dashes anywhere in this project.
 
@@ -70,6 +70,22 @@ src/
   index.css            # Tailwind import + @theme design tokens
   main.tsx             # React entry point, do not touch
 ```
+
+### Barrel export pattern
+
+`src/components/sections/index.ts` only re-exports the six Home sections. All other section
+components (architecture, ecoconstruction, consultancy, Projects/*, Community, About) are
+imported directly in their page files. Do not add non-Home sections to the top-level barrel.
+
+`src/components/sections/Contact/`, `Services/`, `Impact/`, and `Donate/` directories exist with
+placeholder `index.ts` files but contain no components yet.
+
+`src/components/sections/ImpactStats.tsx` at the root of sections/ is a stale leftover. The
+canonical component is `src/components/sections/Home/ImpactStats.tsx`. Do not import from
+the root-level file.
+
+`src/components/sections/About/WhoWeAreSection.tsx` is a dedicated section component used by
+the WhoWeAre page alongside the sections defined directly in `src/pages/about/WhoWeAre.tsx`.
 
 ---
 
@@ -199,7 +215,7 @@ layout or content."
 ### Service Sub-pages (all complete, under src/pages/services/)
 Routes: `/services/eco-construction`, `/services/architecture-design`, `/services/consultancy`
 Section components live in `src/components/sections/ecoconstruction/`, `src/components/sections/architecture/`, `src/components/sections/consultancy/`.
-- EcoConstruction: EcoHero (framer-motion entrance), EcoServices, EcoProcess (vertical timeline), EcoWhyUs (bento grid), EcoProjects (full-bleed image overlay cards)
+- EcoConstruction: EcoHero (framer-motion entrance), EcoServices, EcoProcess (vertical timeline), EcoWhyUs (bento grid), EcoProjects (full-bleed image overlay cards), EcoCTA
 - ArchitectureDesign: ArchHero, ArchServices, ArchProcess, ArchWhyUs, ArchProjects, ArchCTA
 - Consultancy: ConsultancyHero, ConsultancyServices, ConsultancyProcess, ConsultancyWhyUs, ConsultancyProjects, ConsultancyCTA
 
