@@ -301,23 +301,7 @@ export function WhoWeAre() {
                     {content.body.map((p, i) => (
                       <p key={i} className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>{p}</p>
                     ))}
-                    <div className="flex flex-wrap gap-8 mt-8">
-                      {[
-                        { number: '12+',  label: 'Years of Experience' },
-                        { number: '500+', label: 'Local Jobs Created' },
-                        { number: '30%',  label: 'Revenue Donated' },
-                        { number: '3',    label: 'Landmark Projects' },
-                      ].map((stat, i, arr) => (
-                        <div
-                          key={stat.label}
-                          style={i < arr.length - 1 ? { borderRight: '1px solid #e5e7eb', paddingRight: '2rem' } : {}}
-                        >
-                          <p className="text-3xl font-black" style={{ ...PLAYFAIR, color: GREEN }}>{stat.number}</p>
-                          <p className="text-xs text-gray-400 mt-1" style={DM}>{stat.label}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-6">
+<div className="mt-6">
                       <GetStartedBtn />
                     </div>
                   </>
@@ -387,36 +371,46 @@ export function WhoWeAre() {
         initial={{ opacity: 0, y: 24 }}
         viewport={{ once: true }}
       >
-        <section className="py-20 px-6 text-center" style={{ backgroundColor: DARK }}>
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={PLAYFAIR}>
-            Ready to Build Something That Lasts?
-          </h2>
-          <p className="text-base mb-8" style={{ ...DM, color: 'rgba(255,255,255,0.6)' }}>
-            Let's turn your vision into a breathtaking, sustainable reality.
-          </p>
-          <div className="flex justify-center gap-4 flex-wrap">
-            <Link
-              to="/contact"
-              className="px-10 py-4 rounded-full font-semibold text-sm text-white transition-colors duration-300"
-              style={{ backgroundColor: btn1Hovered ? GREEN : GOLD }}
-              onMouseEnter={() => setBtn1Hovered(true)}
-              onMouseLeave={() => setBtn1Hovered(false)}
-            >
-              Start a Conversation
-            </Link>
-            <Link
-              to="/services/consultancy"
-              className="px-10 py-4 rounded-full font-semibold text-sm transition-colors duration-300"
-              style={{
-                border: '2px solid white',
-                backgroundColor: btn2Hovered ? 'white' : 'transparent',
-                color: btn2Hovered ? DARK : 'white',
-              }}
-              onMouseEnter={() => setBtn2Hovered(true)}
-              onMouseLeave={() => setBtn2Hovered(false)}
-            >
-              Explore Our Services
-            </Link>
+        <section className="relative overflow-hidden py-20 px-6 text-center">
+          <img
+            src={hero0}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ zIndex: 0 }}
+            onError={(e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.style.backgroundColor = '#1a1a1a'; e.currentTarget.src = ''; }}
+          />
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.72)', zIndex: 1 }} />
+          <div className="relative" style={{ zIndex: 2 }}>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={PLAYFAIR}>
+              Ready to Build Something That Lasts?
+            </h2>
+            <p className="text-base mb-8" style={{ ...DM, color: 'rgba(255,255,255,0.6)' }}>
+              Let's turn your vision into a breathtaking, sustainable reality.
+            </p>
+            <div className="flex justify-center gap-4 flex-wrap">
+              <Link
+                to="/contact"
+                className="px-10 py-4 rounded-full font-semibold text-sm text-white transition-colors duration-300"
+                style={{ backgroundColor: btn1Hovered ? GREEN : GOLD }}
+                onMouseEnter={() => setBtn1Hovered(true)}
+                onMouseLeave={() => setBtn1Hovered(false)}
+              >
+                Start a Conversation
+              </Link>
+              <Link
+                to="/services/consultancy"
+                className="px-10 py-4 rounded-full font-semibold text-sm transition-colors duration-300"
+                style={{
+                  border: '2px solid white',
+                  backgroundColor: btn2Hovered ? 'white' : 'transparent',
+                  color: btn2Hovered ? DARK : 'white',
+                }}
+                onMouseEnter={() => setBtn2Hovered(true)}
+                onMouseLeave={() => setBtn2Hovered(false)}
+              >
+                Explore Our Services
+              </Link>
+            </div>
           </div>
         </section>
       </motion.div>
