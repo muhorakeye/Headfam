@@ -76,7 +76,7 @@ function OutlinedButton() {
   const [hovered, setHovered] = useState(false);
   return (
     <Link
-      to="/about"
+      to="/community"
       className="px-8 py-3 rounded-full font-semibold text-sm transition-colors duration-300"
       style={{
         border: "2px solid #2E7D32",
