@@ -95,7 +95,7 @@ const TAB_CONTENT: Record<Tab, TabContent> = {
 interface ValueItem {
   title: string;
   description: string;
-  svg: JSX.Element;
+  svg: React.ReactElement;
   accent: string;
 }
 

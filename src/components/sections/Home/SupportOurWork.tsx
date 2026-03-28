@@ -29,7 +29,7 @@ const stats = [
   },
 ];
 
-function StatBox({ stat }) {
+function StatBox({ stat }: { stat: { number: string; label: string; description: string; dark: boolean } }) {
   return (
     <div
       className="rounded-2xl p-6 text-center"
