@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { COMPANY } from '../../utils/constants';
 
 const ABOUT_LINKS = [
-  { label: 'Who We Are', to: '/about' },
+  { label: 'Who We Are', to: '/about/who-we-are' },
   { label: 'Community', to: '/community' },
   { label: 'Our Policy', to: '/about/our-policy' },
   { label: 'Contact Us', to: '/contact' },
@@ -73,7 +73,7 @@ export function Footer() {
 
   return (
     <footer style={{ backgroundColor: '#1a1a1a' }}>
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
 
         {/* Column 1 — Brand */}
         <div>
@@ -120,10 +120,10 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Column 3 — Services & Projects */}
+        {/* Column 3 — Services */}
         <div>
           <p className={columnHeading}>Services</p>
-          <ul className="space-y-3 mb-8">
+          <ul className="space-y-3">
             {SERVICE_LINKS.map((link) => (
               <li key={link.to}>
                 <Link to={link.to} className={footerLink}>
@@ -132,7 +132,10 @@ export function Footer() {
               </li>
             ))}
           </ul>
+        </div>
 
+        {/* Column 4 — Projects */}
+        <div>
           <p className={columnHeading}>Projects</p>
           <ul className="space-y-3">
             {PROJECT_LINKS.map((link) => (
@@ -145,7 +148,7 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Column 4 — Contact */}
+        {/* Column 5 — Contact */}
         <div>
           <p className={columnHeading}>Contact</p>
           <div className="space-y-4">
@@ -154,9 +157,14 @@ export function Footer() {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <p className="font-body text-sm text-gray-400 leading-relaxed">
+              <a
+                href="https://maps.google.com/?q=Remera+Giporoso+Kigali+Rwanda"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={footerLink}
+              >
                 Kigali, Rwanda
-              </p>
+              </a>
             </div>
 
             <div className="flex items-start gap-3">
@@ -164,7 +172,7 @@ export function Footer() {
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
-              <a href={`mailto:${COMPANY.email}`} className={footerLink}>
+              <a href="mailto:info@headfamafrica.com" className={footerLink}>
                 {COMPANY.email}
               </a>
             </div>
@@ -173,7 +181,7 @@ export function Footer() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" className="mt-0.5 flex-shrink-0">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-              <a href={`tel:${COMPANY.phone}`} className={footerLink}>
+              <a href="tel:+250788326612" className={footerLink}>
                 {COMPANY.phone}
               </a>
             </div>
@@ -183,9 +191,9 @@ export function Footer() {
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
               <a
-                href="https://wa.me/+250788326612"
+                href="https://wa.me/250788326612"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={footerLink}
               >
                 WhatsApp Us
@@ -202,7 +210,7 @@ export function Footer() {
             &copy; {year} {COMPANY.name}. All rights reserved.
           </p>
           <p className="font-body text-sm text-gray-600">
-            built by codacre
+            powered by codacre.com
           </p>
         </div>
       </div>
