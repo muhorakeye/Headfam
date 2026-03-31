@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import hero0 from '../../../assets/Hero/headfam.jpeg'
-import hero1 from '../../../assets/Hero/headfam1.jpeg'
 import hero2 from '../../../assets/Hero/headfam2.jpeg'
 import hero3 from '../../../assets/Hero/headfam3.jpeg'
 
@@ -15,15 +14,6 @@ const VP = { once: true, amount: 0.2 as const }
 const T  = { duration: 0.6, ease: 'easeOut' as const }
 
 const PROGRAMS = [
-  {
-    image: hero1,
-    badge: 'EDUCATION',
-    badgeColor: '#2E7D32',
-    title: 'School Building Initiative',
-    body: 'HeadFam Africa constructs and renovates school facilities near active build sites, giving children in underserved areas access to safe, modern learning environments.',
-    stat: '3',
-    statLabel: 'Schools Supported',
-  },
   {
     image: hero2,
     badge: 'SKILLS',
@@ -86,7 +76,7 @@ function LearnMoreBtn() {
 }
 
 export default function CommunityPrograms() {
-  const [cardHovered, setCardHovered] = useState<boolean[]>([false, false, false])
+  const [cardHovered, setCardHovered] = useState<boolean[]>([false, false])
 
   const setHover = (i: number, val: boolean) =>
     setCardHovered((prev) => prev.map((v, idx) => (idx === i ? val : v)))
@@ -184,7 +174,7 @@ export default function CommunityPrograms() {
       </motion.div>
 
       {/* ── Part 3: Programs grid ── */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         {PROGRAMS.map((program, i) => (
           <motion.div
             key={program.title}

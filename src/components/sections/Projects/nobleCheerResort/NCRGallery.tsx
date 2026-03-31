@@ -1,10 +1,10 @@
 import type { JSX } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/Hero/headfam.jpeg'
-import hero1 from '../../../../assets/Hero/headfam1.jpeg'
-import hero2 from '../../../../assets/Hero/headfam2.jpeg'
-import hero3 from '../../../../assets/Hero/headfam3.jpeg'
-import hero4 from '../../../../assets/Hero/Headfam4.jpeg'
+import hero0 from '../../../../assets/Noble/n1.png'
+import hero1 from '../../../../assets/Noble/n6.png'
+import hero2 from '../../../../assets/Noble/n4.png'
+import hero3 from '../../../../assets/Noble/n8.png'
+import hero4 from '../../../../assets/Noble/n9.png'
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'

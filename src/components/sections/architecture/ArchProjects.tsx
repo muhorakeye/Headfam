@@ -1,139 +1,81 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import hero1 from "../../../assets/Masaka/m1.jpg";
-import hero2 from "../../../assets/Noble/n1.jpeg";
-import hero3 from "../../../assets/Hero/headfam3.jpeg";
-import hero4 from "../../../assets/Bambino/B3.jpeg";
 
-interface PortfolioProject {
-  image: string;
-  category: string;
-  date: string;
-  title: string;
-  description: string;
-  tags: string[];
-  route: string;
-}
+// Bambino Design
+import bambinoBD1 from "../../../assets/Bambino/Design/BD1.jpeg";
+import bambinoBD2 from "../../../assets/Bambino/Design/BD2.jpeg";
+import bambinoBD3 from "../../../assets/Bambino/Design/BD3.jpeg";
+import bambinoBD4 from "../../../assets/Bambino/Design/BD4.jpeg";
 
-const portfolioProjects: PortfolioProject[] = [
-  {
-    image: hero1,
-    category: "Culture Center",
-    date: "2022",
-    title: "Kinigi Women Village",
-    description:
-      "A culture center built by HeadFam Africa in Kinigi, Musanze, empowering women through craft, income, and community beneath Sabyinyo Volcano.",
-    tags: ["Culture Center", "Musanze"],
-    route: "/projects/kinigi-womens-village",
-  },
-  {
-    image: hero2,
-    category: "Eco-Residential",
-    date: "2023",
-    title: "Masaka Sweet Apartment",
-    description:
-      "An eco-friendly residential apartment built by HeadFam Africa opposite Masaka Hospital in Kigali, offering sustainable living designed for modern Kigali.",
-    tags: ["Eco-Residential", "Kigali"],
-    route: "/projects/masaka-sweet-apartment",
-  },
-  {
-    image: hero3,
-    category: "Eco-Resort & Campsite",
-    date: "Ongoing",
-    title: "Noble Cheer Resort",
-    description:
-      "A mixed eco-resort and campsite built by HeadFam Africa on the Musanze-Rubavu road, nature-integrated construction serving guests and community.",
-    tags: ["Eco-Resort", "Musanze"],
-    route: "/projects/noble-cheer-resort",
-  },
-  {
-    image: hero4,
-    category: "Eco-Resort",
-    date: "2025",
-    title: "Bambino Super City",
-    description:
-      "A landmark eco-resort built by HeadFam Africa in Kigali, featuring sustainable design, a local workforce, and a new standard for eco-hospitality in Rwanda.",
-    tags: ["Eco-Resort", "Kigali"],
-    route: "/projects/bambino-super-city",
-  },
-];
+// Minak Cafe Design
+import minakD1 from "../../../assets/minakcafeedesign/Image_1.png";
+import minakD2 from "../../../assets/minakcafeedesign/Scene 1_1.png";
+import minakD3 from "../../../assets/minakcafeedesign/Scene 13.png";
+import minakD4 from "../../../assets/minakcafeedesign/Scene 15.png";
+import minakD5 from "../../../assets/minakcafeedesign/Scene 2.png";
+import minakD6 from "../../../assets/minakcafeedesign/Scene 4_1.png";
 
-const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+// KWV Design
+import kwvD1 from "../../../assets/KWV/Design/5_1.png";
+import kwvD2 from "../../../assets/KWV/Design/Scene 18_1.png";
+import kwvD3 from "../../../assets/KWV/Design/8_1.png";
+import kwvD4 from "../../../assets/KWV/Design/Image.png";
+import kwvD5 from "../../../assets/KWV/Design/Image_1.png";
+import kwvD6 from "../../../assets/KWV/Design/Image_2.png";
+
+const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = "#e8f5e9";
   e.currentTarget.src = "";
 };
 
-function PortfolioCard({ project, index }: { project: PortfolioProject; index: number }) {
-  const navigate = useNavigate();
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
-      className="relative overflow-hidden rounded-2xl cursor-pointer group h-64 sm:h-72"
-      onClick={() => navigate(project.route)}
-    >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-110"
-        onError={handleImgError}
-      />
-
-      {/* Permanent gradient overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)" }}
-      />
-
-      {/* Content block */}
-      <div className="absolute bottom-0 left-0 right-0 p-5 z-10 flex items-end justify-between gap-3">
-        <div className="flex-1">
-          <span
-            className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-2 text-white"
-            style={{ backgroundColor: "#2E7D32", fontFamily: "DM Sans" }}
-          >
-            {project.category}
-          </span>
-          <p
-            className="text-base font-black text-white leading-snug mb-1"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            {project.title}
-          </p>
-          <p
-            className="text-xs leading-relaxed"
-            style={{
-              color: "rgba(255,255,255,0.72)",
-              fontFamily: "DM Sans",
-              display: "-webkit-box",
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}
-          >
-            {project.description}
-          </p>
-        </div>
-
-        {/* Arrow button */}
-        <div className="flex-shrink-0 self-end w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C]">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </div>
-      </div>
-    </motion.div>
-  );
+interface DesignProject {
+  id: number;
+  title: string;
+  location: string;
+  category: string;
+  description: string;
+  images: string[];
 }
+
+const designProjects: DesignProject[] = [
+  {
+    id: 1,
+    title: "Bambino Eco-House Design",
+    location: "Kigali, Rwanda",
+    category: "Eco-Residential Villa",
+    description:
+      "HeadFam Africa designed the Bambino Eco-House in Kigali — a modern, sustainable residential design that blends luxury living with eco-conscious construction. The design prioritizes natural light, ventilation, and sustainable materials throughout.",
+    images: [bambinoBD1, bambinoBD2, bambinoBD3, bambinoBD4],
+  },
+  {
+    id: 2,
+    title: "Minak Cafe Design",
+    location: "Musanze, Rwanda",
+    category: "Coffee Shop & Cultural Space",
+    description:
+      "HeadFam Africa designed the Minak Cafe in Musanze — a culturally rooted coffee shop design that honors local aesthetics, uses sustainable materials, and creates a vibrant gathering space for the community and visitors alike.",
+    images: [minakD1, minakD2, minakD3, minakD4, minakD5, minakD6],
+  },
+  {
+    id: 3,
+    title: "Kinigi Women Village Design",
+    location: "Kinigi Sector, Musanze District",
+    category: "Culture Center",
+    description:
+      "HeadFam Africa designed the Kinigi Women Village — a culture center built to empower women through craft, income, and community. The design reflects Rwandan heritage, uses local materials, and creates a functional, beautiful space beneath Sabyinyo Volcano.",
+    images: [kwvD1, kwvD2, kwvD3, kwvD4, kwvD5, kwvD6],
+  },
+];
 
 export function ArchProjects() {
   const [btn1Hovered, setBtn1Hovered] = useState(false);
   const [btn2Hovered, setBtn2Hovered] = useState(false);
+  const [activeImages, setActiveImages] = useState<number[]>([0, 0, 0]);
+
+  const setActiveImage = (projectIndex: number, imgIndex: number) => {
+    setActiveImages((prev) => prev.map((v, i) => (i === projectIndex ? imgIndex : v)));
+  };
 
   return (
     <section
@@ -177,13 +119,128 @@ export function ArchProjects() {
         </p>
       </motion.div>
 
-      {/* Part 3 — Portfolio Grid */}
-      <div className="max-w-6xl mx-auto mb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {portfolioProjects.map((project, index) => (
-            <PortfolioCard key={project.title} project={project} index={index} />
-          ))}
-        </div>
+      {/* Part 3 — Design Project Cards */}
+      <div className="max-w-6xl mx-auto flex flex-col gap-10 mb-10">
+        {designProjects.map((project, projectIndex) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: projectIndex * 0.15 }}
+            className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            {/* LEFT — Image gallery */}
+            <div className="w-full md:w-1/2" style={{ backgroundColor: "#1a1a1a" }}>
+              {/* Main image */}
+              <div
+                className="relative overflow-hidden"
+                style={{ height: "280px", minHeight: "280px" }}
+              >
+                <img
+                  src={project.images[activeImages[projectIndex]]}
+                  alt={project.title}
+                  onError={onImgError}
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Thumbnail row */}
+              {project.images.length > 1 && (
+                <div className="grid grid-cols-3 gap-1 p-1">
+                  {project.images.map((img, imgIndex) => (
+                    <div
+                      key={imgIndex}
+                      className="relative overflow-hidden rounded-sm cursor-pointer"
+                      style={{
+                        height: "80px",
+                        minHeight: "80px",
+                        outline:
+                          activeImages[projectIndex] === imgIndex
+                            ? "2px solid #C9A84C"
+                            : "2px solid transparent",
+                      }}
+                      onClick={() => setActiveImage(projectIndex, imgIndex)}
+                    >
+                      <img
+                        src={img}
+                        alt={`${project.title} ${imgIndex + 1}`}
+                        onError={onImgError}
+                        className="absolute inset-0 w-full h-full object-cover object-center"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* RIGHT — Content */}
+            <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
+              <span
+                className="inline-block mb-4 text-xs font-bold px-3 py-1 rounded-full self-start"
+                style={{
+                  backgroundColor: "rgba(46,125,50,0.08)",
+                  color: "#2E7D32",
+                  fontFamily: "DM Sans",
+                }}
+              >
+                {project.category}
+              </span>
+
+              <p
+                className="text-xs font-bold tracking-widest mb-3"
+                style={{ color: "#C9A84C", fontFamily: "DM Sans" }}
+              >
+                DESIGN BY HEADFAM AFRICA
+              </p>
+
+              <h3
+                className="text-2xl font-black mb-2"
+                style={{ color: "#1a1a1a", fontFamily: "Playfair Display" }}
+              >
+                {project.title}
+              </h3>
+
+              <div className="flex items-center gap-2 mb-4">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span className="text-sm" style={{ color: "#2E7D32", fontFamily: "DM Sans" }}>
+                  {project.location}
+                </span>
+              </div>
+
+              <p
+                className="text-sm text-gray-500 leading-relaxed mb-6"
+                style={{ fontFamily: "DM Sans" }}
+              >
+                {project.description}
+              </p>
+
+              <p
+                className="text-xs text-gray-400 mb-6"
+                style={{ fontFamily: "DM Sans" }}
+              >
+                {project.images.length} design images
+              </p>
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-300 self-start"
+                style={{ color: "#2E7D32", fontFamily: "DM Sans" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#C9A84C";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#2E7D32";
+                }}
+              >
+                Discuss a Similar Design <span>&#8594;</span>
+              </Link>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
       {/* Part 4 — Bottom CTA Row */}

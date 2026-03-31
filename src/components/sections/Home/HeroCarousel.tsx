@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import img0 from "../../../assets/Hero/hero1.jpeg";
-import img1 from "../../../assets/Hero/hero2.jpeg";
+import img0 from "../../../assets/Hero/hero7.png";
+import img1 from "../../../assets/Hero/hero1.jpeg";
 import img2 from "../../../assets/Hero/hero3.jpeg";
 import img3 from "../../../assets/Hero/hero4.jpeg";
 import img4 from "../../../assets/Hero/hero6.jpg";
@@ -72,15 +72,15 @@ export default function HeroCarousel() {
         >
           <div className="flex items-center">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ marginRight: 8, flexShrink: 0 }}>
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
             <a href="tel:+250788326612" className="text-white text-xs font-semibold">+250 788 326 612</a>
           </div>
           <div className="h-px w-full" style={{ background: "rgba(255,255,255,0.3)" }} />
           <div className="flex items-center">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ marginRight: 8, flexShrink: 0 }}>
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
             </svg>
             <a href="mailto:info@headfamafrica.com" className="text-white text-xs font-semibold">info@headfamafrica.com</a>
           </div>

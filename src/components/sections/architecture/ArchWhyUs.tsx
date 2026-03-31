@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import hero1 from "../../../assets/Hero/headfam1.jpeg";
-import hero3 from "../../../assets/Hero/headfam3.jpeg";
-import hero4 from "../../../assets/Hero/Headfam4.jpeg";
+import hero1 from "../../../assets/KWV/Design/Scene 25.png";
+import hero2 from "../../../assets/KWV/Design/8_1.png";
+import hero3 from "../../../assets/KWV/Design/Scene 7_1.png";
 
 interface Reason {
   title: string;
@@ -122,7 +122,7 @@ export function ArchWhyUs() {
 
           {/* Floating bottom-right image */}
           <img
-            src={hero4}
+            src={hero2}
             alt="Architecture detail"
             className="w-44 h-32 object-cover rounded-xl shadow-lg border-4 border-white absolute -bottom-6 -right-6 z-10"
             onError={handleImgError}

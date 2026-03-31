@@ -2,17 +2,17 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import hero0 from '../../assets/Hero/headfam.jpeg';
+import hero0 from '../../assets/Noble/n2.png';
 import hero1 from '../../assets/Hero/headfam1.jpeg';
-import hero2 from '../../assets/Hero/headfam2.jpeg';
 import hero3 from '../../assets/Hero/headfam3.jpeg';
+import hero4 from '../../assets/Noble/n21.png';
 
 const PLAYFAIR = { fontFamily: "'Playfair Display', Georgia, serif" };
-const DM       = { fontFamily: "'DM Sans', system-ui, sans-serif" };
-const GREEN    = '#2E7D32';
-const GOLD     = '#C9A84C';
-const DARK     = '#1a1a1a';
-const CREAM    = '#f9f6f0';
+const DM = { fontFamily: "'DM Sans', system-ui, sans-serif" };
+const GREEN = '#2E7D32';
+const GOLD = '#C9A84C';
+const DARK = '#1a1a1a';
+const CREAM = '#f9f6f0';
 
 function onImgError(e: React.SyntheticEvent<HTMLImageElement>) {
   e.currentTarget.src = '';
@@ -23,7 +23,7 @@ function onImgError(e: React.SyntheticEvent<HTMLImageElement>) {
 function ArrowRight() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="9 18 15 12 9 6"/>
+      <polyline points="9 18 15 12 9 6" />
     </svg>
   );
 }
@@ -68,7 +68,7 @@ const TAB_CONTENT: Record<Tab, TabContent> = {
       'In 2004, our founder noticed something that others were overlooking. Buildings were going up across Rwanda, but the environment was being left behind. Forests cleared, materials wasted, communities burdened with structures they could barely afford, and beneath it all, a truth that could not be ignored: when the environment suffers, people suffer too. He made a decision. He left Rwanda and traveled to Kenya to study eco-construction, to find a better way.',
       'He returned in 2012 with answers. New techniques. Sustainable materials. A philosophy that put people and planet at the center of every build. The company was reborn as HeadFam Africa, with a mission to protect the environment, make sustainable construction affordable, use local materials, and build structures that genuinely improve lives. Today, HeadFam Africa has built 50+ eco-structures across Rwanda, created over 500 jobs for Rwandan people, and attracted international attention to what responsible construction in Africa can look like.',
     ],
-    image: hero2,
+    image: hero4,
     showCta: true,
   },
   'Our Mission': {
@@ -105,7 +105,7 @@ const VALUES: ValueItem[] = [
     description: 'We continuously push the boundaries of eco-construction, adopting new techniques, materials, and methods that set new standards for sustainable building in Africa.',
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V17H9v-2.8C7.21 13.16 6 11.22 6 9a6 6 0 0 1 6-6z"/>
+        <path d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V17H9v-2.8C7.21 13.16 6 11.22 6 9a6 6 0 0 1 6-6z" />
       </svg>
     ),
     accent: GREEN,
@@ -115,7 +115,7 @@ const VALUES: ValueItem[] = [
     description: 'Every structure we build meets rigorous safety standards. Our team is trained in eco-construction best practices that protect both people and the surrounding environment.',
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
     accent: GREEN,
@@ -125,8 +125,8 @@ const VALUES: ValueItem[] = [
     description: 'We design and build with the planet in mind, minimizing waste, conserving water, reducing carbon footprints, and using locally sourced sustainable materials on every project.',
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M17 8C8 10 5.9 16.17 3.82 22"/>
-        <path d="M9.1 17.4C9.7 14 12 11 17 8c1 5-1 9-8 9.4z"/>
+        <path d="M17 8C8 10 5.9 16.17 3.82 22" />
+        <path d="M9.1 17.4C9.7 14 12 11 17 8c1 5-1 9-8 9.4z" />
       </svg>
     ),
     accent: GOLD,
@@ -136,10 +136,10 @@ const VALUES: ValueItem[] = [
     description: 'We hire locally, involve communities in every phase, and donate 30% of project revenue to low-income families near our build sites, because construction should lift people up.',
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
     accent: GOLD,
@@ -153,10 +153,10 @@ function DonutChart({ pct, label }: { pct: string; label: string }) {
     <div className="flex items-center gap-6">
       <div className="relative flex-shrink-0" style={{ width: 110, height: 110 }}>
         <svg width="110" height="110" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" strokeWidth="8"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" strokeWidth="8" />
           <circle cx="50" cy="50" r="40" fill="none" stroke={GREEN} strokeWidth="8"
             strokeDasharray="251.2" strokeDashoffset="37.68"
-            strokeLinecap="round" transform="rotate(-90 50 50)"/>
+            strokeLinecap="round" transform="rotate(-90 50 50)" />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="text-xl font-black" style={{ ...PLAYFAIR, color: GREEN }}>{pct}</span>
@@ -318,7 +318,7 @@ export function WhoWeAre() {
                     {content.body.map((p, i) => (
                       <p key={i} className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>{p}</p>
                     ))}
-<div className="mt-6">
+                    <div className="mt-6">
                       <GetStartedBtn />
                     </div>
                   </>
@@ -329,7 +329,7 @@ export function WhoWeAre() {
                   <>
                     <div className="mb-4" style={{ color: GREEN }}>
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V17H9v-2.8C7.21 13.16 6 11.22 6 9a6 6 0 0 1 6-6z"/>
+                        <path d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V17H9v-2.8C7.21 13.16 6 11.22 6 9a6 6 0 0 1 6-6z" />
                       </svg>
                     </div>
                     <p className="text-xs tracking-widest mb-3" style={{ ...DM, color: GOLD }}>OUR MISSION</p>
@@ -350,8 +350,8 @@ export function WhoWeAre() {
                   <>
                     <div className="mb-4" style={{ color: GOLD }}>
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
                       </svg>
                     </div>
                     <p className="text-xs tracking-widest mb-3" style={{ ...DM, color: GOLD }}>OUR VISION</p>
