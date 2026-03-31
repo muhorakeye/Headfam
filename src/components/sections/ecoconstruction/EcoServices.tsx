@@ -40,6 +40,15 @@ const SERVICES: Service[] = [
   },
   {
     id: 2,
+    title: 'Villas',
+    short: 'High-end eco-friendly private residences',
+    description: 'A villa is a high-end private residence or holiday home built for comfort, exclusivity, and style. HeadFam Africa constructs eco-friendly villas using sustainable local materials and energy-efficient systems, delivering luxury living that respects the environment and uplifts the surrounding community.',
+    detail1: { label: 'Best for', value: 'Private homeowners, holiday home developers, luxury hospitality' },
+    detail2: { label: 'Key feature', value: 'Luxury finishes, sustainable materials, low carbon footprint' },
+    svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>),
+  },
+  {
+    id: 3,
     title: 'Campsites',
     short: 'Modern eco-friendly camping experiences',
     description: "HeadFam Africa's eco campsites use eco-friendly materials and renewable energy for a sustainable and modern camping experience with minimal environmental impact.",
@@ -48,7 +57,7 @@ const SERVICES: Service[] = [
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21l-8-18-8 18"/><line x1="4.8" y1="15" x2="19.2" y2="15"/></svg>),
   },
   {
-    id: 3,
+    id: 4,
     title: 'Coffee Shops',
     short: 'Culture, community and sustainability',
     description: "HeadFam Africa's Kinigi coffee shop brings together culture, community, and sustainability. It offers an authentic coffee experience in a beautiful natural setting built around local aesthetics.",
@@ -57,7 +66,7 @@ const SERVICES: Service[] = [
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>),
   },
   {
-    id: 4,
+    id: 5,
     title: 'Apartments',
     short: 'Energy-efficient sustainable living spaces',
     description: 'HeadFam Africa helps apartment complexes adopt energy-efficient technologies, waste reduction strategies, and sustainable building materials, turning units into low-impact living spaces.',
@@ -66,7 +75,7 @@ const SERVICES: Service[] = [
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>),
   },
   {
-    id: 5,
+    id: 6,
     title: 'Eco-Residential',
     short: "Low-impact homes for Rwanda's future",
     description: 'HeadFam Africa designs, builds, and maintains eco-homes that address real needs: water conservation, waste recycling, pollution control, energy generation, and lower CO2 output.',
@@ -75,7 +84,7 @@ const SERVICES: Service[] = [
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>),
   },
   {
-    id: 6,
+    id: 7,
     title: 'Landscape',
     short: 'Breathtaking eco-conscious outdoor spaces',
     description: 'HeadFam Africa designs landscapes that combine visual character with ecological care. Every space we create works with its surroundings, using native plants and water-conscious techniques.',
@@ -84,7 +93,7 @@ const SERVICES: Service[] = [
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 8C8 10 5.9 16.17 3.82 22"/><path d="M9.1 17.4C9.7 14 12 11 17 8c1 5-1 9-8 9.4z"/></svg>),
   },
   {
-    id: 7,
+    id: 8,
     title: 'Culture Centers',
     short: 'Spaces that celebrate culture responsibly',
     description: 'HeadFam Africa helps plan, design, and establish culture centers and touristic sites that celebrate local traditions and identity, built with care for the environment.',

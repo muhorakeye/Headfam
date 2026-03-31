@@ -44,6 +44,9 @@ npm run lint      # Run ESLint
 npm run preview   # Preview the production build locally
 ```
 
+Deployed to Netlify. `netlify.toml` at the repo root sets `publish = "dist"` and includes a
+`/*` -> `/index.html` (200) redirect rule so React Router handles all client-side routes.
+
 ---
 
 ## Project Structure
@@ -63,7 +66,7 @@ src/
     about/             # Sub-pages for the About section (WhoWeAre, OurProfile, OurTeam, OurPolicy)
     services/          # Full service pages (EcoConstruction, ArchitectureDesign, Consultancy)
     projects/          # Specific project detail pages (KinigiWomensVillage, MasakaSweetApartment, NobleCheerResort, BambinoSuperCity)
-  router/              # createBrowserRouter config with 23 routes and ScrollToTop in Layout
+  router/              # createBrowserRouter config with 22 routes and ScrollToTop in Layout. All pages are lazy-loaded via React.lazy + Suspense.
   types/               # TypeScript interfaces that must stay in sync with FastAPI schemas
   utils/               # constants.ts (company info, nav links), formatters.ts, api.ts
   App.tsx              # RouterProvider wrapper
@@ -182,7 +185,7 @@ layout or content."
 - Dummy data: 11 services, 3 projects, 4 team members, 4 impact stats
 - Hooks: useScrollPosition, useIntersectionObserver
 - Utils: constants.ts, formatters.ts, api.ts (axios instance ready for Phase 2)
-- Router: 23 routes total. Layout wraps all routes with Navbar, Footer, and ScrollToTop. Routes include `/book-consultation` and `/donate` (fully built), plus generic dynamic routes `/services/:serviceId` and `/projects/:projectId` (still shells).
+- Router: 22 routes total. Layout wraps all routes with Navbar, Footer, and ScrollToTop. Routes include `/book-consultation` and `/donate` (fully built), plus generic dynamic routes `/services/:serviceId` and `/projects/:projectId` (still shells). Note: `AboutPage.tsx` exists in `src/pages/` as a placeholder shell but has no router entry -- there is no `/about` top-level route.
 - Favicon: changed to logo.png
 
 ### Components

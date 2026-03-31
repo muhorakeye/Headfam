@@ -218,6 +218,23 @@ export function WhoWeAre() {
             <p className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>
               Our team values environmental stewardship, preserving natural beauty and culture through the use of sustainable local materials. We are more than builders, we are creators of sustainable dreams, shaping a greener future.
             </p>
+            <p className="text-sm text-gray-500 leading-relaxed mb-4" style={DM}>
+              HeadFam Africa is also specialized in building in some of Rwanda's most challenging and breathtaking environments, dense forests and high mountain terrain. We design and construct structures that work with these extreme natural settings, preserving their beauty while creating spaces that people and communities can truly benefit from.
+            </p>
+            <div className="flex flex-wrap gap-3 mt-2 mb-6">
+              <span
+                className="text-xs font-bold px-4 py-2 rounded-full"
+                style={{ backgroundColor: 'rgba(46,125,50,0.08)', color: '#2E7D32' }}
+              >
+                Forest Construction
+              </span>
+              <span
+                className="text-xs font-bold px-4 py-2 rounded-full"
+                style={{ backgroundColor: 'rgba(201,168,76,0.1)', color: '#C9A84C' }}
+              >
+                High Mountain Building
+              </span>
+            </div>
 
             <DonutChart pct="85%" label="Eco-Certified Projects" />
           </div>

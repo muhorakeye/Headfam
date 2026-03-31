@@ -14,7 +14,7 @@ const services: Service[] = [
   {
     title: 'Resorts',
     description:
-      'Eco-friendly resorts with nature views that promote responsible travel, prioritizing water management and conservation for a luxurious guest experience.',
+      'A resort is a place designed for relaxation, recreation, and accommodation. HeadFam Africa builds eco-friendly resorts that blend with nature, prioritize water conservation, and offer guests a luxurious yet responsible experience.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -25,7 +25,7 @@ const services: Service[] = [
   {
     title: 'Lodges',
     description:
-      'Eco lodges that blend sustainable living into a serene retreat, creating an unforgettable and eco-friendly experience for guests.',
+      'A lodge is a small, rustic accommodation set within a natural environment. HeadFam Africa\'s eco-lodges are built to benefit local communities, educate guests about conservation, and offer an authentic connection to the surrounding landscape.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <path d="M4 22V12L12 4l8 8v10" />
@@ -35,9 +35,21 @@ const services: Service[] = [
     ),
   },
   {
+    title: 'Villas',
+    description:
+      'A villa is a high-end, private residence or holiday home designed for comfort and exclusivity. HeadFam Africa builds eco-friendly villas using sustainable local materials, combining luxury living with a minimal environmental footprint.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
+        <path d="M1 22V11L12 2l11 9v11" />
+        <rect x="8" y="14" width="8" height="8" />
+        <line x1="12" y1="14" x2="12" y2="22" />
+      </svg>
+    ),
+  },
+  {
     title: 'Campsites',
     description:
-      'Eco-friendly materials and renewable energy for a sustainable and modern camping experience with minimal environmental impact.',
+      'A campsite is an outdoor space equipped for temporary accommodation. HeadFam Africa designs eco-campsites using renewable energy and eco-friendly materials, creating modern, sustainable camping experiences with minimal impact on nature.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <polygon points="12 2 2 19 22 19" />
@@ -49,7 +61,7 @@ const services: Service[] = [
   {
     title: 'Coffee Shops',
     description:
-      'Culture, community, and sustainability combined an authentic coffee experience in a gorgeous natural setting inspired by local aesthetics.',
+      'A coffee shop is a community gathering space rooted in culture and conversation. HeadFam Africa builds coffee shops that honor local aesthetics, use sustainable materials, and create vibrant spaces for community connection and tourism.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
@@ -63,7 +75,7 @@ const services: Service[] = [
   {
     title: 'Apartments',
     description:
-      'Energy-efficient technologies, waste reduction strategies, and sustainable building materials that transform apartments into responsible living spaces.',
+      'An apartment is a self-contained residential unit within a larger building. HeadFam Africa transforms apartments into eco-friendly living spaces, integrating energy-efficient technologies, waste reduction strategies, and sustainable materials.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -77,7 +89,7 @@ const services: Service[] = [
   {
     title: 'Eco-Residential',
     description:
-      'Environmentally low-impact homes built using materials and technology that reduce carbon footprint, conserve water, and lower energy consumption.',
+      'An eco-home is an environmentally low-impact residence designed to reduce carbon footprint and energy consumption. HeadFam Africa builds eco-homes that conserve water, reuse materials, reduce pollution, and generate clean energy.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <path d="M12 22s8-5 8-12A8 8 0 0 0 4 10c0 7 8 12 8 12z" />
@@ -88,7 +100,7 @@ const services: Service[] = [
   {
     title: 'Landscape',
     description:
-      'Outdoor spaces designed to fit their surroundings, with a focus on water conservation, native plants, and eco-friendly materials.',
+      'Landscape design is the art of shaping outdoor spaces to harmonize with their natural surroundings. HeadFam Africa creates breathtaking eco-conscious landscapes emphasizing native plants, water conservation, and environmentally friendly materials.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <path d="M12 22V12" />
@@ -101,7 +113,7 @@ const services: Service[] = [
   {
     title: 'Culture Centers',
     description:
-      'Planning, design, and establishment of culture centers that celebrate local traditions and heritage, built with care for the environment.',
+      'A culture center is a space that promotes and preserves the arts, heritage, and traditions of a community. HeadFam Africa designs and builds culture centers that celebrate local identity in an environmentally responsible and inclusive way.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-forest">
         <line x1="2" y1="20" x2="22" y2="20" />

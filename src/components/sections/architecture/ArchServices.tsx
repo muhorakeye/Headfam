@@ -40,6 +40,15 @@ const SERVICES: Service[] = [
   },
   {
     id: 2,
+    title: 'Villa Design',
+    short: 'Luxury eco-villa architecture',
+    description: 'A villa is a premium private residence designed for exclusivity, comfort, and connection to its surroundings. HeadFam Africa designs eco-friendly villas that deliver luxury aesthetics while using sustainable materials, passive cooling systems, and energy-efficient features, creating homes that are as responsible as they are beautiful.',
+    detail1: { label: 'Best for', value: 'Private clients, holiday home developers, luxury hospitality' },
+    detail2: { label: 'Key feature', value: 'Luxury design, sustainable materials, energy efficiency' },
+    svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>),
+  },
+  {
+    id: 3,
     title: 'Cultural Center Design',
     short: 'Spaces that celebrate culture and heritage',
     description: 'We design culture centers that celebrate local traditions and heritage. These are spaces that are inclusive, educational, and architecturally meaningful.',
@@ -48,7 +57,7 @@ const SERVICES: Service[] = [
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>),
   },
   {
-    id: 3,
+    id: 4,
     title: 'Residential Design',
     short: "Eco-homes built for Rwanda's future",
     description: 'We design eco-homes that are environmentally low-impact, using materials and technology that reduce carbon footprint, conserve water, recycle waste, control pollution, and lower energy consumption.',
@@ -57,7 +66,7 @@ const SERVICES: Service[] = [
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>),
   },
   {
-    id: 4,
+    id: 5,
     title: 'Landscape Architecture',
     short: 'Outdoor spaces in harmony with nature',
     description: 'We combine artistic vision with ecological sensitivity to design landscapes that sit well within their surroundings, whether a private garden, public park, or corporate campus, with a focus on water conservation and native plants.',
@@ -66,7 +75,7 @@ const SERVICES: Service[] = [
     svg: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>),
   },
   {
-    id: 5,
+    id: 6,
     title: 'Campsite & Coffee Shop Design',
     short: 'Functional spaces with cultural character',
     description: 'We design eco-campsites and coffee shops that use sustainable materials and renewable energy, creating authentic, culturally inspired spaces that serve both community and tourism.',
