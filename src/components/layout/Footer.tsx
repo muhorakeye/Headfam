@@ -158,12 +158,12 @@ export function Footer() {
                 <circle cx="12" cy="10" r="3" />
               </svg>
               <a
-                href="https://maps.google.com/?q=Remera+Giporoso+Kigali+Rwanda"
+                href="https://maps.google.com/?q=Musanze+Rwanda"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={footerLink}
               >
-                Kigali, Rwanda
+                Musanze, Rwanda
               </a>
             </div>
 

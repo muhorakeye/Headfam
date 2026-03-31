@@ -64,11 +64,11 @@ export default function HeroCarousel() {
         </p>
       </div>
 
-      {/* Contact info strip — visible only on the last slide */}
-      {current === slides.length - 1 && (
+      {/* Contact info panel — visible on first and last slides, pinned to right */}
+      {(current === 0 || current === slides.length - 1) && (
         <div
-          className="absolute bottom-8 left-1/2 z-20 flex items-center gap-6 flex-wrap justify-center rounded-full px-6 py-3"
-          style={{ transform: "translateX(-50%)", background: "rgba(0,0,0,0.55)" }}
+          className="absolute bottom-8 right-6 md:right-10 z-20 flex flex-col gap-3 rounded-2xl px-5 py-4"
+          style={{ backgroundColor: "#2E7D32" }}
         >
           <div className="flex items-center">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ marginRight: 8, flexShrink: 0 }}>
@@ -76,7 +76,7 @@ export default function HeroCarousel() {
             </svg>
             <a href="tel:+250788326612" className="text-white text-xs font-semibold">+250 788 326 612</a>
           </div>
-          <div className="w-px h-4" style={{ background: "rgba(255,255,255,0.3)" }} />
+          <div className="h-px w-full" style={{ background: "rgba(255,255,255,0.3)" }} />
           <div className="flex items-center">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ marginRight: 8, flexShrink: 0 }}>
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>

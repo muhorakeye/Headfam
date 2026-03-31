@@ -54,8 +54,8 @@ const contactItems: ContactItem[] = [
   },
   {
     label: 'Address',
-    values: ['Remera Giporoso – Airport Road', 'Kigali, Rwanda'],
-    href: ['https://maps.google.com/?q=Remera+Giporoso+Kigali+Rwanda'],
+    values: ['Musanze', 'Rwanda'],
+    href: ['https://maps.google.com/?q=Musanze+Rwanda'],
     iconStroke: '#2E7D32',
     svg: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
@@ -463,11 +463,11 @@ export function ContactPage() {
               <circle cx="12" cy="10" r="3"/>
             </svg>
             <p className="text-sm font-semibold" style={{ color: '#1a1a1a', fontFamily: 'DM Sans' }}>
-              Remera Giporoso – Airport Road, Kigali, Rwanda
+              Musanze, Rwanda
             </p>
           </div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63800.0!2d30.0588!3d-1.9441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4afc87e60c1%3A0xd29b4b7e4d2e3e4!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63799.0!2d29.6333!3d-1.4990!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dc52bce53e26c5%3A0x7a72e8a6e3b3d7a0!2sMusanze%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1700000000000"
             width="100%"
             height="400"
             style={{ border: 0, display: 'block' }}

@@ -4,7 +4,7 @@ export const COMPANY = {
   tagline: 'Eco-Construction for Community Development',
   email: 'info@headfamafrica.com',
   phone: '+250 788 326 612',
-  address: 'KG 123 St, Kigali, Rwanda',
+  address: 'Musanze, Rwanda',
   foundedYear: 2012,
 } as const;
 
