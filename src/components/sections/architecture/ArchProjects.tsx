@@ -18,8 +18,8 @@ import minakD6 from "../../../assets/minakcafeedesign/Scene 4_1.png";
 
 // KWV Design
 import kwvD1 from "../../../assets/KWV/Design/5_1.png";
-import kwvD2 from "../../../assets/KWV/Design/Scene 18_1.png";
-import kwvD3 from "../../../assets/KWV/Design/8_1.png";
+import kwvD2 from "../../../assets/KWV/Design/Scene 17_1.png";
+import kwvD3 from "../../../assets/KWV/Design/Scene 22_1.png";
 import kwvD4 from "../../../assets/KWV/Design/Image.png";
 import kwvD5 from "../../../assets/KWV/Design/Image_1.png";
 import kwvD6 from "../../../assets/KWV/Design/Image_2.png";

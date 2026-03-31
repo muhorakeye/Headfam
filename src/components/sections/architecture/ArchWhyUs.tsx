@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import hero1 from "../../../assets/KWV/Design/Scene 25.png";
-import hero2 from "../../../assets/KWV/Design/8_1.png";
+import hero1 from "../../../assets/KWV/Design/Scene 23.png";
+import hero2 from "../../../assets/KWV/Design/Scene 26.png";
 import hero3 from "../../../assets/KWV/Design/Scene 7_1.png";
 
 interface Reason {
