@@ -4,10 +4,13 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import hero0 from '../../../assets/Hero/headfam.jpeg'
-import hero1 from '../../../assets/Masaka/m1.jpg'
-import hero2 from '../../../assets/Noble/n1.jpeg'
-import hero3 from '../../../assets/Bambino/B3.jpeg'
+
+const ourWork = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k8_vfmg9b.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055885/m20_tdgbcd.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057749/n3_iiszhz.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B4_k7sh1f.jpg",
+]
 
 interface Project {
   id: number
@@ -26,7 +29,7 @@ const projects: Project[] = [
     date: '2022',
     title: 'Kinigi Women Village',
     description: 'A culture center built by HeadFam Africa in Kinigi, Musanze empowering women through craft, income, and community beneath Sabyinyo Volcano.',
-    image: hero0,
+    image: ourWork[0],
     route: '/projects/kinigi-womens-village',
   },
   {
@@ -35,7 +38,7 @@ const projects: Project[] = [
     date: '2023',
     title: 'Masaka Sweet Apartment',
     description: 'An eco-friendly residential apartment built by HeadFam Africa opposite Masaka Hospital in Kigali sustainable living designed for modern Kigali.',
-    image: hero1,
+    image: ourWork[1],
     route: '/projects/masaka-sweet-apartment',
   },
   {
@@ -44,7 +47,7 @@ const projects: Project[] = [
     date: 'Ongoing',
     title: 'Noble Cheer Resort',
     description: 'A mixed eco-resort and campsite built by HeadFam Africa on the Musanze-Rubavu road nature-integrated construction serving guests and community.',
-    image: hero2,
+    image: ourWork[2],
     route: '/projects/noble-cheer-resort',
   },
   {
@@ -53,7 +56,7 @@ const projects: Project[] = [
     date: '2025',
     title: 'Bambino Super City',
     description: 'A landmark eco-resort built by HeadFam Africa in Kigali sustainable design, local workforce, and a new standard for eco-hospitality in Rwanda.',
-    image: hero3,
+    image: ourWork[3],
     route: '/projects/bambino-super-city',
   },
 ]

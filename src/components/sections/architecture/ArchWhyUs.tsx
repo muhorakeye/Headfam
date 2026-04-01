@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import hero1 from "../../../assets/KWV/Design/Scene 23.png";
-import hero2 from "../../../assets/KWV/Design/Scene 26.png";
-import hero3 from "../../../assets/KWV/Design/Scene 7_1.png";
+
+const archWhyUs = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775061231/Scene_9_m1yky0.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775060843/Scene_7_1_nziy40.png",
+]
 
 interface Reason {
   title: string;
@@ -114,7 +116,7 @@ export function ArchWhyUs() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <img
-            src={hero1}
+            src={archWhyUs[0]}
             alt="Architecture project"
             className="w-full h-80 object-cover rounded-2xl shadow-xl"
             onError={handleImgError}
@@ -122,7 +124,7 @@ export function ArchWhyUs() {
 
           {/* Floating bottom-right image */}
           <img
-            src={hero2}
+            src={archWhyUs[1]}
             alt="Architecture detail"
             className="w-44 h-32 object-cover rounded-xl shadow-lg border-4 border-white absolute -bottom-6 -right-6 z-10"
             onError={handleImgError}
@@ -201,7 +203,7 @@ export function ArchWhyUs() {
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <img
-          src={hero3}
+          src={archWhyUs[1]}
           alt="HeadFam architecture"
           className="w-full h-64 object-cover"
           onError={handleImgError}

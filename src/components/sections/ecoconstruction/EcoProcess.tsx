@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
-import hero2 from '../../../assets/Hero/headfam2.jpeg'
-import hero3 from '../../../assets/Hero/headfam3.jpeg'
+
+const ecoProcess = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059730/ki1_hqfkkf.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B4_k7sh1f.jpg",
+]
 
 const VP = { once: true, amount: 0.2 as const }
 const T = { duration: 0.6, ease: 'easeOut' as const }
@@ -178,7 +181,7 @@ export default function EcoProcess() {
           transition={T}
         >
           <img
-            src={hero2}
+            src={ecoProcess[0]}
             alt="HeadFam Africa eco-construction"
             onError={onImgError}
             className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-xl"
@@ -186,7 +189,7 @@ export default function EcoProcess() {
 
           {/* Floating second image — hidden on mobile */}
           <img
-            src={hero3}
+            src={ecoProcess[1]}
             alt="HeadFam Africa project"
             onError={onImgError}
             className="absolute z-10 w-44 h-32 object-cover rounded-xl shadow-lg hidden md:block"

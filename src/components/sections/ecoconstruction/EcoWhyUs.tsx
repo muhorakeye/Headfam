@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../assets/Hero/headfam.jpeg'
-import hero4 from '../../../assets/Hero/Headfam4.jpeg'
+
+const ecoWhyUs = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k24_h6owx4.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k19_mw6qtp.jpg",
+]
 
 const VP = { once: true, amount: 0.2 as const }
 const T = { duration: 0.6, ease: 'easeOut' as const }
@@ -124,7 +127,7 @@ export default function EcoWhyUs() {
           transition={{ ...T, delay: 0.1 }}
         >
           <img
-            src={hero0}
+            src={ecoWhyUs[0]}
             alt="HeadFam Africa eco-construction"
             onError={onImgError}
             className="w-full h-full min-h-48 object-cover"
@@ -168,7 +171,7 @@ export default function EcoWhyUs() {
           transition={{ ...T, delay: 0 }}
         >
           <img
-            src={hero4}
+            src={ecoWhyUs[1]}
             alt="HeadFam Africa local workforce"
             onError={onImgError}
             className="w-full h-64 object-cover"

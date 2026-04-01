@@ -1,11 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
-import img0 from "../../../assets/Hero/hero7.png";
-import img1 from "../../../assets/Hero/hero1.jpeg";
-import img2 from "../../../assets/Hero/hero3.jpeg";
-import img3 from "../../../assets/Hero/hero4.jpeg";
-import img4 from "../../../assets/Hero/hero6.jpg";
 
-const slides = [img0, img1, img2, img3, img4];
+const slides = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057751/n4_ye91e4.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B4_k7sh1f.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k18_gr7a5p.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055888/m23_rtlkds.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059735/kn6_i4acxm.jpg",
+];
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);

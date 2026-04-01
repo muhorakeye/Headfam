@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import hero1 from '../../../assets/Masaka/m1.jpg'
-import hero2 from '../../../assets/Noble/n1.jpeg'
-import hero3 from '../../../assets/Hero/headfam3.jpeg'
-import hero4 from '../../../assets/Bambino/B3.jpeg'
+
+const ecoProjects = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k8_vfmg9b.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055885/m20_tdgbcd.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057749/n3_iiszhz.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055741/m0_x9qm6y.jpg",
+]
 
 const VP  = { once: true, amount: 0.2 as const }
 const VP1 = { once: true, amount: 0.1 as const }
@@ -27,7 +30,7 @@ interface MosaicProject {
 
 const MOSAIC: MosaicProject[] = [
   {
-    image: hero1,
+    image: ecoProjects[0],
     category: 'Culture Center',
     date: '2022',
     title: 'Kinigi Women Village',
@@ -36,7 +39,7 @@ const MOSAIC: MosaicProject[] = [
     route: '/projects/kinigi-womens-village',
   },
   {
-    image: hero2,
+    image: ecoProjects[1],
     category: 'Eco-Residential',
     date: '2023',
     title: 'Masaka Sweet Apartment',
@@ -45,7 +48,7 @@ const MOSAIC: MosaicProject[] = [
     route: '/projects/masaka-sweet-apartment',
   },
   {
-    image: hero3,
+    image: ecoProjects[2],
     category: 'Eco-Resort & Campsite',
     date: 'Ongoing',
     title: 'Noble Cheer Resort',
@@ -54,7 +57,7 @@ const MOSAIC: MosaicProject[] = [
     route: '/projects/noble-cheer-resort',
   },
   {
-    image: hero4,
+    image: ecoProjects[3],
     category: 'Eco-Resort',
     date: '2025',
     title: 'Bambino Super City',

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import hero3 from '../../../assets/Hero/headfam3.jpeg'
+
+const ecoCTA = "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057743/n6_upviec.png"
 
 const VP = { once: true, amount: 0.2 as const }
 
@@ -34,7 +35,7 @@ export default function EcoCTA() {
         transition={{ duration: 0.9, ease: 'easeOut' as const }}
       >
         <img
-          src={hero3}
+          src={ecoCTA}
           alt="HeadFam Africa eco-construction"
           onError={onImgError}
           className="w-full object-cover h-80 md:h-[480px]"
