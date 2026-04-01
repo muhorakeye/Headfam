@@ -1,8 +1,18 @@
 import type { JSX } from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/Noble/n2.png'
-import hero1 from '../../../../assets/Noble/n1.jpeg'
+
+const noble = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057763/n21_orllvq.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057752/n2_fafh2h.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057751/n4_ye91e4.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057751/n1_lmhigv.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057749/n3_iiszhz.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057743/n6_upviec.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057744/n5_ux7har.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057757/n10_ivdxmn.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057756/n9_fcvi3r.png",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -30,7 +40,7 @@ export default function NCRHero(): JSX.Element {
     >
       {/* Background image */}
       <img
-        src={hero0}
+        src={noble[1]}
         alt="Noble Cheer Resort"
         onError={onImgError}
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
@@ -47,7 +57,7 @@ export default function NCRHero(): JSX.Element {
 
       {/* Floating thumbnail */}
       <img
-        src={hero1}
+        src={noble[3]}
         alt="Noble Cheer Resort detail"
         onError={onImgError}
         className="absolute bottom-8 right-8 z-20 w-44 h-32 object-cover rounded-xl shadow-2xl border-4 border-white"

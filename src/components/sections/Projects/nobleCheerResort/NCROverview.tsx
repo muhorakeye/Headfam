@@ -1,7 +1,17 @@
 import type { JSX } from 'react'
 import { motion } from 'framer-motion'
-import hero2 from '../../../../assets/Noble/n3.png'
-import hero3 from '../../../../assets/Noble/n4.png'
+
+const noble = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057763/n21_orllvq.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057752/n2_fafh2h.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057751/n4_ye91e4.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057751/n1_lmhigv.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057749/n3_iiszhz.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057743/n6_upviec.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057744/n5_ux7har.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057757/n10_ivdxmn.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057756/n9_fcvi3r.png",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -97,7 +107,7 @@ export default function NCROverview(): JSX.Element {
           transition={T}
         >
           <img
-            src={hero2}
+            src={noble[4]}
             alt="Noble Cheer Resort"
             onError={onImgError}
             className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-xl"
@@ -131,7 +141,7 @@ export default function NCROverview(): JSX.Element {
 
           {/* Floating thumbnail — hidden on mobile to prevent overflow */}
           <img
-            src={hero3}
+            src={noble[2]}
             alt="Noble Cheer Resort detail"
             onError={onImgError}
             className="hidden md:block absolute -top-6 -right-6 z-10 w-36 h-24 object-cover rounded-xl shadow-lg border-4 border-white"

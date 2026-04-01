@@ -1,10 +1,17 @@
 import type { JSX } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/Noble/n1.png'
-import hero1 from '../../../../assets/Noble/n6.png'
-import hero2 from '../../../../assets/Noble/n4.png'
-import hero3 from '../../../../assets/Noble/n8.png'
-import hero4 from '../../../../assets/Noble/n9.png'
+
+const noble = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057763/n21_orllvq.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057752/n2_fafh2h.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057751/n4_ye91e4.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057751/n1_lmhigv.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057749/n3_iiszhz.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057743/n6_upviec.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057744/n5_ux7har.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057757/n10_ivdxmn.png",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775057756/n9_fcvi3r.png",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -65,7 +72,7 @@ export default function NCRGallery(): JSX.Element {
             {/* Row 1 — full width */}
             <div className="col-span-2 relative overflow-hidden rounded-xl group" style={{ height: "280px", minHeight: "280px" }}>
               <img
-                src={hero0}
+                src={noble[3]}
                 alt="Noble Cheer Resort overview"
                 onError={onImgError}
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -74,7 +81,7 @@ export default function NCRGallery(): JSX.Element {
             </div>
 
             {/* Row 2 */}
-            {[hero1, hero2].map((src, i) => (
+            {[noble[5], noble[2]].map((src, i) => (
               <div key={`r2-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Noble Cheer Resort ${i + 2}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
@@ -82,7 +89,7 @@ export default function NCRGallery(): JSX.Element {
             ))}
 
             {/* Row 3 */}
-            {[hero3, hero4].map((src, i) => (
+            {[noble[7], noble[8]].map((src, i) => (
               <div key={`r3-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Noble Cheer Resort ${i + 4}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
