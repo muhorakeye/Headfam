@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import hero0 from '../../../assets/Hero/headfam.webp'
-import hero2 from '../../../assets/Hero/headfam2.webp'
-import hero3 from '../../../assets/Hero/headfam3.webp'
+
+const programImages = {
+  featured: "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059727/k5_cee81w.jpg",
+  skills:   "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k21_h5kxtu.jpg",
+  employment: "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058760/B11_zlkk5h.jpg",
+}
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -15,7 +18,7 @@ const T  = { duration: 0.6, ease: 'easeOut' as const }
 
 const PROGRAMS = [
   {
-    image: hero2,
+    image: programImages.skills,
     badge: 'SKILLS',
     badgeColor: '#C9A84C',
     title: 'Construction Skills Training',
@@ -24,7 +27,7 @@ const PROGRAMS = [
     statLabel: 'People Trained',
   },
   {
-    image: hero3,
+    image: programImages.employment,
     badge: 'LIVELIHOODS',
     badgeColor: '#2E7D32',
     title: 'Local Employment Program',
@@ -123,8 +126,8 @@ export default function CommunityPrograms() {
         <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-lg">
 
           <img
-            src={hero0}
-            alt="Kinigi Women's Center"
+            src={programImages.featured}
+            alt="Kinigi Women Village"
             onError={onImgError}
             className="w-full md:w-2/5 h-64 md:h-auto object-cover"
           />
@@ -141,14 +144,14 @@ export default function CommunityPrograms() {
               className="text-2xl md:text-3xl font-black text-white mb-4"
               style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
-              Kinigi Women's Center
+              Kinigi Women Village
             </h3>
 
             <p
               className="text-sm leading-relaxed mb-6"
               style={{ color: 'rgba(255,255,255,0.8)', fontFamily: '"DM Sans", sans-serif' }}
             >
-              Now officially open, the Kinigi Women's Center is a landmark eco-construction project that empowers women through skills training, income-generating activities, and a safe community gathering space built with sustainable local materials.
+              Now officially open, the Kinigi Women Village is a landmark eco-construction project that empowers women through skills training, income-generating activities, and a safe community gathering space built with sustainable local materials.
             </p>
 
             <div className="flex flex-wrap gap-6 mb-8">
