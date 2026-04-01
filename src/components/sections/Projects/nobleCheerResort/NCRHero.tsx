@@ -1,8 +1,8 @@
 import type { JSX } from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/Noble/n1.jpeg'
-import hero1 from '../../../../assets/Noble/n2.png'
+import hero0 from '../../../../assets/Noble/n2.png'
+import hero1 from '../../../../assets/Noble/n1.jpeg'
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
