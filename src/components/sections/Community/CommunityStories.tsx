@@ -114,7 +114,7 @@ export default function CommunityStories() {
           {STORIES.map((story, i) => (
             <div
               key={story.name}
-              className="p-10 md:p-14"
+              className="p-6 md:p-10"
               style={{
                 backgroundColor: story.bg,
                 opacity: i === currentIndex ? 1 : 0,
@@ -132,7 +132,7 @@ export default function CommunityStories() {
               </div>
 
               <p
-                className="text-xl md:text-2xl font-black text-white leading-snug mb-8"
+                className="text-base md:text-xl font-black text-white leading-snug mb-8"
                 style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
               >
                 {story.quote}

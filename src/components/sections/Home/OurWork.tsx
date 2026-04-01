@@ -76,7 +76,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
-      className="relative overflow-hidden rounded-2xl cursor-pointer group h-64 sm:h-72"
+      className="relative overflow-hidden rounded-2xl cursor-pointer group h-52 md:h-64"
       onClick={() => navigate(project.route)}
     >
       <img
@@ -159,7 +159,7 @@ export function OurWork() {
         Real projects. Real impact. Built to last.
       </p>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}

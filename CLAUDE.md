@@ -195,10 +195,12 @@ layout or content."
 - Favicon: changed to logo.png
 
 ### Components
-- Navbar: always white (not transparent), shadow appears after 80px scroll, Services AND About
-  dropdowns on hover, mobile animated menu, active link underline, aria attributes.
+- Navbar: always white (not transparent), shadow appears after 80px scroll, Services, About,
+  AND Projects dropdowns on hover (all three defined as constants in Navbar.tsx), mobile animated
+  menu, active link underline, aria attributes.
   "Book a Consultation" and "Donate" are hardcoded CTAs in Navbar.tsx — they are NOT in
-  `NAV_LINKS`. Add standard nav links to `constants.ts`; touch Navbar.tsx only for CTA changes.
+  `NAV_LINKS`. Add standard nav links to `constants.ts`; touch Navbar.tsx only for CTA or
+  dropdown item changes.
 - Footer: 4-column responsive (1 col mobile, 2 col tablet, 4 col desktop), square social
   icon buttons, all internal links use react-router-dom Link
 
@@ -218,7 +220,7 @@ layout or content."
 ### About Sub-pages (all complete, under src/pages/about/)
 - WhoWeAre: hero, Work Performance section, tabbed History/Mission/Vision, timeline, CTA strip
 - OurProfile: hero, mission/vision text, 3 key stats
-- OurTeam: hero, placeholder cards grid
+- OurTeam: hero, team cards grid with real member data (Managing Director, Architecture Designer, IT, Engineering Team)
 - OurPolicy: hero, 3 policy cards with left green border
 
 ### Service Sub-pages (all complete, under src/pages/services/)

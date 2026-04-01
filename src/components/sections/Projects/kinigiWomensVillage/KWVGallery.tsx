@@ -78,11 +78,11 @@ export default function KWVGallery() {
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
 
             {/* First image — full width */}
             <div
-              className="relative overflow-hidden rounded-xl group col-span-2"
+              className="relative overflow-hidden rounded-xl group col-span-1 md:col-span-2"
               style={{ height: "280px", minHeight: "280px" }}
             >
               <img

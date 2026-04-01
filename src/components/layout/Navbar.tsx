@@ -62,7 +62,7 @@ export function Navbar() {
             <img
               src="/logo.png"
               alt="HeadFam Africa"
-              className="h-14 md:h-16 w-auto"
+              className="h-14 md:h-16 w-auto max-w-[140px]"
             />
           </Link>
         </div>
@@ -240,7 +240,7 @@ export function Navbar() {
           {/* Close button */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
             <Link to="/" onClick={() => setMenuOpen(false)}>
-              <img src="/logo.png" alt="HeadFam Africa" className="h-10 w-auto" />
+              <img src="/logo.png" alt="HeadFam Africa" className="h-10 w-auto max-w-[140px]" />
             </Link>
             <button onClick={() => setMenuOpen(false)} aria-label="Close menu" className="p-2 text-charcoal">
               <span className="text-2xl leading-none">✕</span>

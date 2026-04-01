@@ -63,14 +63,14 @@ interface StatCardProps {
 function StatCard({ stat, index, started }: StatCardProps) {
   return (
     <div
-      className="text-center transition-all duration-700"
+      className="text-center p-4 md:p-8 transition-all duration-700"
       style={{
         opacity: started ? 1 : 0,
         transform: started ? 'translateY(0)' : 'translateY(24px)',
         transitionDelay: `${index * 120}ms`,
       }}
     >
-      <p className="font-mono text-4xl md:text-5xl font-medium text-white mb-2">
+      <p className="font-mono text-3xl md:text-5xl font-medium text-white mb-2">
         <AnimatedCounter value={stat.value} started={started} delay={index * 120} />
       </p>
       <p className="font-body text-sm font-semibold text-white/80 mb-1">

@@ -27,14 +27,14 @@ export function OurTeam() {
           A dedicated team of builders, designers, and community leaders.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
           {TEAM.map((member, i) => (
-            <div key={i} className="rounded-2xl border border-forest-light p-6 text-center" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.07)' }}>
-              <div className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl bg-forest-light">
+            <div key={i} className="rounded-2xl border border-forest-light p-3 md:p-6 text-center flex flex-col items-center" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.07)' }}>
+              <div className="w-16 h-16 md:w-24 md:h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl md:text-4xl bg-forest-light flex-shrink-0">
                 {member.emoji}
               </div>
-              <p className="font-body text-base font-bold text-charcoal">{member.name}</p>
-              <p className="font-body text-sm text-amber">{member.role}</p>
+              <p className="font-body text-sm md:text-base font-bold text-charcoal text-center">{member.name}</p>
+              <p className="font-body text-xs md:text-sm text-amber text-center">{member.role}</p>
             </div>
           ))}
         </div>

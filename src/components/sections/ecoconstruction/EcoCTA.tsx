@@ -103,7 +103,7 @@ export default function EcoCTA() {
             </div>
 
             {/* Button row */}
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex flex-col md:flex-row gap-4">
               <a
                 href="/contact"
                 onMouseEnter={() => setBtn1Hovered(true)}
@@ -114,7 +114,7 @@ export default function EcoCTA() {
                   fontFamily: '"DM Sans", sans-serif',
                   transition: 'background-color 0.3s',
                 }}
-                className="px-8 py-4 rounded-full text-sm font-bold inline-block"
+                className="px-8 py-4 rounded-full text-sm font-bold inline-block w-full md:w-auto text-center"
               >
                 Get a Free Quote
               </a>
@@ -130,7 +130,7 @@ export default function EcoCTA() {
                   fontFamily: '"DM Sans", sans-serif',
                   transition: 'background-color 0.3s, color 0.3s',
                 }}
-                className="px-8 py-4 rounded-full text-sm font-semibold"
+                className="px-8 py-4 rounded-full text-sm font-semibold w-full md:w-auto"
               >
                 Explore Our Services
               </button>

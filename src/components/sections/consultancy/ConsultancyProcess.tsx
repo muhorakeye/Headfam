@@ -114,7 +114,7 @@ export default function ConsultancyProcess() {
       <div className="max-w-5xl mx-auto">
 
         {/* Desktop — horizontal timeline */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <div className="relative">
             {/* Connecting line */}
             <div
@@ -164,53 +164,71 @@ export default function ConsultancyProcess() {
           </div>
         </div>
 
-        {/* Mobile — vertical timeline */}
-        <div className="md:hidden relative pl-8">
-          {/* Vertical line */}
+        {/* Mobile + tablet — vertical timeline */}
+        <div className="lg:hidden relative pl-8">
+          {/* Connecting line */}
           <div
-            className="absolute top-0 bottom-0 w-px"
-            style={{ left: '0.75rem', backgroundColor: '#e5e7eb' }}
+            className="absolute w-0.5"
+            style={{
+              left: '0.75rem',
+              top: '1rem',
+              bottom: '1rem',
+              backgroundColor: 'rgba(46,125,50,0.15)',
+            }}
           />
 
-          {STEPS.map((step, i) => (
-            <motion.div
-              key={step.number}
-              className="relative mb-10"
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={VP}
-              transition={{ duration: 0.5, ease: 'easeOut' as const, delay: i * 0.1 }}
-            >
-              {/* Circle */}
-              <div
-                className="absolute -left-8 top-0 w-10 h-10 rounded-full bg-white flex items-center justify-center"
-                style={{ border: '2px solid #2E7D32', color: '#2E7D32' }}
+          {STEPS.map((step, i) => {
+            const accent = i % 2 === 0 ? '#2E7D32' : '#C9A84C'
+            return (
+              <motion.div
+                key={step.number}
+                className="relative mb-10 last:mb-0"
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={VP}
+                transition={{ duration: 0.5, ease: 'easeOut' as const, delay: i * 0.1 }}
               >
-                <span style={{ width: 16, height: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  {step.icon}
-                </span>
-              </div>
+                {/* Circle with step number */}
+                <div
+                  className="absolute -left-8 top-0 w-10 h-10 rounded-full flex items-center justify-center bg-white"
+                  style={{ border: `2px solid ${accent}` }}
+                >
+                  <span
+                    className="text-xs font-black"
+                    style={{ color: accent, fontFamily: '"DM Sans", sans-serif' }}
+                  >
+                    {step.number}
+                  </span>
+                </div>
 
-              <p
-                className="text-xs font-bold mb-1"
-                style={{ color: '#C9A84C', fontFamily: '"DM Sans", sans-serif' }}
-              >
-                {step.number}
-              </p>
-              <p
-                className="text-base font-black mb-2"
-                style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", Georgia, serif' }}
-              >
-                {step.title}
-              </p>
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
-              >
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
+                {/* Content */}
+                <div className="pl-2">
+                  <p
+                    className="text-xs font-bold mb-1"
+                    style={{ color: '#C9A84C', fontFamily: '"DM Sans", sans-serif' }}
+                  >
+                    {step.number}
+                  </p>
+                  <p
+                    className="text-lg font-black mb-2"
+                    style={{ color: '#1a1a1a', fontFamily: '"Playfair Display", Georgia, serif' }}
+                  >
+                    {step.title}
+                  </p>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
+                  >
+                    {step.description}
+                  </p>
+                  <div
+                    className="h-0.5 w-10 rounded-full mt-3"
+                    style={{ backgroundColor: accent }}
+                  />
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
 
       </div>

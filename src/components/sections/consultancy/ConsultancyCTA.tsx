@@ -71,7 +71,7 @@ export default function ConsultancyCTA() {
               <br />execute your eco-construction or tourism project with confidence.<br />
             </p>
 
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex flex-col md:flex-row gap-4">
               <a
                 href="/contact"
                 onMouseEnter={() => setBtn1Hovered(true)}
@@ -82,7 +82,7 @@ export default function ConsultancyCTA() {
                   fontFamily: '"DM Sans", sans-serif',
                   transition: 'background-color 0.3s',
                 }}
-                className="px-8 py-4 rounded-full text-sm font-bold inline-block"
+                className="px-8 py-4 rounded-full text-sm font-bold block w-full md:w-auto text-center"
               >
                 Book a Free Consultation
               </a>
@@ -98,7 +98,7 @@ export default function ConsultancyCTA() {
                   fontFamily: '"DM Sans", sans-serif',
                   transition: 'background-color 0.3s, color 0.3s',
                 }}
-                className="px-8 py-4 rounded-full text-sm font-semibold"
+                className="px-8 py-4 rounded-full text-sm font-semibold w-full md:w-auto"
               >
                 Learn About Our Services
               </button>

@@ -42,7 +42,7 @@ export function ArchCTA() {
 
         {/* Content block */}
         <div
-          className="absolute left-10 md:left-16 z-10 max-w-xl"
+          className="absolute left-4 md:left-16 z-10 max-w-xl"
           style={{ top: "50%", transform: "translateY(-50%)" }}
         >
           <motion.div
@@ -102,12 +102,12 @@ export function ArchCTA() {
             </div>
 
             {/* Button row */}
-            <div className="flex gap-4 flex-wrap">
-              <a href="/contact">
+            <div className="flex flex-col md:flex-row gap-4">
+              <a href="/contact" className="block w-full md:w-auto">
                 <button
                   onMouseEnter={() => setBtn1Hovered(true)}
                   onMouseLeave={() => setBtn1Hovered(false)}
-                  className="px-8 py-4 rounded-full text-sm font-bold text-white transition-colors duration-200"
+                  className="px-8 py-4 rounded-full text-sm font-bold text-white transition-colors duration-200 w-full md:w-auto"
                   style={{
                     backgroundColor: btn1Hovered ? "#C9A84C" : "#2E7D32",
                     fontFamily: "DM Sans",
@@ -123,7 +123,7 @@ export function ArchCTA() {
                 onClick={() =>
                   document.getElementById("arch-services")?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="px-8 py-4 rounded-full text-sm font-semibold transition-colors duration-200"
+                className="px-8 py-4 rounded-full text-sm font-semibold transition-colors duration-200 w-full md:w-auto"
                 style={{
                   border: "2px solid #ffffff",
                   backgroundColor: btn2Hovered ? "#ffffff" : "transparent",

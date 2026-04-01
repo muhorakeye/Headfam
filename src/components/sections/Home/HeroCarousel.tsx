@@ -28,7 +28,7 @@ export default function HeroCarousel() {
 
   return (
     <div
-      className="relative w-full h-[50vh] sm:h-[60vh] md:h-screen overflow-hidden"
+      className="relative w-full h-screen min-h-[500px] overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -51,40 +51,44 @@ export default function HeroCarousel() {
 
       {/* Partial gradient scrim — left side only, behind text */}
       <div
-        className="absolute inset-y-0 left-0 w-2/3 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, transparent 100%)" }}
+        className="absolute inset-y-0 left-0 w-full md:w-2/3 z-10 pointer-events-none"
+        style={{ background: "linear-gradient(to right, rgba(0,0,0,0.65) 0%, transparent 100%)" }}
       />
 
       {/* Static text overlay — does not move during slide transitions */}
-      <div className="absolute bottom-12 left-6 md:bottom-24 md:left-10 z-20">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-4">
-          Eco-Construction.
-        </h1>
-        <p className="text-base md:text-lg font-semibold text-green-400 max-w-lg leading-relaxed">
-          Green builder, Protecting Health
-        </p>
-      </div>
-
-      {/* Contact info panel — pinned to right on every slide */}
-        <div
-          className="absolute bottom-8 right-6 md:right-10 z-20 flex flex-col gap-3 rounded-2xl px-5 py-4"
-          style={{ backgroundColor: "#2E7D32" }}
-        >
-          <div className="flex items-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ marginRight: 8, flexShrink: 0 }}>
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            <a href="tel:+250788326612" className="text-white text-xs font-semibold">+250 788 326 612</a>
+      <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-12 pointer-events-none">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between w-full gap-6 pointer-events-auto">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-tight text-white mb-4">
+              Eco-Construction.
+            </h1>
+            <p className="text-sm md:text-base lg:text-lg font-semibold text-green-400 max-w-lg leading-relaxed">
+              Green builder, Protecting Health
+            </p>
           </div>
-          <div className="h-px w-full" style={{ background: "rgba(255,255,255,0.3)" }} />
-          <div className="flex items-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ marginRight: 8, flexShrink: 0 }}>
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            <a href="mailto:info@headfamafrica.com" className="text-white text-xs font-semibold">info@headfamafrica.com</a>
+
+          {/* Contact info panel — pinned to right on every slide */}
+          <div
+            className="relative md:absolute md:bottom-0 md:right-0 flex flex-col gap-3 rounded-2xl px-5 py-4 w-full md:w-auto"
+            style={{ backgroundColor: "#2E7D32" }}
+          >
+            <div className="flex items-center">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ marginRight: 8, flexShrink: 0 }}>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <a href="tel:+250788326612" className="text-white text-xs font-semibold">+250 788 326 612</a>
+            </div>
+            <div className="h-px w-full" style={{ background: "rgba(255,255,255,0.3)" }} />
+            <div className="flex items-center">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ marginRight: 8, flexShrink: 0 }}>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="mailto:info@headfamafrica.com" className="text-white text-xs font-semibold">info@headfamafrica.com</a>
+            </div>
           </div>
         </div>
+      </div>
 
       {/* Prev button */}
       <button

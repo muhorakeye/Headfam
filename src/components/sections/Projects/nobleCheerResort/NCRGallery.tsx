@@ -67,10 +67,10 @@ export default function NCRGallery(): JSX.Element {
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
 
             {/* Row 1 — full width */}
-            <div className="col-span-2 relative overflow-hidden rounded-xl group" style={{ height: "280px", minHeight: "280px" }}>
+            <div className="col-span-1 md:col-span-2 relative overflow-hidden rounded-xl group" style={{ height: "280px", minHeight: "280px" }}>
               <img
                 src={noble[3]}
                 alt="Noble Cheer Resort overview"

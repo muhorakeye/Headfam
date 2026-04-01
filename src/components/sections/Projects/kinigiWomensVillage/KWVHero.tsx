@@ -62,12 +62,12 @@ export default function KWVHero() {
         }}
       />
 
-      {/* Floating thumbnail */}
+      {/* Floating thumbnail — hidden on mobile to avoid overlap with content */}
       <img
         src={kwv[13]}
         alt="Kinigi Women's Village interior"
         onError={onImgError}
-        className="absolute bottom-8 right-8 z-20 w-44 h-32 object-cover rounded-xl shadow-2xl border-4 border-white"
+        className="hidden md:block absolute bottom-8 right-8 z-20 w-44 h-32 object-cover rounded-xl shadow-2xl border-4 border-white"
       />
 
       {/* Content block */}

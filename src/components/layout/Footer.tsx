@@ -80,14 +80,14 @@ export function Footer() {
           <img
             src="/logo.png"
             alt="HeadFam Africa"
-            className="h-12 w-auto brightness-0 invert"
+            className="h-12 w-auto max-w-[160px] brightness-0 invert block mx-auto md:mx-0"
           />
-          <p className="font-body text-sm text-gray-400 mt-3 leading-relaxed">
+          <p className="font-body text-sm text-gray-400 mt-3 leading-relaxed text-center md:text-left">
             {COMPANY.tagline}
           </p>
 
           {/* Social icon buttons */}
-          <div className="flex gap-3 mt-5">
+          <div className="flex gap-3 mt-5 justify-center md:justify-start">
             {SOCIALS.map((social) => (
               <a
                 key={social.label}

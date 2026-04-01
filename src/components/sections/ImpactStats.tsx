@@ -15,8 +15,8 @@ export function ImpactStats() {
         }`}
       >
         {stats.map((stat) => (
-          <div key={stat.value} className="text-center">
-            <p className="font-mono text-4xl md:text-5xl font-medium text-white mb-2">
+          <div key={stat.value} className="text-center p-4 md:p-8">
+            <p className="font-mono text-3xl md:text-5xl font-medium text-white mb-2">
               {stat.value}
             </p>
             <p className="font-body text-sm font-semibold text-white/80 mb-1">
