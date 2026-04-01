@@ -19,12 +19,12 @@ export const stats: Stat[] = [
     description: 'Skilled workers hired from surrounding communities across Rwanda',
   },
   {
-    value: '12+',
+    value: '20+',
     label: 'Years of Experience',
     description: 'Pioneering eco-construction techniques across East Africa',
   },
   {
-    value: '20+',
+    value: '50+',
     label: 'Landmark Projects',
     description: 'Iconic structures that define sustainable development in Rwanda',
   },

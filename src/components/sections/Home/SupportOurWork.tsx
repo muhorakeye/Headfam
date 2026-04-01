@@ -16,13 +16,13 @@ const stats = [
     dark: false,
   },
   {
-    number: "12+",
+    number: "20+",
     label: "Years of Experience",
     description: "Pioneering eco-construction techniques across East Africa",
     dark: false,
   },
   {
-    number: "3",
+    number: "50+",
     label: "Landmark Projects",
     description: "Iconic structures defining sustainable development in Rwanda",
     dark: true,
