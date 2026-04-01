@@ -1,9 +1,26 @@
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/KWV/k5.jpeg'
-import hero1 from '../../../../assets/KWV/k6.jpeg'
-import hero2 from '../../../../assets/KWV/k7.jpeg'
-import hero3 from '../../../../assets/KWV/k8.jpeg'
-import hero4 from '../../../../assets/KWV/k9.jpeg'
+
+const kwv = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059735/kn6_i4acxm.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059735/k25_sqsup0.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k15_z5pou1.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k19_mw6qtp.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k24_h6owx4.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k18_gr7a5p.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k16_eejn1k.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059732/k14_i1tlaw.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059731/k13_eztsbd.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059730/ki3_cqiq65.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k11_vqaza5.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k12_zrelab.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059730/ki1_hqfkkf.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k10_ym5fwn.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k9_iz4wy7.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059728/k7_a0wukb.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059728/k6_eqqwff.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059727/k2_qwfhm5.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059727/k3_iti3lp.jpg",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#1b4332'
@@ -69,7 +86,7 @@ export default function KWVGallery() {
               style={{ height: "280px", minHeight: "280px" }}
             >
               <img
-                src={hero0}
+                src={kwv[8]}
                 alt="Women at work, Kinigi Village"
                 onError={onImgError}
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -81,7 +98,7 @@ export default function KWVGallery() {
             </div>
 
             {/* Next 4 images — 2 per row */}
-            {[hero1, hero2, hero3, hero4].map((src, i) => (
+            {[kwv[16], kwv[15], kwv[10], kwv[14]].map((src, i) => (
               <div
                 key={i}
                 className="relative overflow-hidden rounded-xl group"

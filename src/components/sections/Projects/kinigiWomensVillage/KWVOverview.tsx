@@ -1,6 +1,26 @@
 import { motion } from 'framer-motion'
-import hero2 from '../../../../assets/KWV/k3.jpeg'
-import hero3 from '../../../../assets/KWV/k4.jpeg'
+
+const kwv = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059735/kn6_i4acxm.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059735/k25_sqsup0.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k15_z5pou1.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k19_mw6qtp.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k24_h6owx4.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k18_gr7a5p.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k16_eejn1k.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059732/k14_i1tlaw.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059731/k13_eztsbd.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059730/ki3_cqiq65.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k11_vqaza5.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k12_zrelab.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059730/ki1_hqfkkf.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k10_ym5fwn.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k9_iz4wy7.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059728/k7_a0wukb.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059728/k6_eqqwff.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059727/k2_qwfhm5.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059727/k3_iti3lp.jpg",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -102,7 +122,7 @@ export default function KWVOverview() {
           transition={T}
         >
           <img
-            src={hero2}
+            src={kwv[18]}
             alt="Kinigi Women Village"
             onError={onImgError}
             className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-xl"
@@ -136,7 +156,7 @@ export default function KWVOverview() {
 
           {/* Floating thumbnail — hidden on mobile to prevent overflow */}
           <img
-            src={hero3}
+            src={kwv[9]}
             alt="Kinigi Women Village craft"
             onError={onImgError}
             className="hidden md:block absolute -top-6 -right-6 z-10 w-36 h-24 object-cover rounded-xl shadow-lg border-4 border-white"

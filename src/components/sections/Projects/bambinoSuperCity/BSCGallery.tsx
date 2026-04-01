@@ -1,14 +1,19 @@
 import type { JSX } from 'react'
 import { motion } from 'framer-motion'
-import bambinoS from '../../../../assets/Bambino/5.jpeg'
-import bambinoB1 from '../../../../assets/Bambino/B1.jpeg'
-import bambinoB3 from '../../../../assets/Bambino/B3.jpeg'
-import bambinoB6 from '../../../../assets/Bambino/B6.jpeg'
-import bambinoB7 from '../../../../assets/Bambino/B7.jpeg'
-import bambinoBD1 from '../../../../assets/Bambino/Design/BD1.jpeg'
-import bambinoBD2 from '../../../../assets/Bambino/Design/BD2.jpeg'
-import bambinoBD3 from '../../../../assets/Bambino/Design/BD3.jpeg'
-import bambinoBD4 from '../../../../assets/Bambino/Design/BD4.jpeg'
+
+const bambino = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058758/5_xbw0ct.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058758/B2_hkx5qq.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058758/B1_q4ht4p.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B3_pmsnp3.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B4_k7sh1f.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B6_exunj0.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B7_xa5lta.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058761/BD3_dzs99a.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058760/BD1_tn6xwb.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058760/BD2_s0egfa.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058761/BD4_runvy0.jpg",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#1b4332'
@@ -69,7 +74,7 @@ export default function BSCGallery(): JSX.Element {
             {/* Row 1 — full width */}
             <div className="col-span-2 relative overflow-hidden rounded-xl group" style={{ height: "280px", minHeight: "280px" }}>
               <img
-                src={bambinoS}
+                src={bambino[0]}
                 alt="Bambino Super City overview"
                 onError={onImgError}
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -78,7 +83,7 @@ export default function BSCGallery(): JSX.Element {
             </div>
 
             {/* Row 2 */}
-            {[bambinoB1, bambinoB3].map((src, i) => (
+            {[bambino[2], bambino[3]].map((src, i) => (
               <div key={`r2-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Bambino Super City ${i + 2}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
@@ -86,7 +91,7 @@ export default function BSCGallery(): JSX.Element {
             ))}
 
             {/* Row 3 */}
-            {[bambinoB6, bambinoB7].map((src, i) => (
+            {[bambino[5], bambino[6]].map((src, i) => (
               <div key={`r3-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Bambino Super City ${i + 4}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
@@ -103,7 +108,7 @@ export default function BSCGallery(): JSX.Element {
               INTERIOR &amp; DESIGN
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-              {[bambinoBD1, bambinoBD2, bambinoBD3, bambinoBD4].map((src, i) => (
+              {[bambino[8], bambino[9], bambino[7], bambino[10]].map((src, i) => (
                 <div key={`design-${i}`} className="relative overflow-hidden rounded-lg group" style={{ height: "100px", minHeight: "100px" }}>
                   <img
                     src={src}

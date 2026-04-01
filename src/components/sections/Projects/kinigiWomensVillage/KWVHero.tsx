@@ -1,7 +1,27 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/KWV/k2.jpeg'
-import hero1 from '../../../../assets/KWV/k10.jpeg'
+
+const kwv = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059735/kn6_i4acxm.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059735/k25_sqsup0.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k15_z5pou1.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k19_mw6qtp.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059734/k24_h6owx4.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k18_gr7a5p.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059733/k16_eejn1k.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059732/k14_i1tlaw.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059731/k13_eztsbd.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059730/ki3_cqiq65.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k11_vqaza5.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k12_zrelab.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059730/ki1_hqfkkf.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k10_ym5fwn.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059729/k9_iz4wy7.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059728/k7_a0wukb.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059728/k6_eqqwff.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059727/k2_qwfhm5.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775059727/k3_iti3lp.jpg",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#1b4332'
@@ -27,7 +47,7 @@ export default function KWVHero() {
     >
       {/* Background image */}
       <img
-        src={hero0}
+        src={kwv[17]}
         alt="Kinigi Women's Village"
         onError={onImgError}
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
@@ -44,7 +64,7 @@ export default function KWVHero() {
 
       {/* Floating thumbnail */}
       <img
-        src={hero1}
+        src={kwv[13]}
         alt="Kinigi Women's Village interior"
         onError={onImgError}
         className="absolute bottom-8 right-8 z-20 w-44 h-32 object-cover rounded-xl shadow-2xl border-4 border-white"

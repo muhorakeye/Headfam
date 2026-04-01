@@ -1,8 +1,20 @@
 import type { JSX } from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import bambino0 from '../../../../assets/Bambino/B2.jpeg'
-import bambino1 from '../../../../assets/Bambino/B1.jpeg'
+
+const bambino = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058758/5_xbw0ct.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058758/B2_hkx5qq.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058758/B1_q4ht4p.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B3_pmsnp3.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B4_k7sh1f.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B6_exunj0.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058759/B7_xa5lta.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058761/BD3_dzs99a.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058760/BD1_tn6xwb.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058760/BD2_s0egfa.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775058761/BD4_runvy0.jpg",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#1b4332'
@@ -30,7 +42,7 @@ export default function BSCHero(): JSX.Element {
     >
       {/* Background image */}
       <img
-        src={bambino0}
+        src={bambino[1]}
         alt="Bambino Super City"
         onError={onImgError}
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
@@ -47,7 +59,7 @@ export default function BSCHero(): JSX.Element {
 
       {/* Floating thumbnail */}
       <img
-        src={bambino1}
+        src={bambino[2]}
         alt="Bambino Super City detail"
         onError={onImgError}
         className="absolute bottom-8 right-8 z-20 w-44 h-32 object-cover rounded-xl shadow-2xl border-4 border-white"
