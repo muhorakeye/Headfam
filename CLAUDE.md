@@ -53,7 +53,13 @@ Deployed to Netlify. `netlify.toml` at the repo root sets `publish = "dist"` and
 
 ```
 src/
-  assets/images/       # Placeholder for real photography (Phase 2)
+  assets/              # Real photography organized by project
+    Hero/              # headfam1-11.jpeg, hero1-6.jpg — used by HeroCarousel
+    KWV/               # k1-k25.jpeg + Design/ subfolder (PNG renders)
+    Bambino/           # B1-B11.jpeg + Design/ subfolder (PNG renders) + BD1-4.jpeg
+    Masaka/            # m1.jpg + m2-m16.jpeg (untracked, available for MSA gallery)
+    Noble/             # n1.jpeg and more
+    minakcafeedesign/  # PNG design renders for Minak Cafe (architecture portfolio)
   components/
     ui/                # Atomic components: Button, Badge, Card, SectionLabel
     layout/            # Page-level components: Navbar, Footer, PageHero
@@ -250,7 +256,8 @@ in the router at all. `BookingPage.tsx` is at `/booking` but still a shell.
 Services, ServiceDetail (generic `/services/:serviceId`), Projects, ProjectDetail (generic `/projects/:projectId`), Booking, 404
 
 ### Other
-- Real photography (replace placeholder images)
+- Stage and use `src/assets/Masaka/m2-m16.jpeg` in the MasakaSweetApartment gallery (currently untracked)
+- Real photography for Noble, Community, and team sections
 - Final normalization pass across all pages
 
 ---
