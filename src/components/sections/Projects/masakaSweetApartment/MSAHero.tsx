@@ -1,8 +1,22 @@
 import type { JSX } from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/Masaka/m1.jpg'
-import hero1 from '../../../../assets/Masaka/m2.jpeg'
+
+const masaka = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055889/m24_lw3rbz.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055888/m23_rtlkds.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055889/m21_jjog5m.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055888/m22_chn4b2.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055885/m20_tdgbcd.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055885/m18_uqcqgp.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055883/m14_hk5cxu.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055880/m10_wf8cr2.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055880/m5_amywur.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055877/m3_njwz3b.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055878/m9_vvancn.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055881/m7_qvsoqk.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055881/m11_vqqtmm.jpg",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -30,7 +44,7 @@ export default function MSAHero(): JSX.Element {
     >
       {/* Background image */}
       <img
-        src={hero0}
+        src={masaka[0]}
         alt="Masaka Sweet Apartment"
         onError={onImgError}
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
@@ -47,7 +61,7 @@ export default function MSAHero(): JSX.Element {
 
       {/* Floating thumbnail */}
       <img
-        src={hero1}
+        src={masaka[1]}
         alt="Masaka Sweet Apartment detail"
         onError={onImgError}
         className="absolute bottom-8 right-8 z-20 w-44 h-32 object-cover rounded-xl shadow-2xl border-4 border-white"

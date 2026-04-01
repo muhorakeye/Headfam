@@ -64,8 +64,7 @@ export default function HeroCarousel() {
         </p>
       </div>
 
-      {/* Contact info panel — visible on first and last slides, pinned to right */}
-      {(current === 0 || current === slides.length - 1) && (
+      {/* Contact info panel — pinned to right on every slide */}
         <div
           className="absolute bottom-8 right-6 md:right-10 z-20 flex flex-col gap-3 rounded-2xl px-5 py-4"
           style={{ backgroundColor: "#2E7D32" }}
@@ -85,7 +84,6 @@ export default function HeroCarousel() {
             <a href="mailto:info@headfamafrica.com" className="text-white text-xs font-semibold">info@headfamafrica.com</a>
           </div>
         </div>
-      )}
 
       {/* Prev button */}
       <button

@@ -1,7 +1,21 @@
 import type { JSX } from 'react'
 import { motion } from 'framer-motion'
-import hero2 from '../../../../assets/Masaka/m8.jpeg'
-import hero3 from '../../../../assets/Masaka/m12.jpeg'
+
+const masaka = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055889/m24_lw3rbz.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055888/m23_rtlkds.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055889/m21_jjog5m.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055888/m22_chn4b2.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055885/m20_tdgbcd.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055885/m18_uqcqgp.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055883/m14_hk5cxu.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055880/m10_wf8cr2.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055880/m5_amywur.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055877/m3_njwz3b.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055878/m9_vvancn.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055881/m7_qvsoqk.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055881/m11_vqqtmm.jpg",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -96,7 +110,7 @@ export default function MSAOverview(): JSX.Element {
           transition={T}
         >
           <img
-            src={hero2}
+            src={masaka[2]}
             alt="Masaka Sweet Apartment"
             onError={onImgError}
             className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-xl"
@@ -130,7 +144,7 @@ export default function MSAOverview(): JSX.Element {
 
           {/* Floating thumbnail — hidden on mobile to prevent overflow */}
           <img
-            src={hero3}
+            src={masaka[3]}
             alt="Masaka Sweet Apartment detail"
             onError={onImgError}
             className="hidden md:block absolute -top-6 -right-6 z-10 w-36 h-24 object-cover rounded-xl shadow-lg border-4 border-white"

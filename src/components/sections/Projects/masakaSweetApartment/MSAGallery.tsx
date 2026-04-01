@@ -1,10 +1,21 @@
 import type { JSX } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../../assets/Masaka/m5.jpeg'
-import hero1 from '../../../../assets/Masaka/m6.jpeg'
-import hero2 from '../../../../assets/Masaka/m13.jpeg'
-import hero3 from '../../../../assets/Masaka/m8.jpeg'
-import hero4 from '../../../../assets/Masaka/m16.jpeg'
+
+const masaka = [
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055889/m24_lw3rbz.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055888/m23_rtlkds.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055889/m21_jjog5m.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055888/m22_chn4b2.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055885/m20_tdgbcd.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055885/m18_uqcqgp.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055883/m14_hk5cxu.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055880/m10_wf8cr2.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055880/m5_amywur.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055877/m3_njwz3b.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055878/m9_vvancn.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055881/m7_qvsoqk.jpg",
+  "https://res.cloudinary.com/dsld1mtls/image/upload/v1775055881/m11_vqqtmm.jpg",
+]
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = '#e8f5e9'
@@ -65,7 +76,7 @@ export default function MSAGallery(): JSX.Element {
             {/* Row 1 — full width */}
             <div className="col-span-2 relative overflow-hidden rounded-xl group" style={{ height: "280px", minHeight: "280px" }}>
               <img
-                src={hero0}
+                src={masaka[4]}
                 alt="Masaka Sweet Apartment overview"
                 onError={onImgError}
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -74,7 +85,7 @@ export default function MSAGallery(): JSX.Element {
             </div>
 
             {/* Row 2 */}
-            {[hero1, hero2].map((src, i) => (
+            {[masaka[5], masaka[6]].map((src, i) => (
               <div key={`r2-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Masaka Sweet Apartment ${i + 2}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
@@ -82,7 +93,7 @@ export default function MSAGallery(): JSX.Element {
             ))}
 
             {/* Row 3 */}
-            {[hero3, hero4].map((src, i) => (
+            {[masaka[7], masaka[8]].map((src, i) => (
               <div key={`r3-${i}`} className="relative overflow-hidden rounded-xl group" style={{ height: "200px", minHeight: "200px" }}>
                 <img src={src} alt={`Masaka Sweet Apartment ${i + 4}`} onError={onImgError} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'rgba(0,0,0,0.25)' }} />
