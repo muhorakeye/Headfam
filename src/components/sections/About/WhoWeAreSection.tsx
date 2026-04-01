@@ -4,9 +4,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
-import hero0 from '../../../assets/Noble/n9.png';
-import hero2 from '../../../assets/Hero/headfam2.jpeg';
-import hero3 from '../../../assets/Hero/headfam3.jpeg';
+import hero0 from '../../../assets/Noble/n9.webp';
+import hero2 from '../../../assets/Hero/headfam2.webp';
+import hero3 from '../../../assets/Hero/headfam3.webp';
 
 const GREEN = '#2E7D32';
 const GOLD = '#C9A84C';

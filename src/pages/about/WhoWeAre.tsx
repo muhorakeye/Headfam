@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import hero0 from '../../assets/Noble/n2.png';
-import hero1 from '../../assets/Hero/headfam1.jpeg';
-import hero3 from '../../assets/Hero/headfam3.jpeg';
-import hero4 from '../../assets/Noble/n21.png';
+import hero0 from '../../assets/Noble/n2.webp';
+import hero1 from '../../assets/Hero/headfam1.webp';
+import hero3 from '../../assets/Hero/headfam3.webp';
+import hero4 from '../../assets/Noble/n21.webp';
 
 const PLAYFAIR = { fontFamily: "'Playfair Display', Georgia, serif" };
 const DM = { fontFamily: "'DM Sans', system-ui, sans-serif" };

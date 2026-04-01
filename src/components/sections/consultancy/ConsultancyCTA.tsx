@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import hero4 from '../../../assets/Hero/Headfam4.jpeg'
+import hero4 from '../../../assets/Hero/Headfam4.webp'
 
 const VP = { once: true, amount: 0.2 as const }
 

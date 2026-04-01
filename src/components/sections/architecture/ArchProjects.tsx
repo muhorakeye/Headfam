@@ -3,26 +3,26 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // Bambino Design
-import bambinoBD1 from "../../../assets/Bambino/Design/BD1.jpeg";
-import bambinoBD2 from "../../../assets/Bambino/Design/BD2.jpeg";
-import bambinoBD3 from "../../../assets/Bambino/Design/BD3.jpeg";
-import bambinoBD4 from "../../../assets/Bambino/Design/BD4.jpeg";
+import bambinoBD1 from "../../../assets/Bambino/Design/BD1.webp";
+import bambinoBD2 from "../../../assets/Bambino/Design/BD2.webp";
+import bambinoBD3 from "../../../assets/Bambino/Design/BD3.webp";
+import bambinoBD4 from "../../../assets/Bambino/Design/BD4.webp";
 
 // Minak Cafe Design
-import minakD1 from "../../../assets/minakcafeedesign/Image_1.png";
-import minakD2 from "../../../assets/minakcafeedesign/Scene 1_1.png";
-import minakD3 from "../../../assets/minakcafeedesign/Scene 13.png";
-import minakD4 from "../../../assets/minakcafeedesign/Scene 15.png";
-import minakD5 from "../../../assets/minakcafeedesign/Scene 2.png";
-import minakD6 from "../../../assets/minakcafeedesign/Scene 4_1.png";
+import minakD1 from "../../../assets/minakcafeedesign/Image_1.webp";
+import minakD2 from "../../../assets/minakcafeedesign/Scene 1_1.webp";
+import minakD3 from "../../../assets/minakcafeedesign/Scene 13.webp";
+import minakD4 from "../../../assets/minakcafeedesign/Scene 15.webp";
+import minakD5 from "../../../assets/minakcafeedesign/Scene 2.webp";
+import minakD6 from "../../../assets/minakcafeedesign/Scene 4_1.webp";
 
 // KWV Design
-import kwvD1 from "../../../assets/KWV/Design/5_1.png";
-import kwvD2 from "../../../assets/KWV/Design/Scene 17_1.png";
-import kwvD3 from "../../../assets/KWV/Design/Scene 22_1.png";
-import kwvD4 from "../../../assets/KWV/Design/Image.png";
-import kwvD5 from "../../../assets/KWV/Design/Image_1.png";
-import kwvD6 from "../../../assets/KWV/Design/Image_2.png";
+import kwvD1 from "../../../assets/KWV/Design/5_1.webp";
+import kwvD2 from "../../../assets/KWV/Design/Scene 17_1.webp";
+import kwvD3 from "../../../assets/KWV/Design/Scene 22_1.webp";
+import kwvD4 from "../../../assets/KWV/Design/Image.webp";
+import kwvD5 from "../../../assets/KWV/Design/Image_1.webp";
+import kwvD6 from "../../../assets/KWV/Design/Image_2.webp";
 
 const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.backgroundColor = "#e8f5e9";

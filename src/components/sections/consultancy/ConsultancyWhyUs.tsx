@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import hero0 from '../../../assets/Hero/headfam.jpeg'
-import hero1 from '../../../assets/Hero/headfam1.jpeg'
+import hero0 from '../../../assets/Hero/headfam.webp'
+import hero1 from '../../../assets/Hero/headfam1.webp'
 
 const VP = { once: true, amount: 0.2 as const }
 const T = { duration: 0.6, ease: 'easeOut' as const }

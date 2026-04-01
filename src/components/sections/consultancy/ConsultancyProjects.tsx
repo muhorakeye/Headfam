@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import hero0 from '../../../assets/Hero/headfam.jpeg'
-import hero1 from '../../../assets/Hero/headfam1.jpeg'
-import hero2 from '../../../assets/Hero/headfam2.jpeg'
-import hero3 from '../../../assets/Hero/headfam3.jpeg'
+import hero0 from '../../../assets/Hero/headfam.webp'
+import hero1 from '../../../assets/Hero/headfam1.webp'
+import hero2 from '../../../assets/Hero/headfam2.webp'
+import hero3 from '../../../assets/Hero/headfam3.webp'
 
 const VP = { once: true, amount: 0.2 as const }
 const VP1 = { once: true, amount: 0.1 as const }
