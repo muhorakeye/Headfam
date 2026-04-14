@@ -26,7 +26,7 @@ const SERVICES: Service[] = [
     short: 'Market insights on tourism destinations',
     description:
       'We provide detailed business information and market insights on tourism destinations, helping investors and developers make informed, responsible decisions about where and how to build.',
-    detail1: { label: "Who it's for", value: 'Investors, developers, tourism operators' },
+    detail1: { label: "Who it's for", value: 'Investors, developers, tourism operators and others ' },
     detail2: { label: 'Outcome', value: 'Informed investment decisions backed by local knowledge' },
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -42,7 +42,7 @@ const SERVICES: Service[] = [
     short: 'Assess and validate responsible tourism ideas',
     description:
       'We assess and validate investment ideas for responsible tourism, identifying opportunities, risks, and long-term viability to ensure your project creates genuine sustainable value.',
-    detail1: { label: "Who it's for", value: 'Entrepreneurs, NGOs, impact investors' },
+    detail1: { label: "Who it's for", value: 'Entrepreneurs, NGOs, impact investors and others ' },
     detail2: { label: 'Outcome', value: 'Validated project roadmap with risk assessment' },
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -56,7 +56,7 @@ const SERVICES: Service[] = [
     short: 'Bridge investors, communities and government',
     description:
       'We mediate between players in responsible tourism ecosystems, bridging the gap between investors, communities, government bodies, and local stakeholders for aligned outcomes.',
-    detail1: { label: "Who it's for", value: 'Multi-stakeholder projects and partnerships' },
+    detail1: { label: "Who it's for", value: 'Multi-stakeholder projects and partnerships and others ' },
     detail2: { label: 'Outcome', value: 'Aligned stakeholders, reduced conflict, faster progress' },
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -73,7 +73,7 @@ const SERVICES: Service[] = [
     short: 'Local people involved in every project',
     description:
       'We involve local communities at every stage, ensuring that tourism and construction initiatives create genuine, lasting benefit for the people who live there.',
-    detail1: { label: "Who it's for", value: 'Developers building near local communities' },
+    detail1: { label: "Who it's for", value: 'Developers building near local communities and others ' },
     detail2: { label: 'Outcome', value: 'Community buy-in, local hiring, revenue sharing' },
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -88,7 +88,7 @@ const SERVICES: Service[] = [
     short: 'Design spaces that fit within nature',
     description:
       'We offer consultancy in landscape design and architecture, creating outdoor spaces and structures that sit well within their natural surroundings and local culture.',
-    detail1: { label: "Who it's for", value: 'Resorts, eco-lodges, cultural centers, parks' },
+    detail1: { label: "Who it's for", value: 'Resorts, eco-lodges, cultural centers, parks and others ' },
     detail2: { label: 'Outcome', value: 'Award-worthy spaces rooted in place and culture' },
     svg: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

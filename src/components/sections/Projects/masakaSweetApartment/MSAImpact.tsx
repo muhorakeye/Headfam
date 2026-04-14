@@ -7,7 +7,7 @@ const T = { duration: 0.6, ease: 'easeOut' as const }
 
 const stats = [
   {
-    number: '2023',
+    number: '2019',
     label: 'Year Built',
     description: 'Completed in Masaka Sector, Kigali',
     accent: '#2E7D32',

@@ -71,7 +71,7 @@ export const services: Service[] = [
   {
     id: 'resort',
     title: 'Resort',
-    shortDescription: 'Luxury eco-resorts that set the standard for sustainable hospitality in East Africa.',
+    shortDescription: 'Luxury eco-resorts that set the standard for sustainable hospitality in Africa.',
     fullDescription: 'HeadFam Africa designs and constructs boutique eco-resorts that prove luxury and sustainability are not opposites. Our resorts feature private villas with natural ventilation, farm-to-table dining facilities, infinity pools using recirculated water, and spa facilities employing local therapists using indigenous plant-based treatments.',
     category: 'construction',
     imageUrl: 'https://picsum.photos/seed/resort/800/500',

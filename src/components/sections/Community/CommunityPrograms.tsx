@@ -151,12 +151,12 @@ export default function CommunityPrograms() {
               className="text-sm leading-relaxed mb-6"
               style={{ color: 'rgba(255,255,255,0.8)', fontFamily: '"DM Sans", sans-serif' }}
             >
-              Now officially open, the Kinigi Women Village is a landmark eco-construction project that empowers women through skills training, income-generating activities, and a safe community gathering space built with sustainable local materials.
+              Now officially open, the Kinigi Women Village is a landmark eco-construction project that empowers women through skills training, income-generating activities, and a safe community gathering space built with sustainable local materials. Dedicated 30% of the construction income back to the local community, ensuring that the people who needed it most didn't just gain a building, but shared in the prosperity of building it
             </p>
 
             <div className="flex flex-wrap gap-6 mb-8">
               <div style={{ borderRight: '1px solid rgba(255,255,255,0.2)', paddingRight: '2rem' }}>
-                <p className="text-2xl font-black text-white" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>2024</p>
+                <p className="text-2xl font-black text-white" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>2022</p>
                 <p className="text-xs" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: '"DM Sans", sans-serif' }}>Year Opened</p>
               </div>
               <div>
@@ -166,11 +166,11 @@ export default function CommunityPrograms() {
             </div>
 
             <a
-              href="/news"
+              href="/projects/kinigi-womens-village"
               className="text-sm font-semibold hover:underline self-start"
               style={{ color: '#C9A84C', fontFamily: '"DM Sans", sans-serif' }}
             >
-              Read the Full Story →
+              104+ women empowered
             </a>
           </div>
         </div>

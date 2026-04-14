@@ -60,7 +60,7 @@ export default function MSAOverview(): JSX.Element {
             className="text-sm leading-relaxed mb-4"
             style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
           >
-            Masaka Sweet Apartment is an eco-residential project built by HeadFam Africa in 2023,
+            Masaka Sweet Apartment is an eco-residential project built by HeadFam Africa in 2019,
             located opposite Masaka Hospital in Masaka Sector, Kigali. The apartment was designed
             and constructed to offer a cozy, healthy, and environmentally responsible living
             experience in the heart of the city.
@@ -126,7 +126,7 @@ export default function MSAOverview(): JSX.Element {
               className="text-2xl font-black"
               style={{ color: '#2E7D32', fontFamily: '"Playfair Display", serif' }}
             >
-              2023
+              2019
             </p>
             <p
               className="text-xs"

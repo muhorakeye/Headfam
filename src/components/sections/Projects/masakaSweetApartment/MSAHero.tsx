@@ -133,7 +133,7 @@ export default function MSAHero(): JSX.Element {
           transition={{ delay: 0.7, duration: 0.5 }}
         >
           {[
-            { value: '2023', label: 'Year Built', border: true },
+            { value: '2019', label: 'Year Built', border: true },
             { value: 'Masaka, Kigali', label: 'Location', border: true },
             { value: 'Eco-Residential', label: 'Category', border: false },
           ].map((stat) => (

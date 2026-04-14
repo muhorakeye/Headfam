@@ -31,8 +31,8 @@ interface Social {
 const contactItems: ContactItem[] = [
   {
     label: 'Phone',
-    values: ['+250 788 326 612', '+250 788 342 970'],
-    href: ['tel:+250788326612', 'tel:+250788342970'],
+    values: ['+250 788 326 612', '+250 788 342 938','+250 788 342 970'],
+    href: ['tel:+250788326612', 'tel:+250788342938','+250 788 342 970'],
     iconStroke: '#2E7D32',
     svg: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">

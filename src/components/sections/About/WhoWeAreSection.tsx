@@ -80,7 +80,7 @@ const TAB_CONTENT: Record<Tab, TabData> = {
     body: [
       'HeadFam Africa was founded with a single belief: that construction should serve people and planet equally. Beginning in Kigali, Rwanda, our first projects were modest eco-homes built with local materials for local families.',
       'Over the years we expanded into resorts, cultural centers, and community facilities, always keeping the same promise: hire locally, build sustainably, give back generously.',
-      'Today HeadFam Africa is recognized across East Africa as a pioneer of eco-construction, having delivered more than a dozen landmark projects and created over 500 local jobs since inception.',
+      'Today HeadFam Africa is recognized across Africa as a pioneer of eco-construction, having delivered more than a dozen landmark projects and created over 500 local jobs since inception.',
     ],
     image: hero0,
     showCta: false,
@@ -107,11 +107,11 @@ const TAB_CONTENT: Record<Tab, TabData> = {
 // ─── Timeline ─────────────────────────────────────────────────────────────────
 const TIMELINE = [
   { year: '2012', label: 'Founded', body: 'HeadFam Africa established in Kigali with a focus on affordable eco-residential construction using locally sourced materials.' },
-  { year: '2014', label: 'First Resort', body: 'Delivered our first eco-resort project in the Virunga foothills, setting the benchmark for sustainable tourism construction in Rwanda.' },
+  { year: '2013', label: 'First Resort', body: 'Delivered our first eco-resort project in the Virunga foothills, setting the benchmark for sustainable tourism construction in Rwanda.' },
   { year: '2016', label: 'Community Fund', body: '30% revenue program officially launched, committing construction income to building eco-houses for low-income families living near each build site.' },
-  { year: '2018', label: 'Expansion', body: 'Expanded service offerings to include full landscape design, culture centers, and touristic site creation across East Africa.' },
-  { year: '2020', label: 'Kinigi Campus', body: "Broke ground on the Kinigi Women's Center and Kinigi Coffee Shop, two of our most community-defining projects to date." },
-  { year: '2024', label: 'Today', body: "Over 500 local jobs created, 12+ years of expertise, and a growing portfolio of landmark eco-structures shaping Rwanda's green future." },
+  { year: '2018', label: 'Expansion', body: 'Expanded service offerings to include full landscape design, culture centers, and touristic site creation across Africa.' },
+  { year: '2022', label: 'Kinigi Campus', body: "Broke ground on the Kinigi Women's Center and Kinigi Coffee Shop, two of our most community-defining projects to date." },
+  { year: '2026', label: 'Today', body: "Over 500 local jobs created, 12+ years of expertise, and a growing portfolio of landmark eco-structures shaping Rwanda's green future." },
 ];
 
 // ─── Main section component ───────────────────────────────────────────────────

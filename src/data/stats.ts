@@ -21,7 +21,7 @@ export const stats: Stat[] = [
   {
     value: '20+',
     label: 'Years of Experience',
-    description: 'Pioneering eco-construction techniques across East Africa',
+    description: 'Pioneering eco-construction techniques across Africa',
   },
   {
     value: '50+',

@@ -113,7 +113,7 @@ export default function EcoWhyUs() {
             className="text-xs leading-relaxed"
             style={{ color: 'rgba(255,255,255,0.7)', fontFamily: '"DM Sans", sans-serif' }}
           >
-            Over a decade of hands-on experience building sustainable structures across East Africa.
+            Over a decade of hands-on experience building sustainable structures across Africa.
           </p>
           <div className="h-1 w-10 rounded-full mt-4" style={{ backgroundColor: '#C9A84C' }} />
         </motion.div>
@@ -282,7 +282,7 @@ export default function EcoWhyUs() {
             className="text-lg md:text-xl font-black text-white leading-snug mb-4"
             style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
           >
-            HeadFam built our eco-lodge using only local materials and local workers. The result
+            HeadFam built our eco-resort using only local materials and local workers. The result
             exceeded every expectation, and the community around us benefited directly.
           </p>
           <div className="flex items-center gap-3">
@@ -299,10 +299,10 @@ export default function EcoWhyUs() {
             </div>
             <div>
               <p className="text-sm font-bold text-white" style={{ fontFamily: '"DM Sans", sans-serif' }}>
-                Emmanuel Nkusi
+                Joel Kwihangana
               </p>
               <p className="text-xs" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"DM Sans", sans-serif' }}>
-                Eco-Lodge Developer, Northern Rwanda
+                Eco-resort , Western Rwanda
               </p>
             </div>
           </div>

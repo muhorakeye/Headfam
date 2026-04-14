@@ -46,9 +46,9 @@ const reasons: Reason[] = [
 ];
 
 const archStats: ArchStat[] = [
-  { value: "12+", label: "Years Designing in East Africa", sub: "Proven local expertise" },
+  { value: "12+", label: "Years Designing in Africa", sub: "Proven local expertise" },
   { value: "100%", label: "Eco-Certified Designs", sub: "Every project meets sustainability standards" },
-  { value: "3", label: "Award-Worthy Structures", sub: "Landmark builds across Rwanda" },
+  { value: "3", label: "Award-Worthy Structures", sub: "Landmark builds across Africa" },
 ];
 
 const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
@@ -298,13 +298,13 @@ export function ArchWhyUs() {
                   className="text-sm font-bold text-white"
                   style={{ fontFamily: "DM Sans" }}
                 >
-                  Sarah Ingabire
+                  Katarayiha
                 </p>
                 <p
                   className="text-xs"
                   style={{ color: "rgba(255,255,255,0.5)", fontFamily: "DM Sans" }}
                 >
-                  Eco-Lodge Owner, Eastern Rwanda
+                  Bambino Super City Owner, Kigali, Rwanda
                 </p>
               </div>
             </div>

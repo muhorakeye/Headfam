@@ -12,7 +12,7 @@ const impactStats = [
   { number: '30%', label: 'Builds Eco-Homes', sub: 'Every project, without exception' },
   { number: '500+', label: 'Jobs Created', sub: 'Local workers across Rwanda' },
   { number: '3', label: 'Eco-Homes Built', sub: 'For low-income families near build sites' },
-  { number: '12+', label: 'Years of Impact', sub: 'Serving East African communities' },
+  { number: '12+', label: 'Years of Impact', sub: 'Serving African communities' },
 ]
 
 const presets = [10, 25, 50, 100, 250, 500]

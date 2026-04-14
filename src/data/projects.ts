@@ -27,11 +27,11 @@ export const projects: Project[] = [
   {
     id: 'bamboo-renew',
     title: 'Bamboo Renew Project',
-    location: 'Eastern Province, Rwanda',
+    location: 'Kigali city, Rwanda',
     year: 2021,
     category: 'Eco-Construction',
     shortDescription: 'A pioneering demonstration project proving that bamboo can replace steel and concrete in structural construction across Rwanda.',
-    fullDescription: 'The Bamboo Renew Project was HeadFam Africa\'s most ambitious research-driven construction initiative. Working with material scientists from the University of Rwanda, we developed and tested bamboo treatment processes that extend structural lifespan to 50+ years in Rwanda\'s climate. The resulting demonstration structures — a community hall, storage facility, and three residential units — have become a study destination for architects and engineers across East Africa. The project also established a bamboo nursery that now employs 15 full-time farmers.',
+    fullDescription: 'The Bamboo Renew Project was HeadFam Africa\'s most ambitious research-driven construction initiative. Working with material scientists from the University of Rwanda, we developed and tested bamboo treatment processes that extend structural lifespan to 50+ years in Rwanda\'s climate. The resulting demonstration structures — a community hall, storage facility, and three residential units — have become a study destination for architects and engineers across Africa. The project also established a bamboo nursery that now employs 15 full-time farmers.',
     images: [
       'https://picsum.photos/seed/bamboo-renew/800/600',
       'https://picsum.photos/seed/bamboo-renew-2/800/600',
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     year: 2023,
     category: 'Architecture Design',
     shortDescription: 'A flagship urban coffee shop design that brings the warmth of Rwanda\'s hill country into the heart of Kigali.',
-    fullDescription: 'Minnak Coffee Design was a pure architecture and interior design commission for a Kigali entrepreneur who wanted a coffee shop that felt authentically Rwandan without being a pastiche. The result is a layered space that uses rammed earth feature walls, handwoven grass ceiling panels by local artisans, and a flowing layout that references the terraced hillsides of Rwanda\'s tea country. Since opening, the design has been featured in three East African architecture publications and has become one of Kigali\'s most photographed interior spaces.',
+    fullDescription: 'Minnak Coffee Design was a pure architecture and interior design commission for a Kigali entrepreneur who wanted a coffee shop that felt authentically Rwandan without being a pastiche. The result is a layered space that uses rammed earth feature walls, handwoven grass ceiling panels by local artisans, and a flowing layout that references the terraced hillsides of Rwanda\'s tea country. Since opening, the design has been featured in three African architecture publications and has become one of Kigali\'s most photographed interior spaces.',
     images: [
       'https://picsum.photos/seed/minnak-coffee-design/800/600',
       'https://picsum.photos/seed/minnak-coffee-design-2/800/600',

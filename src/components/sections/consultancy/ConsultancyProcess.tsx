@@ -25,7 +25,7 @@ const STEPS: Step[] = [
     number: '02',
     title: 'Site Assessment',
     description:
-      'Our team visits the location to evaluate environmental conditions, community context, regulatory requirements, and development potential.',
+      'Our team visits the location to evaluate environmental conditions, community context, regulatory requirements, budgets and development potential.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z" />

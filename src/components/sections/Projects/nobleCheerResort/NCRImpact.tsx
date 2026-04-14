@@ -7,7 +7,7 @@ const T = { duration: 0.6, ease: 'easeOut' as const }
 
 const stats = [
   {
-    number: '2020',
+    number: '2013',
     label: 'Year Built',
     description: 'Completed in Musanze, Rwanda',
     accent: '#2E7D32',
@@ -85,7 +85,7 @@ export default function NCRImpact(): JSX.Element {
           className="text-sm leading-relaxed"
           style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
         >
-          Built by HeadFam Africa in 2020 on the Musanze-Rubavu road, Noble Cheer Resort has created jobs,
+          Built by HeadFam Africa in 2013 on the Musanze-Rubavu road, Noble Cheer Resort has created jobs,
           boosted local tourism, and delivered a sustainable hospitality destination that benefits
           the Musanze community.
         </p>

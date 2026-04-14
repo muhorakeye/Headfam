@@ -55,7 +55,7 @@ export function DonateBanner() {
         </h2>
 
         <p className="text-base md:text-lg text-gray-500 leading-relaxed mb-10 max-w-2xl mx-auto">
-          Your donation helps us build eco-houses for low-income families near our construction sites across Rwanda. Every project, without exception.
+          Your donation helps us build eco-houses for low-income families near our construction sites across Africa. Every project, without exception.
         </p>
 
         <div className="flex justify-center gap-4 flex-wrap">

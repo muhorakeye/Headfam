@@ -132,7 +132,7 @@ export default function NCRHero(): JSX.Element {
           {[
             { value: 'Musanze', label: 'Location', border: true },
             { value: 'Eco-Resort & Campsite', label: 'Category', border: true },
-            { value: '2020', label: 'Year Built', border: false },
+            { value: '2013', label: 'Year Built', border: false },
           ].map((stat) => (
             <div
               key={stat.label}

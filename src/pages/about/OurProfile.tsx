@@ -29,7 +29,7 @@ export function OurProfile() {
 
             <p className="font-body text-xs font-bold tracking-widest mb-2" style={{ color: '#C9A84C' }}>MISSION</p>
             <p className="font-body text-base leading-relaxed mb-8" style={{ color: '#6b7280' }}>
-              To design and build eco-friendly structures that uplift communities, create local employment, and protect the natural environment across Rwanda and East Africa.
+              To design and build eco-friendly structures that uplift communities, create local employment, and protect the natural environment across Rwanda and Africa.
             </p>
 
             <p className="font-body text-xs font-bold tracking-widest mb-2" style={{ color: '#C9A84C' }}>VISION</p>

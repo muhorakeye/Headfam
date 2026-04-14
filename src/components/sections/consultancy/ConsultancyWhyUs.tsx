@@ -19,7 +19,7 @@ interface Reason {
 const REASONS: Reason[] = [
   {
     title: '12+ Years On the Ground',
-    body: 'We have over a decade of experience working directly in East African eco-construction and tourism development. Not theory. Real field knowledge.',
+    body: 'We have over a decade of experience working directly in African eco-construction and tourism development. Not theory. Real field knowledge.',
     accent: '#2E7D32',
   },
   {

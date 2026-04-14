@@ -5,10 +5,10 @@ import type { TeamMember } from '../types';
 
 export const teamMembers: TeamMember[] = [
   {
-    id: 'amara-nkunda',
-    name: 'Amara Nkunda',
+    id: 'Ndanguza Jean Damour',
+    name: 'Ndanguza Jean Damour',
     role: 'Founder & Lead Architect',
-    bio: 'Amara founded HeadFam Africa after 15 years in sustainable architecture across East and West Africa. His vision of construction as community development drives every project we undertake.',
+    bio: 'Ndanguza founded HeadFam Africa after 12+ years in sustainable architecture across Africa. His vision of construction as community development drives every project we undertake.',
     imageUrl: 'https://picsum.photos/seed/amara-nkunda/400/400',
   },
   {
@@ -26,8 +26,8 @@ export const teamMembers: TeamMember[] = [
     imageUrl: 'https://picsum.photos/seed/eric-habimana/400/400',
   },
   {
-    id: 'diane-mukamana',
-    name: 'Diane Mukamana',
+    id: 'Oreste',
+    name: 'Oreste',
     role: 'Landscape & Ecology Director',
     bio: 'Diane brings a deep knowledge of Rwandan ecosystems to every project. She designs the living landscapes around our structures, ensuring they regenerate rather than displace local biodiversity.',
     imageUrl: 'https://picsum.photos/seed/diane-mukamana/400/400',

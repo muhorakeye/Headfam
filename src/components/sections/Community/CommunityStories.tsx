@@ -34,7 +34,7 @@ function ShareBtn() {
   const [hovered, setHovered] = useState<boolean>(false)
   return (
     <a
-      href="/contact"
+      href="/donate"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{

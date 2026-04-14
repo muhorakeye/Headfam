@@ -59,7 +59,7 @@ export default function BSCOverview(): JSX.Element {
             className="text-sm leading-relaxed mb-4"
             style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}
           >
-            Bambino Super City is a landmark eco-resort constructed by HeadFam Africa in Kigali,
+            Bambino Super City is a landmark eco-resort re-constructed by HeadFam Africa in Kigali,
             Rwanda. Built in 2025 with sustainable materials and eco-conscious methods, the resort
             was designed to offer a world-class experience while staying true to the principles of
             responsible construction.

@@ -41,7 +41,7 @@ const MOSAIC: MosaicProject[] = [
   {
     image: ecoProjects[1],
     category: 'Eco-Residential',
-    date: '2023',
+    date: '2019',
     title: 'Masaka Sweet Apartment',
     description: 'An eco-friendly residential apartment built by HeadFam Africa opposite Masaka Hospital in Kigali, offering sustainable living designed for modern Kigali.',
     tags: ['Eco-Residential', 'Kigali'],
@@ -149,12 +149,12 @@ function QuoteBtn() {
         transition: 'background-color 0.3s',
       }}
     >
-      Get a Quote
+      Get a consultation
     </a>
   )
 }
-
-function AllProjectsBtn() {
+{/* 
+ function AllProjectsBtn() {
   const [hovered, setHovered] = useState(false)
   return (
     <a
@@ -171,9 +171,10 @@ function AllProjectsBtn() {
       }}
     >
       View All Projects
-    </a>
+    </a> 
   )
 }
+  */}
 
 export default function EcoProjects() {
   return (
@@ -248,7 +249,7 @@ export default function EcoProjects() {
 
         <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
           <QuoteBtn />
-          <AllProjectsBtn />
+          {/*<AllProjectsBtn />*/}
         </div>
       </motion.div>
 

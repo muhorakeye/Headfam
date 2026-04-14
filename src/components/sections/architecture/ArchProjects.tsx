@@ -63,7 +63,7 @@ const designProjects: DesignProject[] = [
     location: "Kinigi Sector, Musanze District",
     category: "Culture Center",
     description:
-      "HeadFam Africa designed the Kinigi Women Village — a culture center built to empower women through craft, income, and community. The design reflects Rwandan heritage, uses local materials, and creates a functional, beautiful space beneath Sabyinyo Volcano.",
+      "HeadFam Africa designed the Kinigi Women Village a culture center built to empower women through craft, income, and community. The design reflects Rwandan heritage, uses local materials, and creates a functional, beautiful space beneath Sabyinyo Volcano.",
     images: [kwvD1, kwvD2, kwvD3, kwvD4, kwvD5, kwvD6],
   },
 ];
@@ -114,8 +114,7 @@ export function ArchProjects() {
           style={{ color: "#6b7280", fontFamily: "DM Sans" }}
         >
           Every structure begins as a drawing. Here are some of the architectural
-          designs HeadFam Africa has developed and delivered across Rwanda and East
-          Africa.
+          designs HeadFam Africa has developed and delivered across Africa 
         </p>
       </motion.div>
 

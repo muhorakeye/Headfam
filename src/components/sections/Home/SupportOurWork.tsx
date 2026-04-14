@@ -18,7 +18,7 @@ const stats = [
   {
     number: "20+",
     label: "Years of Experience",
-    description: "Pioneering eco-construction techniques across East Africa",
+    description: "Pioneering eco-construction techniques across Africa",
     dark: false,
   },
   {
