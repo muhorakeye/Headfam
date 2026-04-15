@@ -146,30 +146,6 @@ const VALUES: ValueItem[] = [
   },
 ];
 
-// ─── Donut SVG ────────────────────────────────────────────────────────────────
-// circumference = 2π×40 ≈ 251.2 | offset for 85% = 251.2 × 0.15 ≈ 37.68
-function DonutChart({ pct, label }: { pct: string; label: string }) {
-  return (
-    <div className="flex items-center gap-6">
-      <div className="relative flex-shrink-0" style={{ width: 110, height: 110 }}>
-        <svg width="110" height="110" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" strokeWidth="8" />
-          <circle cx="50" cy="50" r="40" fill="none" stroke={GREEN} strokeWidth="8"
-            strokeDasharray="251.2" strokeDashoffset="37.68"
-            strokeLinecap="round" transform="rotate(-90 50 50)" />
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-xl font-black" style={{ ...PLAYFAIR, color: GREEN }}>{pct}</span>
-        </div>
-      </div>
-      <div>
-        <p className="text-base font-black mb-1" style={{ ...PLAYFAIR, color: DARK }}>{label}</p>
-        <p className="text-sm text-gray-500" style={DM}>Projects completed with certified sustainable materials and methods.</p>
-      </div>
-    </div>
-  );
-}
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export function WhoWeAre() {
   useEffect(() => { window.scrollTo(0, 0); }, []);

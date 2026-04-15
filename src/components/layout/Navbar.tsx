@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 import { NAV_LINKS, COMPANY } from '../../utils/constants';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface ServiceDropdownItem {
   label: string;
@@ -38,7 +39,12 @@ export function Navbar() {
   const [projectsOpen, setProjectsOpen] = useState(false);
 
   // Shared link classes — border-b-2 on all links keeps heights consistent
-  const desktopLinkBase = 'font-body text-sm font-medium pb-px border-b-2 transition-colors duration-300 ease-in-out';
+  // whitespace-nowrap prevents French translations from wrapping mid-word in the bar
+  const desktopLinkBase = 'font-body text-sm font-medium pb-px border-b-2 transition-colors duration-300 ease-in-out whitespace-nowrap';
+
+  // Clamp font-size scales nav text down at narrower viewports so French strings fit
+  // (no Tailwind utility for clamp, inline style is the only option here)
+  const navLinkStyle = { fontSize: 'clamp(0.8rem, 1.1vw, 0.875rem)' };
 
   const desktopLinkClass = (isActive: boolean) =>
     isActive
@@ -68,7 +74,8 @@ export function Navbar() {
         </div>
 
         {/* Desktop nav — centered */}
-        <nav className="hidden md:flex flex-1 justify-center items-center gap-8" aria-label="Main navigation">
+        {/* min-w-0 lets the nav shrink; gap-3 at md-lg compresses for French strings, xl+ restores full gap-8 */}
+        <nav className="hidden md:flex flex-1 min-w-0 justify-center items-center gap-3 xl:gap-8" aria-label="Main navigation">
           {NAV_LINKS.map((link) => {
             // About gets a hover dropdown
             if (link.label === 'About') {
@@ -81,6 +88,7 @@ export function Navbar() {
                 >
                   <span
                     className={`${desktopLinkBase} border-transparent text-charcoal/80 hover:text-forest cursor-pointer select-none`}
+                    style={navLinkStyle}
                     onClick={() => setAboutOpen((o) => !o)}
                   >
                     {link.label}
@@ -116,6 +124,7 @@ export function Navbar() {
                 >
                   <span
                     className={`${desktopLinkBase} border-transparent text-charcoal/80 hover:text-forest cursor-pointer select-none`}
+                    style={navLinkStyle}
                     onClick={() => setServicesOpen((o) => !o)}
                   >
                     {link.label}
@@ -163,6 +172,7 @@ export function Navbar() {
                 >
                   <span
                     className={`${desktopLinkBase} border-transparent text-charcoal/80 hover:text-forest cursor-pointer select-none`}
+                    style={navLinkStyle}
                     onClick={() => setProjectsOpen((o) => !o)}
                   >
                     {link.label}
@@ -193,6 +203,7 @@ export function Navbar() {
                 to={link.to}
                 end={link.to === '/'}
                 className={({ isActive }) => desktopLinkClass(isActive)}
+                style={navLinkStyle}
               >
                 {link.label}
               </NavLink>
@@ -202,8 +213,8 @@ export function Navbar() {
           {/* Donate — gold standalone link */}
           <Link
             to="/donate"
-            className="font-body text-sm font-bold transition-colors duration-300"
-            style={{ color: location.pathname === '/donate' ? '#2E7D32' : '#C9A84C' }}
+            className="font-body text-sm font-bold whitespace-nowrap transition-colors duration-300"
+            style={{ ...navLinkStyle, color: location.pathname === '/donate' ? '#2E7D32' : '#C9A84C' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = '#2E7D32')}
             onMouseLeave={(e) => (e.currentTarget.style.color = location.pathname === '/donate' ? '#2E7D32' : '#C9A84C')}
           >
@@ -212,10 +223,11 @@ export function Navbar() {
         </nav>
 
         {/* Book a Consultation — CTA button, fixed right */}
-        <div className="hidden md:flex flex-shrink-0 ml-8">
+        <div className="hidden md:flex flex-shrink-0 items-center gap-4 ml-8">
+          <LanguageSwitcher variant="desktop" />
           <Link
             to="/book-consultation"
-            className="font-body text-sm font-semibold bg-forest text-white px-4 py-2 rounded-sm hover:bg-forest-dark transition-colors duration-300"
+            className="font-body text-sm font-semibold bg-forest text-white px-4 py-2 rounded-sm hover:bg-forest-dark transition-colors duration-300 max-w-[240px] truncate flex-shrink-0"
           >
             Book a Consultation
           </Link>
@@ -247,7 +259,10 @@ export function Navbar() {
             </button>
           </div>
 
-          <div className="px-6 py-4 space-y-1">
+          <div className="px-6 py-4 space-y-1 break-words">
+
+            {/* LANGUAGE */}
+            <LanguageSwitcher variant="mobile" />
 
             {/* HOME */}
             <Link to="/" onClick={() => setMenuOpen(false)} className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}>HOME</Link>

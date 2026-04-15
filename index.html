@@ -8,9 +8,56 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+    <style>
+      /* Suppress every Google Translate UI element — the custom dropdown drives translation */
+      .goog-te-banner-frame,
+      .goog-te-banner-frame.skiptranslate,
+      .skiptranslate > iframe { display: none !important; height: 0 !important; }
+      body { top: 0 !important; }
+      #goog-gt-tt,
+      .goog-te-balloon-frame { display: none !important; }
+      .goog-text-highlight { background: none !important; box-shadow: none !important; }
+      /* Prevent the translate attribution badge from taking up space */
+      .goog-te-gadget { height: 0 !important; overflow: hidden !important; }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Google Translate widget — hidden div, driven by custom EN/FR dropdown in Navbar -->
+    <div id="google_translate_element" style="display:none;visibility:hidden;"></div>
+
+    <script type="text/javascript">
+      // Aggressively remove the Google Translate toolbar whenever it appears in the DOM.
+      // Google inserts a banner iframe and sets body.style.top — we undo both immediately.
+      (function () {
+        function suppressBar() {
+          var banner = document.querySelector('.goog-te-banner-frame');
+          if (banner) {
+            banner.style.setProperty('display', 'none', 'important');
+            banner.style.setProperty('height', '0', 'important');
+          }
+          if (document.body && document.body.style.top && document.body.style.top !== '0px') {
+            document.body.style.top = '0px';
+          }
+        }
+
+        // Watch for Google inserting the banner as a direct child of body
+        var obs = new MutationObserver(suppressBar);
+        obs.observe(document.documentElement, { childList: true, subtree: true });
+
+        // Also run after full load in case the observer fired too early
+        window.addEventListener('load', suppressBar);
+      })();
+
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: 'en', includedLanguages: 'en,fr', autoDisplay: false },
+          'google_translate_element'
+        );
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
