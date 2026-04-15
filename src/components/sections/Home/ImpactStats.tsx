@@ -70,7 +70,9 @@ function StatCard({ stat, index, started }: StatCardProps) {
         transitionDelay: `${index * 120}ms`,
       }}
     >
-      <p className="font-mono text-3xl md:text-5xl font-medium text-white mb-2">
+      {/* notranslate + translate="no" prevent Google Translate from wrapping these
+          text nodes in <font> elements, which breaks React's count-up animation */}
+      <p className="font-mono text-3xl md:text-5xl font-medium text-white mb-2 notranslate" translate="no">
         <AnimatedCounter value={stat.value} started={started} delay={index * 120} />
       </p>
       <p className="font-body text-sm font-semibold text-white/80 mb-1">
