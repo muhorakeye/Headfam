@@ -280,6 +280,9 @@ export function Navbar() {
               <Link to="/projects/bambino-super-city" onClick={() => setMenuOpen(false)} className="block py-2 pl-4 border-l-2 border-gray-100 font-body text-sm" style={{ color: '#6b7280', fontFamily: '"DM Sans", sans-serif' }}>Bambino Super City</Link>
             </div>
 
+            {/* GALLERY */}
+            <Link to="/gallery" onClick={() => setMenuOpen(false)} className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}>GALLERY</Link>
+
             {/* BOOK */}
             <Link to="/book-consultation" onClick={() => setMenuOpen(false)} className="block py-3 border-b border-gray-100 font-body text-base font-black" style={{ color: '#2E7D32', fontFamily: '"DM Sans", sans-serif' }}>BOOK A CONSULTATION</Link>
 

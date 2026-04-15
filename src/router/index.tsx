@@ -26,6 +26,7 @@ const BambinoSuperCity    = lazy(() => import('../pages/projects/BambinoSuperCit
 const Donate              = lazy(() => import('../pages/Donate'));
 const BookingPage         = lazy(() => import('../pages/BookingPage').then(m => ({ default: m.BookingPage })));
 const BookConsultation    = lazy(() => import('../pages/BookConsultation'));
+const GalleryPage         = lazy(() => import('../pages/GalleryPage').then(m => ({ default: m.GalleryPage })));
 const ContactPage         = lazy(() => import('../pages/ContactPage').then(m => ({ default: m.ContactPage })));
 const NotFoundPage        = lazy(() => import('../pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
@@ -71,6 +72,7 @@ export const router = createBrowserRouter([
       { path: '/projects/noble-cheer-resort', element: <NobleCheerResort /> },
       { path: '/projects/bambino-super-city', element: <BambinoSuperCity /> },
       { path: '/projects/:projectId', element: <ProjectDetailPage /> },
+      { path: '/gallery', element: <GalleryPage /> },
       { path: '/donate', element: <Donate /> },
       { path: '/booking', element: <BookingPage /> },
       { path: '/book-consultation', element: <BookConsultation /> },
